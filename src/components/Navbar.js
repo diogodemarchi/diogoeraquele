@@ -30,7 +30,7 @@ function Navbar() {
         <div>
           <div className="navbar-container">
             <Link
-              to="/raqueleediogo"
+              to="/diogoeraquele"
               className="navbar-logo"
               onClick={closeMobileMenu}
             >
@@ -42,7 +42,7 @@ function Navbar() {
             <ul className={isOpen ? "nav-menu active" : "nav-menu"}>
               <li className="nav-item">
                 <Link
-                  to="/raqueleediogo"
+                  to="/diogoeraquele"
                   className="nav-links"
                   onClick={closeMobileMenu}
                 >

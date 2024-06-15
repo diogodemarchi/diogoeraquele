@@ -37,40 +37,40 @@ function Footer() {
           <div className="footer-link-items">
             <h2>About Us</h2>
             <Link to="/sign-up">How it works</Link>
-            <Link to="/raqueleediogo">Testimonials</Link>
-            <Link to="/raqueleediogo">Careers</Link>
-            <Link to="/raqueleediogo">Investors</Link>
-            <Link to="/raqueleediogo">Terms of Service</Link>
+            <Link to="/diogoeraquele">Testimonials</Link>
+            <Link to="/diogoeraquele">Careers</Link>
+            <Link to="/diogoeraquele">Investors</Link>
+            <Link to="/diogoeraquele">Terms of Service</Link>
           </div>
           <div className="footer-link-items">
             <h2>Contact Us</h2>
-            <Link to="/raqueleediogo">Contact</Link>
-            <Link to="/raqueleediogo">Support</Link>
-            <Link to="/raqueleediogo">Destinations</Link>
-            <Link to="/raqueleediogo">Sponsorships</Link>
+            <Link to="/diogoeraquele">Contact</Link>
+            <Link to="/diogoeraquele">Support</Link>
+            <Link to="/diogoeraquele">Destinations</Link>
+            <Link to="/diogoeraquele">Sponsorships</Link>
           </div>
         </div>
         <div className="footer-link-wrapper">
           <div className="footer-link-items">
             <h2>Videos</h2>
-            <Link to="/raqueleediogo">Submit Video</Link>
-            <Link to="/raqueleediogo">Ambassadors</Link>
-            <Link to="/raqueleediogo">Agency</Link>
-            <Link to="/raqueleediogo">Influencer</Link>
+            <Link to="/diogoeraquele">Submit Video</Link>
+            <Link to="/diogoeraquele">Ambassadors</Link>
+            <Link to="/diogoeraquele">Agency</Link>
+            <Link to="/diogoeraquele">Influencer</Link>
           </div>
           <div className="footer-link-items">
             <h2>Social Media</h2>
-            <Link to="/raqueleediogo">Instagram</Link>
-            <Link to="/raqueleediogo">Facebook</Link>
-            <Link to="/raqueleediogo">Youtube</Link>
-            <Link to="/raqueleediogo">Twitter</Link>
+            <Link to="/diogoeraquele">Instagram</Link>
+            <Link to="/diogoeraquele">Facebook</Link>
+            <Link to="/diogoeraquele">Youtube</Link>
+            <Link to="/diogoeraquele">Twitter</Link>
           </div>
         </div>
       </div>
       <section className="social-media">
         <div className="social-media-wrap">
           <div className="footer-logo">
-            <Link to="/raqueleediogo" className="social-logo">
+            <Link to="/diogoeraquele" className="social-logo">
               TRVL
             </Link>
           </div>
@@ -78,7 +78,7 @@ function Footer() {
           <div className="social-icons">
             <Link
               className="social-icon-link facebook"
-              to="/raqueleediogo"
+              to="/diogoeraquele"
               target="_blank"
               aria-label="Facebook"
             >
@@ -86,7 +86,7 @@ function Footer() {
             </Link>
             <Link
               className="social-icon-link instagram"
-              to="/raqueleediogo"
+              to="/diogoeraquele"
               target="_blank"
               aria-label="Instagram"
             >
@@ -94,7 +94,7 @@ function Footer() {
             </Link>
             <Link
               className="social-icon-link twiiter"
-              to="/raqueleediogo"
+              to="/diogoeraquele"
               target="_blank"
               aria-label="Twitter"
             >
@@ -102,7 +102,7 @@ function Footer() {
             </Link>
             <Link
               className="social-icon-link youtube"
-              to="/raqueleediogo"
+              to="/diogoeraquele"
               target="_blank"
               aria-label="Youtube"
             >
