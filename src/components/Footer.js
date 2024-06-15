@@ -32,77 +32,77 @@ function Footer() {
           </form>
         </div>
       </section>
-      <div class="footer-links">
+      <div className="footer-links">
         <div className="footer-link-wrapper">
-          <div class="footer-link-items">
+          <div className="footer-link-items">
             <h2>About Us</h2>
             <Link to="/sign-up">How it works</Link>
-            <Link to="/">Testimonials</Link>
-            <Link to="/">Careers</Link>
-            <Link to="/">Investors</Link>
-            <Link to="/">Terms of Service</Link>
+            <Link to="/raqueleediogo">Testimonials</Link>
+            <Link to="/raqueleediogo">Careers</Link>
+            <Link to="/raqueleediogo">Investors</Link>
+            <Link to="/raqueleediogo">Terms of Service</Link>
           </div>
-          <div class="footer-link-items">
+          <div className="footer-link-items">
             <h2>Contact Us</h2>
-            <Link to="/">Contact</Link>
-            <Link to="/">Support</Link>
-            <Link to="/">Destinations</Link>
-            <Link to="/">Sponsorships</Link>
+            <Link to="/raqueleediogo">Contact</Link>
+            <Link to="/raqueleediogo">Support</Link>
+            <Link to="/raqueleediogo">Destinations</Link>
+            <Link to="/raqueleediogo">Sponsorships</Link>
           </div>
         </div>
         <div className="footer-link-wrapper">
-          <div class="footer-link-items">
+          <div className="footer-link-items">
             <h2>Videos</h2>
-            <Link to="/">Submit Video</Link>
-            <Link to="/">Ambassadors</Link>
-            <Link to="/">Agency</Link>
-            <Link to="/">Influencer</Link>
+            <Link to="/raqueleediogo">Submit Video</Link>
+            <Link to="/raqueleediogo">Ambassadors</Link>
+            <Link to="/raqueleediogo">Agency</Link>
+            <Link to="/raqueleediogo">Influencer</Link>
           </div>
-          <div class="footer-link-items">
+          <div className="footer-link-items">
             <h2>Social Media</h2>
-            <Link to="/">Instagram</Link>
-            <Link to="/">Facebook</Link>
-            <Link to="/">Youtube</Link>
-            <Link to="/">Twitter</Link>
+            <Link to="/raqueleediogo">Instagram</Link>
+            <Link to="/raqueleediogo">Facebook</Link>
+            <Link to="/raqueleediogo">Youtube</Link>
+            <Link to="/raqueleediogo">Twitter</Link>
           </div>
         </div>
       </div>
       <section className="social-media">
         <div className="social-media-wrap">
           <div className="footer-logo">
-            <Link to="/" className="social-logo">
+            <Link to="/raqueleediogo" className="social-logo">
               TRVL
             </Link>
           </div>
           <small className="website-wrights">TRVL C 2024</small>
           <div className="social-icons">
             <Link
-              class="social-icon-link facebook"
-              to="/"
+              className="social-icon-link facebook"
+              to="/raqueleediogo"
               target="_blank"
               aria-label="Facebook"
             >
               <FontAwesomeIcon icon={faFacebook} />
             </Link>
             <Link
-              class="social-icon-link instagram"
-              to="/"
+              className="social-icon-link instagram"
+              to="/raqueleediogo"
               target="_blank"
               aria-label="Instagram"
             >
               <FontAwesomeIcon icon={faInstagram} />
             </Link>
             <Link
-              class="social-icon-link twiiter"
-              to="/"
+              className="social-icon-link twiiter"
+              to="/raqueleediogo"
               target="_blank"
               aria-label="Twitter"
             >
               <FontAwesomeIcon icon={faTwitter} />
             </Link>
             <Link
-              class="social-icon-link youtube"
-              to="/"
+              className="social-icon-link youtube"
+              to="/raqueleediogo"
               target="_blank"
               aria-label="Youtube"
             >
