@@ -1,7 +1,7 @@
 import Hamburger from "hamburger-react";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
+// import "./Navbar.css";
 import { Button } from "./Button";
 import { useTranslation } from "react-i18next";
 import { LANGUAGES } from "../constants";
@@ -9,6 +9,7 @@ import { LANGUAGES } from "../constants";
 interface Language {
   code: string;
   label: string;
+  countryCode: string;
 }
 
 interface NavbarProps {
@@ -46,7 +47,7 @@ const Navbar: React.FC<NavbarProps> = ({ closeMobileMenu, isOpen, setOpen, butto
             <Hamburger toggled={isOpen} toggle={setOpen} color="#fff" />
           </div>
           <ul className={`md:flex md:items-center md:space-x-4 ${isOpen ? 'flex flex-col items-center absolute top-20 left-0 w-full bg-gray-800' : 'hidden'}`}>
-            <li className="nav-item h-20">
+            <li className="h-20">
               <Link
                 to="/diogoeraquele"
                 className="text-white flex items-center p-2 h-full"
@@ -55,7 +56,7 @@ const Navbar: React.FC<NavbarProps> = ({ closeMobileMenu, isOpen, setOpen, butto
                 {t("home")}
               </Link>
             </li>
-            <li className="nav-item h-20">
+            <li className="h-20">
               <Link
                 to="/services"
                 className="text-white flex items-center p-2 h-full"
@@ -64,7 +65,7 @@ const Navbar: React.FC<NavbarProps> = ({ closeMobileMenu, isOpen, setOpen, butto
                 Services
               </Link>
             </li>
-            <li className="nav-item h-20">
+            <li className="h-20">
               <Link
                 to="/products"
                 className="text-white flex items-center p-2 h-full"
@@ -73,7 +74,7 @@ const Navbar: React.FC<NavbarProps> = ({ closeMobileMenu, isOpen, setOpen, butto
                 Products
               </Link>
             </li>
-            <li className="nav-item h-20 md:hidden">
+            <li className="h-20 md:hidden">
               <Link
                 to="/sign-up"
                 className="text-white flex items-center p-2 h-full"
@@ -97,7 +98,7 @@ const Navbar: React.FC<NavbarProps> = ({ closeMobileMenu, isOpen, setOpen, butto
               aria-expanded="true"
               onClick={toggleDropdown}
             >
-              {LANGUAGES.find(lang => lang.code === i18n.language)?.label || 'Select Language'}
+              {<img className="object-cover h-8 w-8" src={`${process.env.PUBLIC_URL}/images/${LANGUAGES.find(lang => lang.code === i18n.language)?.countryCode}.png`} /> || LANGUAGES.find(lang => lang.code === i18n.language)?.countryCode || 'Select Language'}
               <svg
                 className="-mr-1 ml-2 h-5 w-5"
                 xmlns="http://www.w3.org/2000/svg"
@@ -120,14 +121,14 @@ const Navbar: React.FC<NavbarProps> = ({ closeMobileMenu, isOpen, setOpen, butto
                 aria-labelledby="options-menu"
               >
                 <div className="py-1" role="none">
-                  {LANGUAGES.map(({ code, label }: Language) => (
+                  {LANGUAGES.map(({ code, label, countryCode }: Language) => (
                     <button
                       key={code}
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
                       onClick={(e) => onChangeLang(e)}
                       value={code}
                     >
-                      {label}
+                      <img className="object-cover h-8 w-8" src={`${process.env.PUBLIC_URL}/images/${countryCode}.png`}/>{label}
                     </button>
                     
                   ))}
