@@ -1,14 +1,22 @@
 import Hamburger from "hamburger-react";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "./Button";
 import "./Navbar.css";
+import { Button } from "./Button";
+import { useTranslation } from "react-i18next";
+import { LANGUAGES } from "../constants";
 
 function Navbar() {
+  const { i18n, t } = useTranslation();
+  const onChangeLang = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    i18n.changeLanguage(e.target.value);
+  };
+
   const [isOpen, setOpen] = useState(false);
   const [button, setButton] = useState(true);
 
   const closeMobileMenu = () => setOpen(false);
+
 
   const showButton = () => {
     if (window.innerWidth <= 960) {
@@ -46,7 +54,7 @@ function Navbar() {
                   className="nav-links"
                   onClick={closeMobileMenu}
                 >
-                  Home
+                  {t("home")}
                 </Link>
               </li>
               <li className="nav-item">
@@ -80,6 +88,15 @@ function Navbar() {
             {button && <Button buttonStyle="btn--outline">Sign Up</Button>}
           </div>
         </div>
+        <div className="text-red-500 space-x-100">
+        <select defaultValue={i18n.language} onChange={onChangeLang}>
+        {LANGUAGES.map(({ code, label }) => (
+          <option key={code} value={code}>
+            {label}
+          </option>
+        ))}
+      </select>
+      </div>
       </nav>
     </>
   );
