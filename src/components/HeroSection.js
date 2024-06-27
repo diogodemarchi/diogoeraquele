@@ -1,18 +1,21 @@
 import React from "react";
 import "../App.css";
 import { Button } from "./Button";
-import "./HeroSection.css";
+// import "./HeroSection.css";
+import { useTranslation } from "react-i18next";
 
 function HeroSection() {
+  const { t } = useTranslation();
+
   return (
     <div className="hero-container">
-      <video
+      {/* <video
         src={process.env.PUBLIC_URL + "/videos/video-2.mp4"}
         autoPlay
         loop
         muted
-      />
-      <h1>ADVENTURE AWAITS</h1>
+      /> */}
+      <h1>Raquele & Diogo</h1>
       <p>What are you waiting for?</p>
       <div className="hero-btns">
         <Button
@@ -20,7 +23,7 @@ function HeroSection() {
           buttonStyle="btn--outline"
           buttonSize="btn--large"
         >
-          GET STARTED
+          {t("rsvp")}
         </Button>
         <Button
           className="btns"

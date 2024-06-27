@@ -36,7 +36,7 @@ function Footer() {
         <div className="footer-link-wrapper">
           <div className="footer-link-items">
             <h2>About Us</h2>
-            <Link to="/sign-up">How it works</Link>
+            <Link to="/rsvp">How it works</Link>
             <Link to="/diogoeraquele">Testimonials</Link>
             <Link to="/diogoeraquele">Careers</Link>
             <Link to="/diogoeraquele">Investors</Link>
