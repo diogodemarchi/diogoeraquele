@@ -1,30 +1,23 @@
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/pages/Home";
-import Services from "./components/pages/Services";
 import Rsvp from "./components/pages/Rsvp";
-import Products from "./components/pages/Products";
-import "./App.css";
+import Venue from "./components/pages/Venue";
+import History from "./components/pages/History";
 import React, { Suspense, useState } from "react";
+import Services from "./components/pages/Services";
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const closeMobileMenu = () => setIsOpen(false);
   return (
     <>
       <Suspense fallback="loading">
         <Router>
-          <Navbar
-            closeMobileMenu={closeMobileMenu}
-            isOpen={isOpen}
-            setOpen={setIsOpen}
-            button={true}
-          />
+          <Navbar />
           <Routes>
             <Route path="/diogoeraquele" Component={Home} />
+            <Route path="/our-history" Component={History} />
             <Route path="/services" Component={Services} />
-            <Route path="/products" Component={Products} />
+            <Route path="/products" Component={Venue} />
             <Route path="/rsvp" Component={Rsvp} />
           </Routes>
         </Router>

@@ -1,6 +1,5 @@
 import React from "react";
-import { Button } from "./Button";
-import "./Footer.css";
+// import "./Footer.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -28,7 +27,7 @@ function Footer() {
               placeholder="Your Email"
               className="footer-input"
             />
-            <Button buttonStyle="btn--outline">Subscribe</Button>
+            <button className="btn btn-outline">Subscribe</button>
           </form>
         </div>
       </section>

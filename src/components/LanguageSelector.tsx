@@ -54,54 +54,55 @@ const LanguageSelector: React.FC = () => {
   }, []);
 
   return (
-    <div className="text-white flex-grow-0 items-center p-4 h-full">
-      <button
-        type="button"
-        className="inline-flex justify-center w-full shadow-sm px-4 py-2 text-sm font-medium hover:bg-slate-800 focus:bg-slate-800 rounded-t-lg"
-        id="options-menu"
-        aria-haspopup="true"
-        aria-expanded="true"
-        onClick={toggleDropdown}
-      >
-        {(
-          <img
-            id="options-menu-flag"
-            className="object-cover h-8 w-8"
-            src={`${process.env.PUBLIC_URL}/images/${LANGUAGES.find((lang) => lang.code === i18n.language)?.countryCode}.png`}
-          />
-        ) ||
-          LANGUAGES.find((lang) => lang.code === i18n.language)?.countryCode ||
-          "Select Language"}
-      </button>
-      {dropdownOpen && (
-        <div
-          className="z-10 bg-white divide-y divide-gray-100 rounded-b-lg shadow dark:bg-slate-800"
-          role="menu"
-          aria-orientation="vertical"
-          aria-labelledby="options-menu"
+    <div className="dropdown justify-center flex items-center h-full">
+      <div className="m-2">
+        <button
+          type="button"
+          className="inline-flex justify-center w-full shadow-sm py-2 text-sm font-medium hover:bg-secondary/100 focus:bg-primary/10 rounded-t-lg rounded-b-lg"
+          id="options-menu"
+          aria-haspopup="true"
+          aria-expanded="true"
+          onClick={toggleDropdown}
         >
-          <div className="py-1" role="none">
-            {LANGUAGES.filter(
-              (item: Language) => !(item.code === i18n.language),
-            ).map(({ code, label, countryCode }: Language) => (
-              <button
-                key={code}
-                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
-                onClick={(e) => onChangeLang(e)}
-                value={code}
-              >
-                <img
-                  id="options-menu-inner-flag"
-                  alt={code}
-                  className="object-cover h-8 w-8"
-                  src={`${process.env.PUBLIC_URL}/images/${countryCode}.png`}
-                  onClick={(e) => onChangeLangByImg(e)}
-                />
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
+          {(
+            <img
+              id="options-menu-flag"
+              className="object-cover h-8 w-8"
+              src={`${process.env.PUBLIC_URL}/images/${LANGUAGES.find((lang) => lang.code === i18n.language)?.countryCode}.png`}
+            />
+          ) ||
+            LANGUAGES.find((lang) => lang.code === i18n.language)
+              ?.countryCode ||
+            "Select Language"}
+        </button>
+        {dropdownOpen && (
+          <ul
+            className="absolute z-[1] -translate-x-6 menu rounded-b-lg bg-base-100 rounded-box w-auto shadow h-auto"
+            role="menu"
+          >
+            {LANGUAGES.filter((item) => item.code !== i18n.language).map(
+              ({ code, label, countryCode }) => (
+                <li key={code}>
+                  <button
+                    key={code}
+                    className="block py-2 text-sm hover:bg-black w-16 text-left"
+                    onClick={(e) => onChangeLang(e)}
+                    value={code}
+                  >
+                    <img
+                      id="options-menu-inner-flag"
+                      alt={code}
+                      className="flex object-cover h-8 w-8"
+                      src={`${process.env.PUBLIC_URL}/images/${countryCode}.png`}
+                      onClick={(e) => onChangeLangByImg(e)}
+                    />
+                  </button>
+                </li>
+              ),
+            )}
+          </ul>
+        )}
+      </div>
     </div>
   );
 };

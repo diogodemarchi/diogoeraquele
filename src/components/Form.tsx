@@ -50,7 +50,7 @@ const Form: React.FC = () => {
           <button className="btn btn-active btn-outline btn-success btn-block max-w-[200px]">
             {t("confirm")}
           </button>
-          <button className="btn btn-active btn-error btn-block max-w-[200px]">
+          <button className="btn btn-outline btn-block max-w-[200px]">
             {t("deny")}
           </button>
         </div>
