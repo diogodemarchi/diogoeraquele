@@ -45,6 +45,7 @@ module.exports = {
       "dark",
     ],
     darkTheme: "dark", // name of one of the included themes for dark mode
+    // darkMode: ["class", '[data-theme="dark"]'],
     base: true, // applies background color and foreground color for root element by default
     styled: true, // include daisyUI colors and design decisions for all components
     utils: true, // adds responsive and modifier utility classes

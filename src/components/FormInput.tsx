@@ -7,6 +7,7 @@ interface FormInputProps {
   type?: string;
   optional?: boolean;
   callback: Dispatch<SetStateAction<string>>;
+  value?: string;
 }
 
 const FormInput: React.FC<FormInputProps> = ({
@@ -15,6 +16,7 @@ const FormInput: React.FC<FormInputProps> = ({
   type = "text",
   optional = false,
   callback,
+  value = "",
 }) => {
   const { t } = useTranslation();
 
@@ -22,16 +24,17 @@ const FormInput: React.FC<FormInputProps> = ({
     <div className="w-full">
       {title && (
         <div className="label mb-2">
-          <span className="label-text text-lg font-semibold text-[#4A07DA]">
+          <span className="label-text text-lg font-semibold text-primary">
             {title}
           </span>
         </div>
       )}
-      <label className="input input-bordered input-primary text-black flex items-center gap-2 bg-white">
+      <label className="input input-bordered input-primary text-base-content flex items-center gap-2 bg-base-100">
         <input
           type={type}
           placeholder={title ? t("type_here") : placeholder}
-          className="grow"
+          value={value}
+          className="grow placeholder-base-content placeholder-opacity-50"
           onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
             callback(event.target.value)
           }
