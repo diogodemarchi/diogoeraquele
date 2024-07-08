@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import FormInput from "./FormInput";
+import FormOption from "./FormOption";
 
 function Form() {
   const { t } = useTranslation();
@@ -12,6 +13,7 @@ function Form() {
   const [phone, setPhone] = useState("");
   const [firstQuestion, setFirstQuestion] = useState("");
   const [isChecked, setIsChecked] = useState(false);
+  const [selectedOption, setSelectedOption] = useState();
 
   const addGuest = () => {
     let newGuest = { firstName: "", lastName: "" };
@@ -150,6 +152,15 @@ function Form() {
           optional={true}
           callback={setFirstQuestion}
         />
+        <div>
+          <FormOption
+            title="Choose an option"
+            options={["Option 1", "Option 2", "Option 3", "Option 4"]}
+            callback={setSelectedOption}
+            selectedValue={selectedOption}
+          />
+          <p>Selected Option: {selectedOption}</p>
+        </div>
         // ToDo yes/no questions: need_transport, need_accomodation
         <div className="flex items-center gap-1.5  justify-start pl-2">
           <div className="form-control">
