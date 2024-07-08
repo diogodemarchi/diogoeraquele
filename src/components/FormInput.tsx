@@ -2,7 +2,7 @@ import React, { Dispatch, SetStateAction } from "react";
 import { useTranslation } from "react-i18next";
 
 interface FormInputProps {
-  placeholder: string;
+  placeholder?: string;
   title?: string;
   type?: string;
   optional?: boolean;
@@ -11,17 +11,17 @@ interface FormInputProps {
 }
 
 const FormInput: React.FC<FormInputProps> = ({
-  placeholder,
+  placeholder = "",
   title = "",
   type = "text",
   optional = false,
   callback,
-  value = "",
+  value,
 }) => {
   const { t } = useTranslation();
 
   return (
-    <div className="w-full">
+    <div>
       {title && (
         <div className="label mb-2">
           <span className="label-text text-lg font-semibold text-primary">
@@ -32,7 +32,7 @@ const FormInput: React.FC<FormInputProps> = ({
       <label className="input input-bordered input-primary text-base-content flex items-center gap-2 bg-base-100">
         <input
           type={type}
-          placeholder={title ? t("type_here") : placeholder}
+          placeholder={placeholder !== "" ? placeholder : t("type_here")}
           value={value}
           className="grow placeholder-base-content placeholder-opacity-50"
           onChange={(event: React.ChangeEvent<HTMLInputElement>) =>

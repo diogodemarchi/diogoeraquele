@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import FormInput from "./FormInput";
 
@@ -6,6 +6,12 @@ function Form() {
   const { t } = useTranslation();
 
   const [guest, setGuest] = useState([]);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [firstQuestion, setFirstQuestion] = useState("");
+  const [isChecked, setIsChecked] = useState(false);
 
   const addGuest = () => {
     let newGuest = { firstName: "", lastName: "" };
@@ -30,16 +36,31 @@ function Form() {
     console.log(guest);
   };
 
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [firstQuestion, setFirstQuestion] = useState("");
+  const handleCheckbox = (event) => {
+    setIsChecked(event.target.checked);
+  };
+
+  function isFormFilled() {
+    return (
+      firstName &&
+      firstName !== "" &&
+      lastName &&
+      lastName !== "" &&
+      guest.every(
+        (g) =>
+          g["firstName"] &&
+          g["firstName"] !== "" &&
+          g["lastName"] &&
+          g["lastName"] !== "",
+      ) &&
+      isChecked
+    );
+  }
 
   return (
-    <div className="w-full mt-5 sm:mt-8">
-      <div className="mx-auto w-full sm:max-w-md md:max-w-lg flex flex-col gap-5">
-        <div className="flex flex-col sm:flex-row gap-3">
+    <div className="w-full mt-5">
+      <div className="mx-auto w-full max-w-lg flex flex-col gap-5">
+        <div className="flex flex-col md:flex-row gap-3">
           <FormInput placeholder={t("first_name")} callback={setFirstName} />
           <FormInput placeholder={t("last_name")} callback={setLastName} />
         </div>
@@ -59,7 +80,7 @@ function Form() {
                 callback={(event) => handleGuest(index, "lastName", event)}
                 value={guest[index]["lastName"]}
               />
-              <div className="my-auto">
+              <div className="m-auto">
                 <button
                   className="btn btn-circle btn-outline btn-xs btn-error place-items-center align-middle"
                   onClick={() => removeGuest(index)}
@@ -99,28 +120,85 @@ function Form() {
         />
         <FormInput
           placeholder={t("type_here")}
-          title={t("some_first_question")}
+          title={t("question_diet_restrictions")}
           optional={true}
           callback={setFirstQuestion}
         />
+        <FormInput
+          placeholder={t("type_here")}
+          title={t("question_song_requests")}
+          optional={true}
+          callback={setFirstQuestion}
+        />
+        <FormInput
+          placeholder={t("type_here")}
+          title={t("question_special_needs")}
+          optional={true}
+          callback={setFirstQuestion}
+        />
+        <FormInput
+          placeholder={t("type_here")}
+          title={t("question_message_to_the_couple")}
+          optional={true}
+          callback={setFirstQuestion}
+        />
+        <FormInput
+          placeholder={t(
+            "seating_preference_placeholder_close_to_music_close_to_food",
+          )}
+          title={t("question_seating_preference")}
+          optional={true}
+          callback={setFirstQuestion}
+        />
+        // ToDo yes/no questions: need_transport, need_accomodation
         <div className="flex items-center gap-1.5  justify-start pl-2">
           <div className="form-control">
             <label className="label cursor-pointer">
-              <input type="checkbox" className="checkbox-xs checkbox-primary" />
+              <input
+                type="checkbox"
+                className="checkbox-xs checkbox-primary"
+                checked={isChecked}
+                onChange={handleCheckbox}
+              />
             </label>
           </div>
           <h3 className="flex items-center whitespace-nowrap text-xs text-black">
-            {t("agreement_text")}
+            {t("agreement_text_pictures_so_on")}
           </h3>
         </div>
-        <div className="flex flex-col md:flex-row gap-2 md:gap-4 justify-center items-center">
-          <button className="btn  btn-outline btn-success btn-block max-w-[200px]">
+        <div className="flex flex-col md:flex-row gap-2 md:gap-4 justify-center items-center z-40">
+          <button
+            className={`btn btn-outline btn-success btn-block max-w-[200px]`}
+            disabled={!isFormFilled()}
+          >
             {t("will_attend")}
           </button>
-          <button className="btn btn-outline btn-block max-w-[200px] btn-error">
+          <button
+            title="test"
+            className="btn btn-outline btn-block max-w-[200px] btn-error"
+            disabled={!isFormFilled()}
+          >
             {t("will_not_attend")}
           </button>
         </div>
+        {!isFormFilled() && (
+          <div role="alert" className="alert alert-error">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 shrink-0 stroke-current"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <span>{t("fill_all_fields")}</span>
+          </div>
+        )}
       </div>
     </div>
   );
