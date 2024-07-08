@@ -13,7 +13,9 @@ function Form() {
   const [phone, setPhone] = useState("");
   const [firstQuestion, setFirstQuestion] = useState("");
   const [isChecked, setIsChecked] = useState(false);
-  const [selectedOption, setSelectedOption] = useState();
+  const [selectedCoolest, setSelectedCoolest] = useState("Diogo");
+  const [selectedTransport, setSelectedTransport] = useState("no");
+  const [selectedAccomodation, setSelectedAccomodation] = useState("no");
 
   const addGuest = () => {
     let newGuest = { firstName: "", lastName: "" };
@@ -42,6 +44,15 @@ function Form() {
     setIsChecked(event.target.checked);
   };
 
+  const handleSelectedCoolest = (chosenCoolest) => {
+    console.log(chosenCoolest);
+    setSelectedCoolest(chosenCoolest);
+    if (chosenCoolest === "Raquele") {
+      document.getElementById("insane_modal").showModal();
+    }
+    console.log(selectedCoolest);
+  };
+
   function isFormFilled() {
     return (
       firstName &&
@@ -55,7 +66,8 @@ function Form() {
           g["lastName"] &&
           g["lastName"] !== "",
       ) &&
-      isChecked
+      isChecked &&
+      selectedCoolest === "Diogo"
     );
   }
 
@@ -144,24 +156,67 @@ function Form() {
           optional={true}
           callback={setFirstQuestion}
         />
-        <FormInput
-          placeholder={t(
-            "seating_preference_placeholder_close_to_music_close_to_food",
-          )}
-          title={t("question_seating_preference")}
-          optional={true}
-          callback={setFirstQuestion}
+        <FormOption
+          title={t("do_you_need_transport")}
+          options={[
+            t("from") + " Timbó",
+            t("from") + " Rio dos Cedros",
+            t("somewhere_else"),
+            t("no"),
+          ]}
+          callback={setSelectedTransport}
+          selectedValue={selectedTransport}
         />
-        <div>
-          <FormOption
-            title="Choose an option"
-            options={["Option 1", "Option 2", "Option 3", "Option 4"]}
-            callback={setSelectedOption}
-            selectedValue={selectedOption}
-          />
-          <p>Selected Option: {selectedOption}</p>
-        </div>
-        // ToDo yes/no questions: need_transport, need_accomodation
+        <FormOption
+          title={t("do_you_need_accomodation")}
+          options={[t("yes_help_out"), t("no_i_am_fine")]}
+          callback={setSelectedAccomodation}
+          selectedValue={selectedAccomodation}
+        />
+        <FormOption
+          title={t("who_is_the_coolest")}
+          options={["Diogo", "Raquele"]}
+          callback={handleSelectedCoolest}
+          selectedValue={selectedCoolest}
+        />
+        {selectedCoolest !== "Diogo" && (
+          <div role="alert" className="alert alert-error">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 shrink-0 stroke-current"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <span>{t("wrong_answer_please_choose_diogo")}</span>
+          </div>
+        )}
+        <dialog id="insane_modal" className="modal">
+          <div className="modal-box">
+            <h3 className="font-bold text-lg">{t("are_you_insane")}</h3>
+            <p className="py-4">{t("you_have_chosen_wrong")}</p>
+            <div className="modal-action">
+              <form method="dialog">
+                <button
+                  onClick={() => handleSelectedCoolest("Diogo")}
+                  className="btn mr-2"
+                >
+                  {t("choose_diogo")}
+                </button>
+                <button className="btn ml-2">{t("close")}</button>
+              </form>
+            </div>
+          </div>
+          <form method="dialog" className="modal-backdrop">
+            <button>close</button>
+          </form>
+        </dialog>
         <div className="flex items-center gap-1.5  justify-start pl-2">
           <div className="form-control">
             <label className="label cursor-pointer">
@@ -173,20 +228,27 @@ function Form() {
               />
             </label>
           </div>
-          <h3 className="flex items-center whitespace-nowrap text-xs text-black">
+          <h3 className="flex items-center whitespace-nowrap text-xs text-base-content">
             {t("agreement_text_pictures_so_on")}
           </h3>
         </div>
-        <div className="flex flex-col md:flex-row gap-2 md:gap-4 justify-center items-center z-40">
+        <div className="flex flex-col md:flex-row gap-2 md:gap-4 justify-center items-center">
           <button
-            className={`btn btn-outline btn-success btn-block max-w-[200px]`}
+            className={`btn btn-outline btn-success btn-block max-w-36`}
             disabled={!isFormFilled()}
           >
             {t("will_attend")}
           </button>
           <button
             title="test"
-            className="btn btn-outline btn-block max-w-[200px] btn-error"
+            className="btn btn-outline btn-block max-w-36 btn-error"
+            disabled={!isFormFilled()}
+          >
+            {t("still_dont_know")}
+          </button>
+          <button
+            title="test"
+            className="btn btn-outline btn-block max-w-36 btn-error"
             disabled={!isFormFilled()}
           >
             {t("will_not_attend")}
