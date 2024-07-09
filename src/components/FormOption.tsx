@@ -25,9 +25,9 @@ const FormOption: React.FC<FormOptionProps> = ({
           </span>
         </div>
       )}
-      <div className="flex items-center justify-center gap-4">
+      <div className="flex items-center justify-center gap-2">
         {options.map((option, index) => (
-          <label key={index} className="flex items-center gap-2">
+          <label key={index} className="flex-wrap items-center gap-2">
             <input
               type="radio"
               name={title}
