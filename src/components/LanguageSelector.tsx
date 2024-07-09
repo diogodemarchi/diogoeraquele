@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-interface Language {
-  code: string;
-  label: string;
-  countryCode: string;
-}
-
 export const LANGUAGES = [
   { label: "Portugues", code: "pt", countryCode: "br" },
   { label: "English", code: "en", countryCode: "us" },
@@ -40,6 +34,7 @@ const LanguageSelector: React.FC = () => {
 
   const onClickOutside = (e: Event) => {
     console.log(e.target);
+    console.log(i18n.language);
     if (!(e.target as HTMLElement).id.includes("options-menu")) {
       setDropdownOpen(false);
     }
