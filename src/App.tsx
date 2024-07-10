@@ -1,5 +1,10 @@
 import Navbar from "./components/Navbar";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import Home from "./components/pages/Home";
 import Rsvp from "./components/pages/Rsvp";
 import Venue from "./components/pages/Venue";
@@ -19,6 +24,7 @@ function App() {
             <Route path="/services" Component={Services} />
             <Route path="/products" Component={Venue} />
             <Route path="/rsvp" Component={Rsvp} />
+            <Route path="/" element={<Navigate to="/diogoeraquele" />} />
           </Routes>
         </Router>
       </Suspense>

@@ -1,3 +1,6 @@
+/* fancy handrwitten font */
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

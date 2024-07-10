@@ -32,10 +32,12 @@ const FormOption: React.FC<FormOptionProps> = ({
               type="radio"
               name={title}
               value={option}
+              id={option}
+              key={option}
               checked={option === selectedValue}
-              onChange={() => callback(option)}
+              onClick={() => callback(option)}
               className="btn btn-outline btn-primary"
-              aria-label={option}
+              aria-label={t(option)}
             />
           </label>
         ))}

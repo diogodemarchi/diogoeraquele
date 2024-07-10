@@ -1,43 +1,48 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import FormInput from "./FormInput";
 import FormOption from "./FormOption";
+import { use } from "i18next";
+import { Link } from "react-router-dom";
 
 function Form() {
   const { t } = useTranslation();
 
-  const [guest, setGuest] = useState([]);
+  const [guestList, setGuestList] = useState([]);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [firstQuestion, setFirstQuestion] = useState("");
   const [isChecked, setIsChecked] = useState(false);
   const [selectedCoolest, setSelectedCoolest] = useState("Diogo");
-  const [selectedTransport, setSelectedTransport] = useState("no");
-  const [selectedAccomodation, setSelectedAccomodation] = useState("no");
+  const [selectedTransport, setSelectedTransport] = useState("no_transport");
+  const [selectedAccomodation, setSelectedAccomodation] =
+    useState("no_i_am_fine");
+  const [amountClicksRaquele, setAmountClicksRaquele] = useState(0);
+  const [dietRestrictions, setDietRestrictions] = useState("");
+  const [songRequests, setSongRequests] = useState("");
+  const [specialNeeds, setSpecialNeeds] = useState("");
+  const [message, setMessage] = useState("");
+  const [sendingRequest, setSendingRequest] = useState(false);
+  const [responseSent, setReponseSent] = useState(false);
 
   const addGuest = () => {
     let newGuest = { firstName: "", lastName: "" };
-    console.log(guest);
-    setGuest([...guest, newGuest]);
-    console.log(guest);
+    console.log(guestList);
+    setGuestList([...guestList, newGuest]);
+    console.log(guestList);
   };
 
   const removeGuest = (index) => {
-    let data = [...guest];
+    let data = [...guestList];
     data.splice(index, 1);
-    setGuest(data);
-    console.log(guest);
-    console.log(data);
-    console.log(guest);
+    setGuestList(data);
   };
 
   const handleGuest = (index, field, value) => {
-    let data = [...guest];
+    let data = [...guestList];
     data[index][field] = value;
-    setGuest(data);
-    console.log(guest);
+    setGuestList(data);
   };
 
   const handleCheckbox = (event) => {
@@ -45,9 +50,10 @@ function Form() {
   };
 
   const handleSelectedCoolest = (chosenCoolest) => {
-    console.log(chosenCoolest);
+    console.log("click");
     setSelectedCoolest(chosenCoolest);
     if (chosenCoolest === "Raquele") {
+      setAmountClicksRaquele(amountClicksRaquele + 1);
       document.getElementById("insane_modal").showModal();
     }
     console.log(selectedCoolest);
@@ -59,7 +65,7 @@ function Form() {
       firstName !== "" &&
       lastName &&
       lastName !== "" &&
-      guest.every(
+      guestList.every(
         (g) =>
           g["firstName"] &&
           g["firstName"] !== "" &&
@@ -71,8 +77,106 @@ function Form() {
     );
   }
 
+  const onFinish = async (answer) => {
+    try {
+      const modal = document.getElementById("modal_finish");
+      modal.showModal();
+      // disable exit on ESC
+      // modal.addEventListener("cancel", (event) => {
+      //   event.preventDefault();
+      // });
+      setSendingRequest(true);
+      // const formUrl =
+      //   "https://docs.google.com/forms/d/e/1FAIpQLSeFLV_wxKvaIiaxt2deQYjE6HyFq78BkblCbWTGeC1WVTOKBg/formResponse?";
+      // const response = await fetch(
+      //   formUrl +
+      //     new URLSearchParams({
+      //       "entry.2123682207": answer,
+      //       "entry.75741258": firstName,
+      //       "entry.276127613": lastName,
+      //       "entry.180690125": JSON.stringify(guestList),
+      //       "entry.295464470": email,
+      //       "entry.65819718": phone,
+      //       "entry.1331545422": selectedCoolest,
+      //       "entry.1922160049": selectedTransport,
+      //       "entry.1836559536": selectedAccomodation,
+      //       "entry.167166928": amountClicksRaquele,
+      //       "entry.66045006": dietRestrictions,
+      //       "entry.687592573": songRequests,
+      //       "entry.355837000": specialNeeds,
+      //       "entry.1251753864": message,
+      //       "entry.1254951546": new Date().toISOString(),
+      //     }),
+      //   {
+      //     mode: "no-cors",
+      //   },
+      // );
+      // setReponseSent(response.status === 0); // 0 because of CORS
+
+      // dummy placeholder not to ddos
+      console.log("waiting");
+      setReponseSent(false);
+      await new Promise((r) => setTimeout(r, 2000));
+      console.log("done waiting");
+      setReponseSent(true);
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+
   return (
-    <div className="w-full mt-5">
+    <div className="w-full">
+      <dialog id="modal_finish" className="modal">
+        <div className={`modal-box ${responseSent ? "bg-success" : "bg-base"}`}>
+          <h3
+            className={`font-bold text-lg pb-6 text-success-content ${responseSent ? "text-success-content" : "text-base-content"}`}
+          >
+            {!responseSent ? t("sending_confirmation") : t("sent_confirmation")}
+          </h3>
+          <div
+            className={`flex items-center ${responseSent ? "text-success-content" : "text-base-content"}`}
+          >
+            {sendingRequest && !responseSent && (
+              <>
+                <span className="loading loading-spinner loading-lg"></span>
+                <span className="pl-2">
+                  {t("sending_confirmation_please_wait")}
+                </span>
+              </>
+            )}
+            {responseSent && (
+              <>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-10 w-10 shrink-0 stroke-current"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span className="pl-2">{t("confirmation_sent")}</span>
+              </>
+            )}
+          </div>
+          <div className="modal-action my-auto">
+            <form method="dialog">
+              <Link
+                to="/diogoeraquele"
+                className="text-primary-content flex items-center p-2 h-full"
+              >
+                <button className="btn" disabled={!responseSent}>
+                  {t("home")}
+                </button>
+              </Link>
+            </form>
+          </div>
+        </div>
+      </dialog>
       <div className="mx-auto w-full max-w-lg flex flex-col gap-5">
         <div className="flex flex-col md:flex-row gap-3">
           <FormInput placeholder={t("first_name")} callback={setFirstName} />
@@ -81,18 +185,18 @@ function Form() {
         <button className="btn btn-outline btn-info" onClick={addGuest}>
           {t("add_guest")}
         </button>
-        {guest.map((_, index) => {
+        {guestList.map((_, index) => {
           return (
             <div className="flex flex-col sm:flex-row gap-3" key={index}>
               <FormInput
                 placeholder={t("first_name")}
                 callback={(event) => handleGuest(index, "firstName", event)}
-                value={guest[index]["firstName"]}
+                value={guestList[index]["firstName"]}
               />
               <FormInput
                 placeholder={t("last_name")}
                 callback={(event) => handleGuest(index, "lastName", event)}
-                value={guest[index]["lastName"]}
+                value={guestList[index]["lastName"]}
               />
               <div className="m-auto">
                 <button
@@ -136,40 +240,40 @@ function Form() {
           placeholder={t("type_here")}
           title={t("question_diet_restrictions")}
           optional={true}
-          callback={setFirstQuestion}
+          callback={setDietRestrictions}
         />
         <FormInput
           placeholder={t("type_here")}
           title={t("question_song_requests")}
           optional={true}
-          callback={setFirstQuestion}
+          callback={setSongRequests}
         />
         <FormInput
           placeholder={t("type_here")}
           title={t("question_special_needs")}
           optional={true}
-          callback={setFirstQuestion}
+          callback={setSpecialNeeds}
         />
         <FormInput
           placeholder={t("type_here")}
           title={t("question_message_to_the_couple")}
           optional={true}
-          callback={setFirstQuestion}
+          callback={setMessage}
         />
         <FormOption
           title={t("do_you_need_transport")}
           options={[
-            t("from") + " Timbó",
-            t("from") + " Rio dos Cedros",
-            t("somewhere_else"),
-            t("no"),
+            "from_timbo",
+            "from_rio_dos_cedros",
+            "from_somewhere_else",
+            "no_transport",
           ]}
           callback={setSelectedTransport}
           selectedValue={selectedTransport}
         />
         <FormOption
           title={t("do_you_need_accomodation")}
-          options={[t("yes_help_out"), t("no_i_am_fine")]}
+          options={["yes_help_out", "no_i_am_fine"]}
           callback={setSelectedAccomodation}
           selectedValue={selectedAccomodation}
         />
@@ -236,6 +340,7 @@ function Form() {
           <button
             className={`btn btn-outline btn-success btn-block max-w-36`}
             disabled={!isFormFilled()}
+            onClick={() => onFinish("accept")}
           >
             {t("will_attend")}
           </button>
@@ -243,6 +348,7 @@ function Form() {
             title="test"
             className="btn btn-outline btn-block max-w-36 btn-error"
             disabled={!isFormFilled()}
+            onClick={() => onFinish("maybe")}
           >
             {t("still_dont_know")}
           </button>
@@ -250,6 +356,7 @@ function Form() {
             title="test"
             className="btn btn-outline btn-block max-w-36 btn-error"
             disabled={!isFormFilled()}
+            onClick={() => onFinish("reject")}
           >
             {t("will_not_attend")}
           </button>
@@ -276,4 +383,5 @@ function Form() {
     </div>
   );
 }
+
 export default Form;

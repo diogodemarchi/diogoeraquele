@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export const LANGUAGES = [
-  { label: "Portugues", code: "pt", countryCode: "br" },
-  { label: "English", code: "en", countryCode: "us" },
-  { label: "Deutsch", code: "de", countryCode: "de" },
+  { label: "Portugues", code: "pt-BR", countryCode: "br" },
+  { label: "English", code: "en-US", countryCode: "us" },
+  { label: "Deutsch", code: "de-DE", countryCode: "de" },
 ];
 
 const LanguageSelector: React.FC = () => {
@@ -53,7 +53,7 @@ const LanguageSelector: React.FC = () => {
       <div className="m-2">
         <button
           type="button"
-          className="inline-flex justify-center w-full shadow-sm py-2 text-sm font-medium hover:bg-secondary/100 focus:bg-primary/10 rounded-t-lg rounded-b-lg"
+          className="inline-flex justify-center w-16 shadow-lg py-2 text-sm font-medium hover:bg-base-100 focus:bg-base-100 rounded-t-lg rounded-b-lg active:bg-secondary"
           id="options-menu"
           aria-haspopup="true"
           aria-expanded="true"
@@ -72,7 +72,7 @@ const LanguageSelector: React.FC = () => {
         </button>
         {dropdownOpen && (
           <ul
-            className="absolute z-[1] -translate-x-6 menu rounded-b-lg bg-base-100 rounded-box w-auto shadow h-auto"
+            className="absolute z-[1] menu rounded-b-lg bg-base-100 rounded-btn w-16 shadow h-auto"
             role="menu"
           >
             {LANGUAGES.filter((item) => item.code !== i18n.language).map(
@@ -80,7 +80,7 @@ const LanguageSelector: React.FC = () => {
                 <li key={code}>
                   <button
                     key={code}
-                    className="block py-2 text-sm hover:bg-black w-16 text-left"
+                    className="block py-2 text-sm w-16 text-left -translate-x-2"
                     onClick={(e) => onChangeLang(e)}
                     value={code}
                   >

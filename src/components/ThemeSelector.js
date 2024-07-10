@@ -11,12 +11,13 @@ function ThemeSelector() {
   React.useEffect(() => {
     document.querySelector("html").setAttribute("data-theme", theme);
   }, [theme]);
-
   return (
-    <div className="flex items-center h-full">
-      <button className="btn btn-ghost btn-sm btn-circle" onClick={toggleTheme}>
+    <div className="flex items-center h-full m-2">
+      <button
+        className="btn btn-ghost btn-md btn-circle hover:bg-base-100 active:bg-secondary shadow-lg"
+        onClick={toggleTheme}
+      >
         <label className="swap swap-rotate">
-          {/* <input onClick={toggleTheme} type="checkbox" /> */}
           <div className="swap-on">
             <svg
               fill="none"

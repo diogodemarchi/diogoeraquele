@@ -5,6 +5,10 @@ module.exports = {
     extend: {
       backgroundImage: {
         "product-image": "url('/public/images/img-1.jpg')",
+        paris: "url('/public/images/paris.jpg')",
+      },
+      fontFamily: {
+        fancy: ["Great Vibes", "sans-serif"],
       },
     },
   },
