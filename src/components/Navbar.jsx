@@ -41,6 +41,15 @@ function DefaultItems({ callback }) {
       </li>
       <li className="h-20">
         <Link
+          to="/our-history"
+          className="text-base-content flex items-center p-2 h-full focus:bg-transparent"
+          onClick={callback}
+        >
+          {t("our_history")}
+        </Link>
+      </li>
+      <li className="h-20">
+        <Link
           to="/vacation"
           className="text-base-content flex items-center p-2 h-full focus:bg-transparent"
           onClick={callback}
@@ -138,6 +147,13 @@ function Navbar() {
             </Link>
           </li>
           <DefaultItems callback={closeDrawer} />
+          <div class="grow text-start hover:bg-transparent" />
+          <div className="grid grid-cols-2 items-center justify-center m-auto">
+            <ThemeSelector />
+            <div className="dropdown-top">
+              <LanguageSelector />
+            </div>
+          </div>
         </ul>
       </div>
     </div>

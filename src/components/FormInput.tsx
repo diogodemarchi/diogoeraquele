@@ -7,7 +7,7 @@ interface FormInputProps {
   type?: string;
   optional?: boolean;
   callback: Dispatch<SetStateAction<string>>;
-  value?: string;
+  value: string;
 }
 
 const FormInput: React.FC<FormInputProps> = ({
@@ -23,14 +23,16 @@ const FormInput: React.FC<FormInputProps> = ({
   return (
     <div>
       {title && (
-        <div className="label mb-2">
+        <div className="label mb-2 max-w-full flex-wrap">
           <span className="label-text text-lg font-semibold text-primary">
             {title}
           </span>
         </div>
       )}
       {title === "" ? (
-        <label className="input input-bordered input-primary text-base-content flex items-center gap-2 bg-base-100">
+        <label
+          className={`input input-primary text-base-content flex items-center gap-2 bg-base-100 border-primary/80 ${value === "" || typeof value === "undefined" ? !optional && "input-error bg-error/50" : "input-success bg-success/50"}`}
+        >
           {type === "email" && (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -53,6 +55,7 @@ const FormInput: React.FC<FormInputProps> = ({
             </svg>
           )}
           <input
+            id="mandatoryValue"
             type={type}
             placeholder={placeholder !== "" ? placeholder : t("type_here")}
             value={value}
@@ -62,18 +65,22 @@ const FormInput: React.FC<FormInputProps> = ({
             }
           />
           {optional && (
-            <span className="badge badge-info">{t("optional")}</span>
+            <span className="badge badge-info badge-sm">{t("optional")}</span>
           )}
         </label>
       ) : (
-        <label className="form-control">
+        <label className="textarea flex items-center gap-2 text-base-content bg-base-100 border-primary/80">
           <textarea
-            className="grow textarea textarea-bordered textarea-primary placeholder-base-content placeholder-opacity-50 text-base-content flex items-center gap-2 bg-base-100"
+            className="grow textarea placeholder-base-content placeholder-opacity-50 text-base-content flex gap-2 bg-base-200/40"
             placeholder={placeholder}
+            value={value}
             onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) =>
               callback(event.target.value)
             }
-          ></textarea>
+          />
+          {optional && (
+            <span className="badge badge-info badge-sm">{t("optional")}</span>
+          )}
         </label>
       )}
     </div>

@@ -7,7 +7,7 @@ export const LANGUAGES = [
   { label: "Deutsch", code: "de-DE", countryCode: "de" },
 ];
 
-const LanguageSelector: React.FC = () => {
+function LanguageSelector() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const { t, i18n } = useTranslation();
 
@@ -72,7 +72,7 @@ const LanguageSelector: React.FC = () => {
         </button>
         {dropdownOpen && (
           <ul
-            className="absolute z-[1] menu rounded-b-lg bg-base-100 rounded-btn w-16 shadow h-auto"
+            className="dropdown-content absolute z-[1] menu rounded-b-lg bg-base-100 rounded-btn w-16 shadow h-auto"
             role="menu"
           >
             {LANGUAGES.filter((item) => item.code !== i18n.language).map(
@@ -100,5 +100,5 @@ const LanguageSelector: React.FC = () => {
       </div>
     </div>
   );
-};
+}
 export default LanguageSelector;

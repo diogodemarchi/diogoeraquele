@@ -12,11 +12,10 @@ function HeroSection() {
   const targetDate = new Date("2025-04-26T15:00:00");
 
   return (
-    <div className="hero min-h-screen bg-paris -translate-y-28">
+    <div className="hero min-h-screen bg-paris-small lg:bg-paris -translate-y-28">
       <div className="hero-overlay bg-opacity-50"></div>
       <div className="hero-content text-neutral-content text-center mt-24">
         <div className="max-w-screen-lg">
-          <Countdown targetDate={targetDate} />
           <h1 className="mb-5 text-8xl font-thin font-fancy">
             Raquele & Diogo
           </h1>
@@ -50,19 +49,33 @@ function HeroSection() {
             >
               <div className="card bg-base-200/50 text-base-content rounded-full grid-cols-1 grid h-20 min-w-56 flex-grow items-center">
                 <span className="m-auto">
-                  Estrada Geral Rio Ada, S/N
+                  {t("address_street")}
                   <br />
-                  Rio dos Cedros, SC, Brasil
+                  {t("address_city")}
                 </span>
               </div>
             </Link>
           </div>
-          <p className="mb-5">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
+          <h1 className="my-5 text-3xl">{t("home_page_text_title")}</h1>
+          <Countdown targetDate={targetDate} />
+          <p className="my-5">
+            {t("home_page_text", {
+              wedding_date: targetDate.toLocaleDateString(i18n.language, {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              }),
+            })}
           </p>
-          <button className="btn btn-primary">Get Started</button>
+          <p className="alert text-center bg-base-200/50 border-base-200/50">
+            {t("website_explanation")}
+          </p>
+          <p className="my-5">{t("click_button_to_confirm")}</p>
+          <Link to="/rsvp" className="">
+            <button className="btn btn-wide btn-lg btn- btn-primary">
+              {t("rsvp")}
+            </button>
+          </Link>
         </div>
       </div>
     </div>

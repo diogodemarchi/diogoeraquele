@@ -6,6 +6,7 @@ module.exports = {
       backgroundImage: {
         "product-image": "url('/public/images/img-1.jpg')",
         paris: "url('/public/images/paris.jpg')",
+        "paris-small": "url('/public/images/paris-small.jpg')",
       },
       fontFamily: {
         fancy: ["Great Vibes", "sans-serif"],

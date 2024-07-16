@@ -1,6 +1,16 @@
 {
-    "home": "Início",
-    "products": "Produtos",
-    "rsvp": "RSVP",
-    "confirm_presence": "Confirmar presenca"
-  }
+  "home": "Início",
+  "products": "Produtos",
+  "rsvp": "RSVP",
+  "confirm_presence": "Confirmar presença",
+  "address_street": "Estrada Geral Rio Ada, S/N",
+  "address_city": "Rio dos Cedros, SC, Brasil",
+  "home_page_text_title": "Nós vamos juntar os trapinhos!",
+  "home_page_text": "No dia {{wedding_date}}, Rio dos Cedros vai parar e você estará lá para testemunhar!",
+  "click_button_to_confirm": "Clique no botão abaixo para confirmar presença",
+  "website_explanation": "Aqui no nosso site, você vai encontrar todas as informações que precisa para desfrutar do nosso casamento da melhor maneira possível. Você também pode aprender um pouco mais sobre a nossa história e como funcionará o casamento. Para quem não é da região, damos dicas de passeios e instruções de como chegar, bem como opções de acomodação e transporte. Não deixe de explorar o site para tirar as suas dúvidas. Caso tenha alguma dúvida, sugestão ou comentário, escreva no processo de confirmação ou entre em contato conosco diretamente. Esperamos você lá!",
+  "days": "dias",
+  "hours": "horas",
+  "min": "min",
+  "sec": "seg"
+}

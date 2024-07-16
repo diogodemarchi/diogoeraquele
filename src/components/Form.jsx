@@ -177,10 +177,18 @@ function Form() {
           </div>
         </div>
       </dialog>
-      <div className="mx-auto w-full max-w-lg flex flex-col gap-5">
+      <div className="mt-5 mx-auto w-full max-w-lg flex flex-col gap-5">
         <div className="flex flex-col md:flex-row gap-3">
-          <FormInput placeholder={t("first_name")} callback={setFirstName} />
-          <FormInput placeholder={t("last_name")} callback={setLastName} />
+          <FormInput
+            placeholder={t("first_name")}
+            callback={setFirstName}
+            value={firstName}
+          />
+          <FormInput
+            placeholder={t("last_name")}
+            callback={setLastName}
+            value={lastName}
+          />
         </div>
         <button className="btn btn-outline btn-info" onClick={addGuest}>
           {t("add_guest")}
@@ -228,36 +236,42 @@ function Form() {
           placeholder={t("email")}
           type="email"
           optional={true}
+          value={email}
           callback={setEmail}
         />
         <FormInput
           placeholder={t("phone_number")}
           type="tel"
           optional={true}
+          value={phone}
           callback={setPhone}
         />
         <FormInput
           placeholder={t("type_here")}
           title={t("question_diet_restrictions")}
           optional={true}
+          value={dietRestrictions}
           callback={setDietRestrictions}
         />
         <FormInput
           placeholder={t("type_here")}
           title={t("question_song_requests")}
           optional={true}
+          value={songRequests}
           callback={setSongRequests}
         />
         <FormInput
           placeholder={t("type_here")}
           title={t("question_special_needs")}
           optional={true}
+          value={specialNeeds}
           callback={setSpecialNeeds}
         />
         <FormInput
           placeholder={t("type_here")}
           title={t("question_message_to_the_couple")}
           optional={true}
+          value={message}
           callback={setMessage}
         />
         <FormOption
@@ -321,20 +335,22 @@ function Form() {
             <button>close</button>
           </form>
         </dialog>
-        <div className="flex items-center gap-1.5  justify-start pl-2">
-          <div className="form-control">
-            <label className="label cursor-pointer">
-              <input
-                type="checkbox"
-                className="checkbox-xs checkbox-primary"
-                checked={isChecked}
-                onChange={handleCheckbox}
-              />
-            </label>
-          </div>
-          <h3 className="flex items-center whitespace-nowrap text-xs text-base-content">
-            {t("agreement_text_pictures_so_on")}
-          </h3>
+        <div className="form-control">
+          <label
+            className={`textarea text-base-content flex items-center border-primary/80 cursor-pointer justify-start gap-2 ${!isChecked || typeof isChecked === "undefined" ? "input-error bg-error/50" : "input-success bg-success/50"}`}
+          >
+            <input
+              type="checkbox"
+              className="checkbox checkbox-error checked:checkbox-success flex"
+              checked={isChecked}
+              onChange={handleCheckbox}
+            />
+            <span className="label-text block">
+              {t(
+                "agreement_text_pictures_so_on agreement_text_pictures_so_on agreement_text_pictures_so_on agreement_text_pictures_so_on agreement_text_pictures_so_on agreement_text_pictures_so_on agreement_text_pictures_so_on agreement_text_pictures_so_on",
+              )}
+            </span>
+          </label>
         </div>
         <div className="flex flex-col md:flex-row gap-2 md:gap-4 justify-center items-center">
           <button
@@ -361,7 +377,7 @@ function Form() {
             {t("will_not_attend")}
           </button>
         </div>
-        {!isFormFilled() && (
+        {!isFormFilled() ? (
           <div role="alert" className="alert alert-error">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -378,6 +394,8 @@ function Form() {
             </svg>
             <span>{t("fill_all_fields")}</span>
           </div>
+        ) : (
+          <div className="mt-12"></div>
         )}
       </div>
     </div>

@@ -25,9 +25,10 @@ const FormOption: React.FC<FormOptionProps> = ({
           </span>
         </div>
       )}
-      <div className="flex items-center justify-center gap-2">
+      <div className="grid grid-cols-2 md:flex-row md:flex md:items-center md:justify-center gap-2">
         {options.map((option, index) => (
-          <label key={index} className="flex-wrap items-center gap-2">
+          // <div className="flex">
+          <label key={index} className="flex-wrap items-center">
             <input
               type="radio"
               name={title}
@@ -36,10 +37,11 @@ const FormOption: React.FC<FormOptionProps> = ({
               key={option}
               checked={option === selectedValue}
               onClick={() => callback(option)}
-              className="btn btn-outline btn-primary"
+              className="btn btn-outline btn-primary btn-block flex"
               aria-label={t(option)}
             />
           </label>
+          // </div>
         ))}
       </div>
     </div>

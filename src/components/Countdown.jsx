@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 function Countdown({ targetDate }) {
+  const { t } = useTranslation();
+
   const calculateTimeLeft = () => {
     const difference = new Date(targetDate) - new Date();
     let timeLeft = {};
@@ -28,30 +31,30 @@ function Countdown({ targetDate }) {
   }, [targetDate]);
 
   return (
-    <div className="flex justify-center grid-flow-col gap-5 text-center auto-cols-max mb-32">
+    <div className="flex justify-center grid-flow-col gap-5 text-center auto-cols-max">
       <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
         <span className="countdown-3 font-mono text-5xl">
           <span style={{ "--value": timeLeft.days }}></span>
         </span>
-        days
+        {t("days")}
       </div>
       <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
         <span className="countdown font-mono text-5xl">
           <span style={{ "--value": timeLeft.hours }}></span>
         </span>
-        hours
+        {t("hours")}
       </div>
       <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
         <span className="countdown font-mono text-5xl">
           <span style={{ "--value": timeLeft.minutes }}></span>
         </span>
-        min
+        {t("min")}
       </div>
       <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
         <span className="countdown font-mono text-5xl">
           <span style={{ "--value": timeLeft.seconds }}></span>
         </span>
-        sec
+        {t("sec")}
       </div>
     </div>
   );
