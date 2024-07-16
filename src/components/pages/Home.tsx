@@ -1,12 +1,12 @@
 import HeroSection from "../HeroSection";
-import Cards from "../Cards";
 import Footer from "../Footer";
+import CardItems from "../CardItems";
 
 function Home() {
   return (
     <>
       <HeroSection />
-      <Cards />
+      <CardItems />
       <Footer />
     </>
   );

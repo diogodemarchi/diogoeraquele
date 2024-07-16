@@ -3,71 +3,10 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LanguageSelector from "./LanguageSelector";
 import ThemeSelector from "./ThemeSelector";
+import DefaultItems from "./DefaultItems";
 
 function closeDrawer() {
   document.getElementById("mobile-drawer").click();
-}
-
-function DefaultItems({ callback }) {
-  const { t } = useTranslation();
-  return (
-    <>
-      <li className="h-20">
-        <Link
-          to="/diogoeraquele"
-          className="text-base-content flex items-center p-2 h-full focus:bg-transparent"
-          onClick={callback}
-        >
-          {t("home")}
-        </Link>
-      </li>
-      <li className="h-20">
-        <Link
-          to="/arrival"
-          className="text-base-content flex items-center p-2 h-full focus:bg-transparent"
-          onClick={callback}
-        >
-          {t("arrival")}
-        </Link>
-      </li>
-      <li className="h-20">
-        <Link
-          to="/wedding"
-          className="text-base-content flex items-center p-2 h-full focus:bg-transparent"
-          onClick={callback}
-        >
-          {t("wedding")}
-        </Link>
-      </li>
-      <li className="h-20">
-        <Link
-          to="/our-history"
-          className="text-base-content flex items-center p-2 h-full focus:bg-transparent"
-          onClick={callback}
-        >
-          {t("our_history")}
-        </Link>
-      </li>
-      <li className="h-20">
-        <Link
-          to="/vacation"
-          className="text-base-content flex items-center p-2 h-full focus:bg-transparent"
-          onClick={callback}
-        >
-          {t("vacation")}
-        </Link>
-      </li>
-      <li className="h-20">
-        <Link
-          to="/info"
-          className="text-base-content flex items-center p-2 h-full focus:bg-transparent"
-          onClick={callback}
-        >
-          {t("info")}
-        </Link>
-      </li>
-    </>
-  );
 }
 
 function Navbar() {

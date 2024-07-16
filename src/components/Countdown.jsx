@@ -33,25 +33,25 @@ function Countdown({ targetDate }) {
   return (
     <div className="flex justify-center grid-flow-col gap-5 text-center auto-cols-max">
       <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-        <span className="countdown-3 font-mono text-5xl">
+        <span className="countdown-3 font-mono text-2xl md:text-5xl justify-center">
           <span style={{ "--value": timeLeft.days }}></span>
         </span>
         {t("days")}
       </div>
       <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-        <span className="countdown font-mono text-5xl">
+        <span className="countdown font-mono text-2xl md:text-5xl justify-center">
           <span style={{ "--value": timeLeft.hours }}></span>
         </span>
         {t("hours")}
       </div>
       <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-        <span className="countdown font-mono text-5xl">
+        <span className="countdown font-mono text-2xl md:text-5xl justify-center">
           <span style={{ "--value": timeLeft.minutes }}></span>
         </span>
         {t("min")}
       </div>
       <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-        <span className="countdown font-mono text-5xl">
+        <span className="countdown font-mono text-2xl md:text-5xl justify-center">
           <span style={{ "--value": timeLeft.seconds }}></span>
         </span>
         {t("sec")}
