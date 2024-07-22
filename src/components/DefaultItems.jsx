@@ -33,8 +33,8 @@ const items = [
     cardImgSrc: process.env.PUBLIC_URL + "/images/paris.jpg",
   },
   {
-    to: "/info",
-    key: "info",
+    to: "/faq",
+    key: "faq",
     labels: ["label"],
     cardImgSrc: process.env.PUBLIC_URL + "/images/paris.jpg",
   },

@@ -46,7 +46,10 @@ function Navbar() {
               className="text-primary-content text-2xl flex items-center cursor-pointer"
               onClick={closeMobileMenu}
             >
-              <img src={process.env.PUBLIC_URL + "/images/logo.png"} />
+              <img
+                className="max-w-[20vw] max-h-40"
+                src={process.env.PUBLIC_URL + "/images/logo.png"}
+              />
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">

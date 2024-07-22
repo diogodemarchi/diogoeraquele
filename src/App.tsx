@@ -11,6 +11,7 @@ import Venue from "./components/pages/Venue";
 import History from "./components/pages/History";
 import React, { Suspense, useState } from "react";
 import Services from "./components/pages/Services";
+import Arrival from "./components/pages/Arrival";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/diogoeraquele" Component={Home} />
+            <Route path="/arrival" Component={Arrival} />
             <Route path="/our-history" Component={History} />
             <Route path="/services" Component={Services} />
             <Route path="/products" Component={Venue} />

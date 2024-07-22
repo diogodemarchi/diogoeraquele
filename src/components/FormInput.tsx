@@ -6,6 +6,7 @@ interface FormInputProps {
   title?: string;
   type?: string;
   optional?: boolean;
+  paintBg?: boolean;
   callback: Dispatch<SetStateAction<string>>;
   value: string;
 }
@@ -15,6 +16,7 @@ const FormInput: React.FC<FormInputProps> = ({
   title = "",
   type = "text",
   optional = false,
+  paintBg = true,
   callback,
   value,
 }) => {
@@ -31,7 +33,13 @@ const FormInput: React.FC<FormInputProps> = ({
       )}
       {title === "" ? (
         <label
-          className={`input input-primary text-base-content flex items-center gap-2 bg-base-100 border-primary/80 ${value === "" || typeof value === "undefined" ? !optional && "input-error bg-error/50" : "input-success bg-success/50"}`}
+          className={`input input-primary text-base-content flex items-center gap-2 bg-base-100 border-primary/80 ${
+            value === "" || typeof value === "undefined"
+              ? !optional
+                ? `input-error ${paintBg ? "bg-error/50" : ""}`
+                : ""
+              : `input-success ${paintBg ? "bg-success/50" : ""}`
+          }`}
         >
           {type === "email" && (
             <svg
