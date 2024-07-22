@@ -106,4 +106,4 @@ const SubmitForm = async (answer, sendingCallback, sentCallback) => {
   }
 };
 
-export { SubmitFormModal, SubmitForm };
+export default { SubmitFormModal, SubmitForm };

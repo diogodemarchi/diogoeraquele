@@ -27,7 +27,6 @@ const FormOption: React.FC<FormOptionProps> = ({
       )}
       <div className="grid grid-cols-2 md:flex-row md:flex md:items-center md:justify-center gap-2">
         {options.map((option, index) => (
-          // <div className="flex">
           <label key={index} className="flex-wrap items-center">
             <input
               type="radio"
@@ -41,7 +40,6 @@ const FormOption: React.FC<FormOptionProps> = ({
               aria-label={t(option)}
             />
           </label>
-          // </div>
         ))}
       </div>
     </div>
