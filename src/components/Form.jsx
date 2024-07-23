@@ -264,7 +264,24 @@ function Form() {
             className={`btn btn-outline btn-success btn-block max-w-36`}
             disabled={!isFormFilled()}
             onClick={() =>
-              SubmitForm("accept", setSendingRequest, setReponseSent)
+              SubmitForm(
+                "accept",
+                firstName,
+                lastName,
+                guestList,
+                email,
+                phone,
+                selectedCoolest,
+                selectedTransport,
+                selectedAccomodation,
+                amountClicksRaquele,
+                dietRestrictions,
+                songRequests,
+                specialNeeds,
+                message,
+                setSendingRequest,
+                setReponseSent,
+              )
             }
           >
             {t("will_attend")}
@@ -274,7 +291,24 @@ function Form() {
             className="btn btn-outline btn-block max-w-36 btn-error"
             disabled={!isFormFilled()}
             onClick={() =>
-              SubmitForm("maybe", setSendingRequest, setReponseSent)
+              SubmitForm(
+                "maybe",
+                firstName,
+                lastName,
+                guestList,
+                email,
+                phone,
+                selectedCoolest,
+                selectedTransport,
+                selectedAccomodation,
+                amountClicksRaquele,
+                dietRestrictions,
+                songRequests,
+                specialNeeds,
+                message,
+                setSendingRequest,
+                setReponseSent,
+              )
             }
           >
             {t("still_dont_know")}
@@ -284,7 +318,24 @@ function Form() {
             className="btn btn-outline btn-block max-w-36 btn-error"
             disabled={!isFormFilled()}
             onClick={() =>
-              SubmitForm("reject", setSendingRequest, setReponseSent)
+              SubmitForm(
+                "reject",
+                firstName,
+                lastName,
+                guestList,
+                email,
+                phone,
+                selectedCoolest,
+                selectedTransport,
+                selectedAccomodation,
+                amountClicksRaquele,
+                dietRestrictions,
+                songRequests,
+                specialNeeds,
+                message,
+                setSendingRequest,
+                setReponseSent,
+              )
             }
           >
             {t("will_not_attend")}

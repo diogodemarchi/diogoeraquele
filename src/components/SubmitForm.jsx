@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
-function SubmitFormModal(sendingRequest, responseSent) {
+function SubmitFormModal({ sendingRequest, responseSent }) {
   const { t } = useTranslation();
   return (
     <dialog id="modal_finish" className="modal">
@@ -46,11 +46,10 @@ function SubmitFormModal(sendingRequest, responseSent) {
           <form method="dialog">
             <Link
               to="/diogoeraquele"
-              className="text-primary-content flex items-center p-2 h-full"
+              className={`btn ${!responseSent && "btn-disabled"}`}
+              reloadDocument
             >
-              <button className="btn" disabled={!responseSent}>
-                {t("home")}
-              </button>
+              {t("home")}
             </Link>
           </form>
         </div>
@@ -59,7 +58,25 @@ function SubmitFormModal(sendingRequest, responseSent) {
   );
 }
 
-const SubmitForm = async (answer, sendingCallback, sentCallback) => {
+const SubmitForm = async (
+  answer,
+  firstName,
+  lastName,
+  guestList,
+  email,
+  phone,
+  selectedCoolest,
+  selectedTransport,
+  selectedAccomodation,
+  amountClicksRaquele,
+  dietRestrictions,
+  songRequests,
+  specialNeeds,
+  message,
+  sendingCallback,
+  sentCallback,
+) => {
+  console.log(sendingCallback);
   try {
     const modal = document.getElementById("modal_finish");
     modal.showModal();
@@ -67,9 +84,11 @@ const SubmitForm = async (answer, sendingCallback, sentCallback) => {
     // modal.addEventListener("cancel", (event) => {
     //   event.preventDefault();
     // });
-    sendingCallback(true);
+    // sendingCallback(true);
+    // sentCallback(false);
     // const formUrl =
     //   "https://docs.google.com/forms/d/e/1FAIpQLSeFLV_wxKvaIiaxt2deQYjE6HyFq78BkblCbWTGeC1WVTOKBg/formResponse?";
+    // console.log(guestList);
     // const response = await fetch(
     //   formUrl +
     //     new URLSearchParams({
@@ -93,11 +112,11 @@ const SubmitForm = async (answer, sendingCallback, sentCallback) => {
     //     mode: "no-cors",
     //   },
     // );
-    // setReponseSent(response.status === 0); // 0 because of CORS
+    // sentCallback(response.status === 0); // 0 because of CORS
 
     // dummy placeholder not to ddos
-    console.log("waiting");
     sentCallback(false);
+    console.log("waiting");
     await new Promise((r) => setTimeout(r, 2000));
     console.log("done waiting");
     sentCallback(true);
@@ -106,4 +125,4 @@ const SubmitForm = async (answer, sendingCallback, sentCallback) => {
   }
 };
 
-export default { SubmitFormModal, SubmitForm };
+export { SubmitFormModal, SubmitForm };

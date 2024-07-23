@@ -10,7 +10,7 @@ const items = [
   },
   {
     to: "/arrival",
-    key: "arrival",
+    key: "getting_there",
     labels: ["label"],
     cardImgSrc: process.env.PUBLIC_URL + "/images/paris.jpg",
   },

@@ -16,7 +16,7 @@ function HeroSection() {
       <div className="hero-overlay bg-opacity-50"></div>
       <div className="hero-content text-neutral-content text-center mt-24">
         <div className="max-w-screen-lg">
-          <h1 className="mb-5 text-6xl md:text-8xl font-thin font-fancy">
+          <h1 className="mt-5 mb-5 text-6xl md:text-8xl font-thin font-fancy">
             Raquele & Diogo
           </h1>
           <div className="flex w-full flex-col lg:flex-row place-items-center justify-center">
@@ -73,10 +73,8 @@ function HeroSection() {
             {t("website_explanation")}
           </p>
           <p className="my-5">{t("click_button_to_confirm")}</p>
-          <Link to="/rsvp" className="">
-            <button className="btn btn-wide btn-lg btn- btn-primary">
-              {t("rsvp")}
-            </button>
+          <Link to="/rsvp" className="btn btn-wide btn-lg btn- btn-primary">
+            {t("rsvp")}
           </Link>
         </div>
       </div>

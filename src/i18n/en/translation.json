@@ -3,5 +3,7 @@
   "products": "Products",
   "confirm_presence": "Confirm presence",
   "home_page_text_title": "We are tying the knot",
-  "home_page_text": "On the {{wedding_date}}, Rio dos Cedros will stop, and you will be there to witness!"
+  "home_page_text": "On the {{wedding_date}}, Rio dos Cedros will stop, and you will be there to witness!",
+
+  "made_for_text": "Made for my <heart/> Raquele with the power of hate for front-end"
 }

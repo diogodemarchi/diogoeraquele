@@ -12,6 +12,7 @@ import History from "./components/pages/History";
 import React, { Suspense, useState } from "react";
 import Services from "./components/pages/Services";
 import Arrival from "./components/pages/Arrival";
+import Faq from "./components/pages/Faq";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
             <Route path="/arrival" Component={Arrival} />
             <Route path="/our-history" Component={History} />
             <Route path="/services" Component={Services} />
-            <Route path="/products" Component={Venue} />
+            <Route path="/faq" Component={Faq} />
             <Route path="/rsvp" Component={Rsvp} />
             <Route path="/" element={<Navigate to="/diogoeraquele" />} />
           </Routes>

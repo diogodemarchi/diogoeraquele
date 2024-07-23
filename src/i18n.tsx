@@ -11,16 +11,30 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: "pt-BR",
+    fallbackLng: {
+      "pt-BR": ["en-US", "de-DE"],
+      pt: ["en-US", "de-DE"],
+      "en-US": ["de-DE", "pt-BR"],
+      en: ["de-DE", "pt-BR"],
+      "de-DE": ["en-US", "pt-BR"],
+      de: ["en-US", "pt-BR"],
+    },
     lng: "pt-BR",
     resources: {
       en: {
         translation: enTranslation,
       },
+      "en-US": {
+        translation: enTranslation,
+      },
       pt: {
         translation: ptTranslation,
       },
+      "pt-BR": { translation: ptTranslation },
       de: {
+        translation: deTranslation,
+      },
+      "de-DE": {
         translation: deTranslation,
       },
     },

@@ -18,7 +18,7 @@ function Navbar() {
     <div className="drawer z-50">
       <input id="mobile-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
-        <div className="navbar min-w-fit sticky top-0 z-2 min-h-28">
+        <div className="navbar min-w-fit sticky top-0 z-2 min-h-28 shadow-lg backdrop-blur-sm backdrop-brightness-125 backdrop-contrast-125 backdrop-hue-rotate-15 glass">
           <div className="flex-none lg:hidden">
             <label
               htmlFor="mobile-drawer"
@@ -40,14 +40,14 @@ function Navbar() {
               </svg>
             </label>
           </div>
-          <div className="navbar-start">
+          <div className="navbar-start relative z-1">
             <Link
               to="/diogoeraquele"
-              className="text-primary-content text-2xl flex items-center cursor-pointer"
+              className="text-primary-content text-2xl flex flex-shrink-0 items-center cursor-pointer"
               onClick={closeMobileMenu}
             >
               <img
-                className="max-w-[20vw] max-h-40"
+                className="w-full h-16 object-contain"
                 src={process.env.PUBLIC_URL + "/images/logo.png"}
               />
             </Link>
@@ -64,10 +64,10 @@ function Navbar() {
             </div>
             <Link
               to="/rsvp"
-              className="text-primary-content flex items-center p-2 h-full"
+              className="btn flex items-center p-4 h-full"
               onClick={closeMobileMenu}
             >
-              <button className="btn">{t("rsvp")}</button>
+              {t("rsvp")}
             </Link>
           </div>
         </div>
@@ -89,7 +89,7 @@ function Navbar() {
             </Link>
           </li>
           <DefaultItems callback={closeDrawer} />
-          <div class="grow text-start hover:bg-transparent" />
+          <div className="grow text-start hover:bg-transparent" />
           <div className="grid grid-cols-2 items-center justify-center m-auto">
             <ThemeSelector />
             <div className="dropdown-top">
