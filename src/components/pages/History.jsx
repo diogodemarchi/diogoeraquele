@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 
 function HistoryItem({ date, title, text, imgSrc, imgSide = "right" }) {
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
   const textSide = imgSide === "right" ? "end" : "start";
   const imgSide_ = imgSide === "right" ? "start" : "end";
   return (
@@ -40,7 +40,9 @@ function HistoryItem({ date, title, text, imgSrc, imgSide = "right" }) {
           className={`hidden md:block timeline-${imgSide_} md:mb-10 md:text-${textSide} md:h-full md:mt-12 mx-2`}
         >
           <time className="font-mono italic">
-            {new Date(date).toLocaleDateString()}
+            {new Date(date).toLocaleDateString(i18n.language, {
+              timeZone: "UTC",
+            })}
           </time>
           <div className="text-lg font-black">{title}</div>
           {text}
@@ -50,7 +52,9 @@ function HistoryItem({ date, title, text, imgSrc, imgSide = "right" }) {
         >
           <div className="md:hidden timeline-start mb-10 md:text-end h-full mt-12 mx-2">
             <time className="font-mono italic">
-              {new Date(date).toLocaleDateString()}
+              {new Date(date).toLocaleDateString(i18n.language, {
+                timeZone: "UTC",
+              })}
             </time>
             <div className="text-lg font-black">{title}</div>
             {text}
@@ -64,7 +68,9 @@ function HistoryItem({ date, title, text, imgSrc, imgSide = "right" }) {
         <div className="md:hidden block timeline-start md:text-start">
           <div className="timeline-start mb-10 md:text-end h-full mt-12 mx-2">
             <time className="font-mono italic">
-              {new Date(date).toLocaleDateString()}
+              {new Date(date).toLocaleDateString(i18n.language, {
+                timeZone: "UTC",
+              })}
             </time>
             <div className="text-lg font-black">{title}</div>
             {text}
@@ -139,7 +145,7 @@ function History() {
               imgSide="right"
             />
             <HistoryItem
-              date={new Date().toString()}
+              date={"2024-04-26"}
               title={t("our_wedding")}
               text={t("our_wedding_text")}
               imgSrc={process.env.PUBLIC_URL + "/images/paris.jpg"}
