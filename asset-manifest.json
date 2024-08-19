@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/diogoeraquele/static/css/main.c80dc409.css",
-    "main.js": "/diogoeraquele/static/js/main.9851c295.js",
+    "main.js": "/diogoeraquele/static/js/main.92bf3eb1.js",
     "static/media/paris.jpg": "/diogoeraquele/static/media/paris.f73bb2899053baffc00a.jpg",
     "static/media/paris-small.jpg": "/diogoeraquele/static/media/paris-small.f1b689a3e09d055c849b.jpg",
     "static/media/img-1.jpg": "/diogoeraquele/static/media/img-1.53f4843759ebec256cb9.jpg",
     "index.html": "/diogoeraquele/index.html",
     "main.c80dc409.css.map": "/diogoeraquele/static/css/main.c80dc409.css.map",
-    "main.9851c295.js.map": "/diogoeraquele/static/js/main.9851c295.js.map"
+    "main.92bf3eb1.js.map": "/diogoeraquele/static/js/main.92bf3eb1.js.map"
   },
   "entrypoints": [
     "static/css/main.c80dc409.css",
-    "static/js/main.9851c295.js"
+    "static/js/main.92bf3eb1.js"
   ]
 }
