@@ -1,156 +1,70 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import FormInput from "../FormInput";
-import FormOption from "../FormOption";
 import { SubmitForm, SubmitFormModal } from "../SubmitForm";
-import { Link } from "react-router-dom";
 
 function VenueCarousel() {
   const carouselRef = useRef(null);
+  const images = [
+    "/images/sitio1.jpeg",
+    "/images/sitio2.jpeg",
+    "/images/sitio3.jpg",
+    "/images/sitio4.jpeg",
+    "/images/sitio5.jpeg",
+    "/images/sitio6.jpeg",
+    "/images/sitio7.jpeg",
+    "/images/sitio8.jpeg",
+  ];
 
   const carouselScroll = (itemNumber) => {
     const carousel = carouselRef.current;
-    const itemWidth = carousel.scrollWidth / 4;
+    const itemWidth = carousel.scrollWidth / images.length;
     carousel.scrollTo({
       left: (itemNumber - 1) * itemWidth,
       behavior: "smooth",
     });
   };
 
+  const CarouselItem = ({ src, index }) => (
+    <div className="carousel-item relative w-full">
+      <img
+        className="rounded-lg m-12 w-11/12 h-fit"
+        src={process.env.PUBLIC_URL + src}
+      />
+      <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+        <button
+          className="btn btn-circle"
+          onClick={() => carouselScroll(index === 0 ? images.length : index)}
+        >
+          ❮
+        </button>
+        <button
+          className="btn btn-circle"
+          onClick={() =>
+            carouselScroll(index + 2 > images.length ? 1 : index + 2)
+          }
+        >
+          ❯
+        </button>
+      </div>
+    </div>
+  );
+
   return (
     <div className="carousel items-center" ref={carouselRef}>
-      <div id="slide1" className="carousel-item relative w-full">
-        <img
-          className="rounded-lg m-12 w-11/12 h-fit"
-          src={process.env.PUBLIC_URL + "/images/sitio1.jpeg"}
-        />
-        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-          <button className="btn btn-circle" onClick={() => carouselScroll(8)}>
-            ❮
-          </button>
-          <button className="btn btn-circle" onClick={() => carouselScroll(2)}>
-            ❯
-          </button>
-        </div>
-      </div>
-      <div id="slide2" className="carousel-item relative w-full">
-        <img
-          className="rounded-lg m-12 w-11/12 h-fit"
-          src={process.env.PUBLIC_URL + "/images/sitio2.jpeg"}
-        />
-        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-          <button className="btn btn-circle" onClick={() => carouselScroll(1)}>
-            ❮
-          </button>
-          <button className="btn btn-circle" onClick={() => carouselScroll(3)}>
-            ❯
-          </button>
-        </div>
-      </div>
-      <div id="slide3" className="carousel-item relative w-full">
-        <img
-          className="rounded-lg m-12 w-11/12 h-fit"
-          src={process.env.PUBLIC_URL + "/images/sitio3.jpg"}
-        />
-        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-          <button className="btn btn-circle" onClick={() => carouselScroll(2)}>
-            ❮
-          </button>
-          <button className="btn btn-circle" onClick={() => carouselScroll(4)}>
-            ❯
-          </button>
-        </div>
-      </div>
-      <div id="slide4" className="carousel-item relative w-full">
-        <img
-          className="rounded-lg m-12 w-11/12 h-fit"
-          src={process.env.PUBLIC_URL + "/images/sitio4.jpeg"}
-        />
-        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-          <button className="btn btn-circle" onClick={() => carouselScroll(3)}>
-            ❮
-          </button>
-          <button className="btn btn-circle" onClick={() => carouselScroll(5)}>
-            ❯
-          </button>
-        </div>
-      </div>
-      <div id="slide5" className="carousel-item relative w-full">
-        <img
-          className="rounded-lg m-12 w-11/12 h-fit"
-          src={process.env.PUBLIC_URL + "/images/sitio5.jpeg"}
-        />
-        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-          <button className="btn btn-circle" onClick={() => carouselScroll(4)}>
-            ❮
-          </button>
-          <button className="btn btn-circle" onClick={() => carouselScroll(6)}>
-            ❯
-          </button>
-        </div>
-      </div>
-      <div id="slide6" className="carousel-item relative w-full">
-        <img
-          className="rounded-lg m-12 w-11/12 h-fit"
-          src={process.env.PUBLIC_URL + "/images/sitio6.jpeg"}
-        />
-        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-          <button className="btn btn-circle" onClick={() => carouselScroll(5)}>
-            ❮
-          </button>
-          <button className="btn btn-circle" onClick={() => carouselScroll(7)}>
-            ❯
-          </button>
-        </div>
-      </div>
-      <div id="slide7" className="carousel-item relative w-full">
-        <img
-          className="rounded-lg m-12 w-11/12 h-fit"
-          src={process.env.PUBLIC_URL + "/images/sitio7.jpeg"}
-        />
-        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-          <button className="btn btn-circle" onClick={() => carouselScroll(6)}>
-            ❮
-          </button>
-          <button className="btn btn-circle" onClick={() => carouselScroll(8)}>
-            ❯
-          </button>
-        </div>
-      </div>
-      <div id="slide8" className="carousel-item relative w-full">
-        <img
-          className="rounded-lg m-12 w-11/12 h-fit"
-          src={process.env.PUBLIC_URL + "/images/sitio8.jpeg"}
-        />
-        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-          <button className="btn btn-circle" onClick={() => carouselScroll(7)}>
-            ❮
-          </button>
-          <button className="btn btn-circle" onClick={() => carouselScroll(1)}>
-            ❯
-          </button>
-        </div>
-      </div>
+      {images.map((src, index) => (
+        <CarouselItem key={index} src={src} index={index} />
+      ))}
     </div>
   );
 }
 
 function TransportCard() {
   const { t } = useTranslation();
-  const [guestList, setGuestList] = useState([]);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [isChecked, setIsChecked] = useState(false);
-  const [selectedCoolest, setSelectedCoolest] = useState("Diogo");
   const [selectedTransport, setSelectedTransport] = useState();
-  const [selectedAccomodation, setSelectedAccomodation] =
-    useState("no_i_am_fine");
-  const [amountClicksRaquele, setAmountClicksRaquele] = useState(0);
-  const [dietRestrictions, setDietRestrictions] = useState("");
-  const [songRequests, setSongRequests] = useState("");
-  const [specialNeeds, setSpecialNeeds] = useState("");
   const [message, setMessage] = useState("");
   const [sendingRequest, setSendingRequest] = useState(false);
   const [responseSent, setReponseSent] = useState(false);
@@ -248,14 +162,14 @@ function TransportCard() {
               lastName,
               numberGuests,
               email,
-              phone,
-              selectedCoolest,
-              selectedTransport,
-              selectedAccomodation,
-              amountClicksRaquele,
-              dietRestrictions,
-              songRequests,
-              specialNeeds,
+              "",
+              "",
+              "",
+              "",
+              0,
+              "",
+              "",
+              "",
               message,
               setSendingRequest,
               setReponseSent,

@@ -37,6 +37,10 @@ const YoutubeIcon = () => {
 function Footer() {
   const { t } = useTranslation();
 
+  const openInNewTab = (url) => {
+    window.open(url, "_blank", "noreferrer");
+  };
+
   return (
     <footer className="footer footer-center bg-primary text-primary-content p-10">
       <aside>
@@ -67,9 +71,29 @@ function Footer() {
         <div className="flex w-full flex-col items-center">
           <span className="mb-4">{t("check_out_couple_social_media")}</span>
           <div className="grid grid-flow-col gap-4 text-xl">
-            <FontAwesomeIcon icon={faYoutube} />
-            <FontAwesomeIcon icon={faGithub} />
-            <FontAwesomeIcon icon={faHashtag} />
+            <FontAwesomeIcon
+              className="btn btn-ghost btn-xs hover:bg-transparent p-0 m-0"
+              onClick={() =>
+                openInNewTab(
+                  "https://www.youtube.com/channel/UCYrl3hdwxGHmVaVEbp-uaBQ",
+                )
+              }
+              icon={faYoutube}
+            />
+            <FontAwesomeIcon
+              className="btn btn-ghost btn-xs hover:bg-transparent p-0 m-0"
+              onClick={() => openInNewTab("https://github.com/diogodemarchi/")}
+              icon={faGithub}
+            />
+            <FontAwesomeIcon
+              className="btn btn-ghost btn-xs hover:bg-transparent p-0 m-0"
+              onClick={() =>
+                openInNewTab(
+                  "https://www.instagram.com/explore/tags/raqueleediogo",
+                )
+              }
+              icon={faHashtag}
+            />
           </div>
           <div className="divider divider-vertical my-1"></div>
           <span className="mb-4">{t("check_out_personal_social_media")}</span>
@@ -77,10 +101,34 @@ function Footer() {
             <div className="card grid h-12 flex-grow place-items-center">
               <div className="flex flex-col items-center gap-4">
                 <div className="flex flex-row gap-4 text-xl">
-                  <FontAwesomeIcon icon={faCamera} />
-                  <FontAwesomeIcon icon={faPaintBrush} />
-                  <FontAwesomeIcon icon={faInstagram} />
-                  <FontAwesomeIcon icon={faStrava} />
+                  <FontAwesomeIcon
+                    className="btn btn-ghost btn-xs hover:bg-transparent p-0 m-0"
+                    onClick={() =>
+                      openInNewTab("https://www.instagram.com/conti.jpg/")
+                    }
+                    icon={faCamera}
+                  />
+                  <FontAwesomeIcon
+                    className="btn btn-ghost btn-xs hover:bg-transparent p-0 m-0"
+                    onClick={() =>
+                      openInNewTab("https://www.instagram.com/conti.arts/")
+                    }
+                    icon={faPaintBrush}
+                  />
+                  <FontAwesomeIcon
+                    className="btn btn-ghost btn-xs hover:bg-transparent p-0 m-0"
+                    onClick={() =>
+                      openInNewTab("https://www.instagram.com/raquelegc/")
+                    }
+                    icon={faInstagram}
+                  />
+                  <FontAwesomeIcon
+                    className="btn btn-ghost btn-xs hover:bg-transparent p-0 m-0"
+                    onClick={() =>
+                      openInNewTab("https://www.strava.com/athletes/47476490")
+                    }
+                    icon={faStrava}
+                  />
                 </div>
                 <span className="badge badge-info badge-sm">Raquele</span>
               </div>
@@ -90,8 +138,20 @@ function Footer() {
             <div className="card grid h-12 flex-grow place-items-center">
               <div className="flex flex-col items-center gap-4">
                 <div className="flex flex-row gap-4 text-xl">
-                  <FontAwesomeIcon icon={faInstagram} />
-                  <FontAwesomeIcon icon={faStrava} />
+                  <FontAwesomeIcon
+                    className="btn btn-ghost btn-xs hover:bg-transparent p-0 m-0"
+                    onClick={() =>
+                      openInNewTab("https://www.instagram.com/diogodemarchi/")
+                    }
+                    icon={faInstagram}
+                  />
+                  <FontAwesomeIcon
+                    className="btn btn-ghost btn-xs hover:bg-transparent p-0 m-0"
+                    onClick={() =>
+                      openInNewTab("https://www.strava.com/athletes/45251064")
+                    }
+                    icon={faStrava}
+                  />
                 </div>
                 <span className="badge badge-info badge-sm">Diogo</span>
               </div>
@@ -100,106 +160,6 @@ function Footer() {
         </div>
       </nav>
     </footer>
-    // <div className="footer-container">
-    //   <section className="footer-subscription">
-    //     <p className="footer-subscription-heading">
-    //       Join the Adventure newsletter to receive our best vacation deals
-    //     </p>
-    //     <p className="footer-subscription-text">
-    //       You can unsubscribe at any time.
-    //     </p>
-    //     <div className="input-areas">
-    //       <form>
-    //         <input
-    //           type="email"
-    //           name="email"
-    //           placeholder="Your Email"
-    //           className="footer-input"
-    //         />
-    //         <button className="btn btn-outline">Subscribe</button>
-    //       </form>
-    //     </div>
-    //   </section>
-    //   <div className="footer-links">
-    //     <div className="footer-link-wrapper">
-    //       <div className="footer-link-items">
-    //         <h2>About Us</h2>
-    //         <Link to="/rsvp">How it works</Link>
-    //         <Link to="/diogoeraquele">Testimonials</Link>
-    //         <Link to="/diogoeraquele">Careers</Link>
-    //         <Link to="/diogoeraquele">Investors</Link>
-    //         <Link to="/diogoeraquele">Terms of Service</Link>
-    //       </div>
-    //       <div className="footer-link-items">
-    //         <h2>Contact Us</h2>
-    //         <Link to="/diogoeraquele">Contact</Link>
-    //         <Link to="/diogoeraquele">Support</Link>
-    //         <Link to="/diogoeraquele">Destinations</Link>
-    //         <Link to="/diogoeraquele">Sponsorships</Link>
-    //       </div>
-    //     </div>
-    //     <div className="footer-link-wrapper">
-    //       <div className="footer-link-items">
-    //         <h2>Videos</h2>
-    //         <Link to="/diogoeraquele">Submit Video</Link>
-    //         <Link to="/diogoeraquele">Ambassadors</Link>
-    //         <Link to="/diogoeraquele">Agency</Link>
-    //         <Link to="/diogoeraquele">Influencer</Link>
-    //       </div>
-    //       <div className="footer-link-items">
-    //         <h2>Social Media</h2>
-    //         <Link to="/diogoeraquele">Instagram</Link>
-    //         <Link to="/diogoeraquele">Facebook</Link>
-    //         <Link to="/diogoeraquele">Youtube</Link>
-    //         <Link to="/diogoeraquele">Twitter</Link>
-    //       </div>
-    //     </div>
-    //   </div>
-    //   <section className="social-media">
-    //     <div className="social-media-wrap">
-    //       <div className="footer-logo">
-    //         <Link to="/diogoeraquele" className="social-logo">
-    //           TRVL
-    //         </Link>
-    //       </div>
-    //       <small className="website-wrights">TRVL C 2024</small>
-    //       <div className="social-icons">
-    //         <Link
-    //           className="social-icon-link facebook"
-    //           to="/diogoeraquele"
-    //           target="_blank"
-    //           aria-label="Facebook"
-    //         >
-    //           <FontAwesomeIcon icon={faFacebook} />
-    //         </Link>
-    //         <Link
-    //           className="social-icon-link instagram"
-    //           to="/diogoeraquele"
-    //           target="_blank"
-    //           aria-label="Instagram"
-    //         >
-    //           <FontAwesomeIcon icon={faInstagram} />
-    //         </Link>
-    //         <Link
-    //           className="social-icon-link twiiter"
-    //           to="/diogoeraquele"
-    //           target="_blank"
-    //           aria-label="Twitter"
-    //         >
-    //           <FontAwesomeIcon icon={faTwitter} />
-    //         </Link>
-    //         <Link
-    //           className="social-icon-link youtube"
-    //           to="/diogoeraquele"
-    //           target="_blank"
-    //           aria-label="Youtube"
-    //         >
-    //           <FontAwesomeIcon icon={faYoutube} />
-    //         </Link>
-    //       </div>
-    //     </div>
-    //   </section>
-    // </div>
   );
 }
 export default Footer;
