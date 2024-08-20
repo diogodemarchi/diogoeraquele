@@ -94,6 +94,7 @@ function History() {
     <div className="justify-center flex items-baseline w-full min-h-screen py-5">
       <div className="xl:max-w-7xl bg-primary-content drop-shadow-xl border border-black/20 w-full rounded-md justify-between items-stretch px-5 xl:px-5 py-5">
         <div className="mx-auto w-full">
+          <h1 className="text-3xl text-center mb-8">{t("our_history")}</h1>
           <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
             <HistoryItem
               date="1996-07-11"

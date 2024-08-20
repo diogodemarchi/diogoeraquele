@@ -22,10 +22,10 @@ function VenueCarousel() {
       <div id="slide1" className="carousel-item relative w-full">
         <img
           className="rounded-lg m-12 w-11/12 h-fit"
-          src={process.env.PUBLIC_URL + "/images/paris.jpg"}
+          src={process.env.PUBLIC_URL + "/images/sitio1.jpeg"}
         />
         <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-          <button className="btn btn-circle" onClick={() => carouselScroll(4)}>
+          <button className="btn btn-circle" onClick={() => carouselScroll(8)}>
             ❮
           </button>
           <button className="btn btn-circle" onClick={() => carouselScroll(2)}>
@@ -36,7 +36,7 @@ function VenueCarousel() {
       <div id="slide2" className="carousel-item relative w-full">
         <img
           className="rounded-lg m-12 w-11/12 h-fit"
-          src={process.env.PUBLIC_URL + "/images/paris.jpg"}
+          src={process.env.PUBLIC_URL + "/images/sitio2.jpeg"}
         />
         <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
           <button className="btn btn-circle" onClick={() => carouselScroll(1)}>
@@ -50,7 +50,7 @@ function VenueCarousel() {
       <div id="slide3" className="carousel-item relative w-full">
         <img
           className="rounded-lg m-12 w-11/12 h-fit"
-          src={process.env.PUBLIC_URL + "/images/paris.jpg"}
+          src={process.env.PUBLIC_URL + "/images/sitio3.jpg"}
         />
         <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
           <button className="btn btn-circle" onClick={() => carouselScroll(2)}>
@@ -64,10 +64,66 @@ function VenueCarousel() {
       <div id="slide4" className="carousel-item relative w-full">
         <img
           className="rounded-lg m-12 w-11/12 h-fit"
-          src={process.env.PUBLIC_URL + "/images/paris.jpg"}
+          src={process.env.PUBLIC_URL + "/images/sitio4.jpeg"}
         />
         <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
           <button className="btn btn-circle" onClick={() => carouselScroll(3)}>
+            ❮
+          </button>
+          <button className="btn btn-circle" onClick={() => carouselScroll(5)}>
+            ❯
+          </button>
+        </div>
+      </div>
+      <div id="slide5" className="carousel-item relative w-full">
+        <img
+          className="rounded-lg m-12 w-11/12 h-fit"
+          src={process.env.PUBLIC_URL + "/images/sitio5.jpeg"}
+        />
+        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+          <button className="btn btn-circle" onClick={() => carouselScroll(4)}>
+            ❮
+          </button>
+          <button className="btn btn-circle" onClick={() => carouselScroll(6)}>
+            ❯
+          </button>
+        </div>
+      </div>
+      <div id="slide6" className="carousel-item relative w-full">
+        <img
+          className="rounded-lg m-12 w-11/12 h-fit"
+          src={process.env.PUBLIC_URL + "/images/sitio6.jpeg"}
+        />
+        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+          <button className="btn btn-circle" onClick={() => carouselScroll(5)}>
+            ❮
+          </button>
+          <button className="btn btn-circle" onClick={() => carouselScroll(7)}>
+            ❯
+          </button>
+        </div>
+      </div>
+      <div id="slide7" className="carousel-item relative w-full">
+        <img
+          className="rounded-lg m-12 w-11/12 h-fit"
+          src={process.env.PUBLIC_URL + "/images/sitio7.jpeg"}
+        />
+        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+          <button className="btn btn-circle" onClick={() => carouselScroll(6)}>
+            ❮
+          </button>
+          <button className="btn btn-circle" onClick={() => carouselScroll(8)}>
+            ❯
+          </button>
+        </div>
+      </div>
+      <div id="slide8" className="carousel-item relative w-full">
+        <img
+          className="rounded-lg m-12 w-11/12 h-fit"
+          src={process.env.PUBLIC_URL + "/images/sitio8.jpeg"}
+        />
+        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+          <button className="btn btn-circle" onClick={() => carouselScroll(7)}>
             ❮
           </button>
           <button className="btn btn-circle" onClick={() => carouselScroll(1)}>

@@ -13,6 +13,7 @@ import Vacation from "./components/pages/Vacation";
 import Arrival from "./components/pages/Arrival";
 import Faq from "./components/pages/Faq";
 import PasswordGate from "./components/PasswordGate";
+import Wedding from "./components/pages/Wedding";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               <Route path="/diogoeraquele" Component={Home} />
               <Route path="/arrival" Component={Arrival} />
               <Route path="/our-history" Component={History} />
+              <Route path="/wedding" Component={Wedding} />
               <Route path="/vacation" Component={Vacation} />
               <Route path="/faq" Component={Faq} />
               <Route path="/rsvp" Component={Rsvp} />
