@@ -1,9 +1,7 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import FormInput from "./FormInput";
 import FormOption from "./FormOption";
-import { use } from "i18next";
-import { Link } from "react-router-dom";
 import { SubmitFormModal, SubmitForm } from "./SubmitForm";
 
 function Form() {
@@ -85,7 +83,7 @@ function Form() {
         responseSent={responseSent}
       />
       <div className="mt-5 mx-auto w-full max-w-lg flex flex-col gap-5">
-        <div className="flex flex-col md:flex-row gap-3">
+        <div className="flex flex-col md:flex-row gap-3 w-full">
           <FormInput
             placeholder={t("first_name")}
             callback={setFirstName}

@@ -134,7 +134,7 @@ function History() {
               date="2023-10-28"
               title={t("we_got_engaged")}
               text={t("we_got_engaged_text")}
-              imgSrc={process.env.PUBLIC_URL + "/images/paris.jpg"}
+              imgSrc={process.env.PUBLIC_URL + "/images/cristo-engaged.jpeg"}
               imgSide="left"
             />
             <HistoryItem
