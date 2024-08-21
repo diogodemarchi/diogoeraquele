@@ -76,5 +76,13 @@
   "question6": "Posso levar fulano?",
   "answer6": "Nós tomamos o maior cuidado para somente convidar pessoas que fizeram parte de nossa história e estão presentes em nossas vidas. Por este motivo e pelo espaço ser limitado, estaremos restringindo apenas às pessoas convidadas diretamente.",
   "question7": "Tenho alguma restrição alimentar. Vai ter opção para mim?",
-  "answer7": "Escreva durante a confirmação de presença ou fale com a gente previamente."
+  "answer7": "Escreva durante a confirmação de presença ou fale com a gente previamente.",
+  "enter_password": "Digite a senha secreta",
+  "submit": "Entrar",
+  "meeting_with_appetizers": "Chegada com petiscos",
+  "start_ceremony": "Início da cerimônia",
+  "pictures": "Sessão de fotos",
+  "reception": "Recepção",
+  "dinner": "Jantar",
+  "party": "Festa"
 }
