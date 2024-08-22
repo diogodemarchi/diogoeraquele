@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 
 import { useTranslation } from "react-i18next";
+import { weddingIdentifier } from "../constants";
 
 const PasswordGate: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const { t } = useTranslation();
-  const [password, setPassword] = useState("");
+  const [userPassword, setUserPassword] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const correctPassword = "2604"; // are you really this petty to "hack" my wedding website?
-
   const handlePasswordSubmit = () => {
-    if (password === correctPassword) {
+    // are you really this petty to "hack" my wedding website?
+    if (btoa(userPassword) === weddingIdentifier) {
       setIsAuthenticated(true);
     } else {
       alert(t("incorrect_password"));
@@ -46,8 +46,8 @@ const PasswordGate: React.FC<{ children: React.ReactNode }> = ({
             type="password"
             id="password"
             className="input input-bordered w-full mb-4 text-center"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={userPassword}
+            onChange={(e) => setUserPassword(e.target.value)}
             onKeyDown={handleKeyDown}
           />
           <button

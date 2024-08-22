@@ -12,14 +12,14 @@ import React, { Suspense, useState } from "react";
 import Vacation from "./components/pages/Vacation";
 import Arrival from "./components/pages/Arrival";
 import Faq from "./components/pages/Faq";
-import PasswordGate from "./components/PasswordGate";
+import Gate from "./components/Gate";
 import Wedding from "./components/pages/Wedding";
 
 function App() {
   return (
     <>
       <Suspense fallback="loading">
-        <PasswordGate>
+        <Gate>
           <Router>
             <Navbar />
             <Routes>
@@ -33,7 +33,7 @@ function App() {
               <Route path="/" element={<Navigate to="/diogoeraquele" />} />
             </Routes>
           </Router>
-        </PasswordGate>
+        </Gate>
       </Suspense>
     </>
   );
