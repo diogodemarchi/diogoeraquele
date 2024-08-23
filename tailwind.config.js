@@ -5,8 +5,8 @@ module.exports = {
     extend: {
       backgroundImage: {
         "product-image": "url('/public/images/img-1.jpg')",
-        paris: "url('/public/images/paris.jpg')",
-        "paris-small": "url('/public/images/paris-small.jpg')",
+        paris: "url('/public/images/paris-compressed.jpg')",
+        "paris-small": "url('/public/images/paris-small-compressed.jpg')",
       },
       fontFamily: {
         fancy: ["Great Vibes", "sans-serif"],
