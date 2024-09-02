@@ -81,45 +81,45 @@ const SubmitForm = async (
     const modal = document.getElementById("modal_finish");
     modal.showModal();
     // disable exit on ESC
-    // modal.addEventListener("cancel", (event) => {
-    //   event.preventDefault();
-    // });
-    // sendingCallback(true);
-    // sentCallback(false);
-    // const formUrl =
-    //   "https://docs.google.com/forms/d/e/1FAIpQLSeFLV_wxKvaIiaxt2deQYjE6HyFq78BkblCbWTGeC1WVTOKBg/formResponse?";
-    // console.log(guestList);
-    // const response = await fetch(
-    //   formUrl +
-    //     new URLSearchParams({
-    //       "entry.2123682207": answer,
-    //       "entry.75741258": firstName,
-    //       "entry.276127613": lastName,
-    //       "entry.180690125": JSON.stringify(guestList),
-    //       "entry.295464470": email,
-    //       "entry.65819718": phone,
-    //       "entry.1331545422": selectedCoolest,
-    //       "entry.1922160049": selectedTransport,
-    //       "entry.1836559536": selectedAccomodation,
-    //       "entry.167166928": amountClicksRaquele,
-    //       "entry.66045006": dietRestrictions,
-    //       "entry.687592573": songRequests,
-    //       "entry.355837000": specialNeeds,
-    //       "entry.1251753864": message,
-    //       "entry.1254951546": new Date().toISOString(),
-    //     }),
-    //   {
-    //     mode: "no-cors",
-    //   },
-    // );
-    // sentCallback(response.status === 0); // 0 because of CORS
+    modal.addEventListener("cancel", (event) => {
+      event.preventDefault();
+    });
+    sendingCallback(true);
+    sentCallback(false);
+    const formUrl =
+      "https://docs.google.com/forms/d/e/1FAIpQLSeFLV_wxKvaIiaxt2deQYjE6HyFq78BkblCbWTGeC1WVTOKBg/formResponse?";
+    console.log(guestList);
+    const response = await fetch(
+      formUrl +
+        new URLSearchParams({
+          "entry.2123682207": answer,
+          "entry.75741258": firstName,
+          "entry.276127613": lastName,
+          "entry.180690125": JSON.stringify(guestList),
+          "entry.295464470": email,
+          "entry.65819718": phone,
+          "entry.1331545422": selectedCoolest,
+          "entry.1922160049": selectedTransport,
+          "entry.1836559536": selectedAccomodation,
+          "entry.167166928": amountClicksRaquele,
+          "entry.66045006": dietRestrictions,
+          "entry.687592573": songRequests,
+          "entry.355837000": specialNeeds,
+          "entry.1251753864": message,
+          "entry.1254951546": new Date().toISOString(),
+        }),
+      {
+        mode: "no-cors",
+      },
+    );
+    sentCallback(response.status === 0); // 0 because of CORS
 
     // dummy placeholder not to ddos
-    sentCallback(false);
-    console.log("waiting");
-    await new Promise((r) => setTimeout(r, 2000));
-    console.log("done waiting");
-    sentCallback(true);
+    // sentCallback(false);
+    // console.log("waiting");
+    // await new Promise((r) => setTimeout(r, 2000));
+    // console.log("done waiting");
+    // sentCallback(true);
   } catch (e) {
     console.log(e.message);
   }
