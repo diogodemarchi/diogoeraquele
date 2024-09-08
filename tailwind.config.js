@@ -9,7 +9,7 @@ module.exports = {
         "paris-small": "url('/public/images/paris-small-compressed.jpg')",
       },
       fontFamily: {
-        fancy: ["Great Vibes", "sans-serif"],
+        fancy: ["Rajdhani", "sans-serif"],
       },
     },
   },

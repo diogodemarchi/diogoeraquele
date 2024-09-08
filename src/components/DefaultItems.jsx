@@ -5,39 +5,45 @@ const items = [
   {
     to: "/diogoeraquele",
     key: "home",
-    labels: ["label"],
+    labels: ["home"],
+    cardText: "",
     cardImgSrc: process.env.PUBLIC_URL + "/images/paris-compressed.jpg",
   },
   {
     to: "/arrival",
     key: "getting_there",
-    labels: ["label"],
+    labels: ["directions", "tips", "shuttle"],
+    cardText: "getting_there_card_text",
     cardImgSrc:
       process.env.PUBLIC_URL + "/images/couple/couple-rio-ada-far.jpeg",
   },
   {
     to: "/wedding",
     key: "wedding",
-    labels: ["label"],
+    labels: ["schedule", "guidelines"],
+    cardText: "wedding_card_text",
     cardImgSrc: process.env.PUBLIC_URL + "/images/couple/some-wedding.jpeg",
   },
   {
     to: "/our-history",
     key: "our_history",
-    labels: ["label"],
+    labels: ["couple", "pictures", "timeline"],
+    cardText: "our_history_card_text",
     cardImgSrc: process.env.PUBLIC_URL + "/images/couple/canyons.jpeg",
   },
   {
     to: "/vacation",
     key: "vacation",
-    labels: ["label"],
-    cardImgSrc: process.env.PUBLIC_URL + "/images/paris-compressed.jpg",
+    labels: ["fun", "party"],
+    cardText: "vacation_card_text",
+    cardImgSrc: process.env.PUBLIC_URL + "/images/couple/praia-bc.jpeg",
   },
   {
     to: "/faq",
     key: "faq",
-    labels: ["label"],
-    cardImgSrc: process.env.PUBLIC_URL + "/images/paris-compressed.jpg",
+    labels: ["question", "answer"],
+    cardText: "faq_card_text",
+    cardImgSrc: process.env.PUBLIC_URL + "/images/couple/faq-pic.jpeg",
   },
 ];
 

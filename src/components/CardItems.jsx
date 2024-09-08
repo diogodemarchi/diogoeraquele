@@ -14,7 +14,7 @@ function CardItems() {
             key={item.key}
             className="card shadow-xl compact bg-base-100 basis-1/4 min-w-64"
           >
-            <Link key={item.key} to={item.to} className="card">
+            <Link key={item.key} to={item.to} className="card h-full">
               <figure key={index}>
                 <img key={item.key} src={item.cardImgSrc} alt={t(item.key)} />
               </figure>
@@ -22,10 +22,11 @@ function CardItems() {
                 <h2 key={`h2${index}`} className="card-title">
                   {t(item.key)}
                 </h2>
-                <p key={index}>
-                  If a dog chews shoes whose shoes does he choose?
-                </p>
-                <div key={item.key} className="card-actions justify-end">
+                <p key={index}>{t(item.cardText)}</p>
+                <div
+                  key={item.key}
+                  className="card-actions justify-end place-items-end"
+                >
                   {item.labels.map((label) => (
                     <div key={item.key} className="badge badge-outline">
                       {t(label)}

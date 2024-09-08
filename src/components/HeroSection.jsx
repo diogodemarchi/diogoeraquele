@@ -15,8 +15,8 @@ function HeroSection() {
       <div className="hero-overlay bg-opacity-50"></div>
       <div className="hero-content text-neutral-content text-center mt-24">
         <div className="max-w-screen-lg">
-          <h1 className="mt-5 mb-5 text-6xl md:text-8xl font-thin font-fancy">
-            Raquele & Diogo
+          <h1 className="mt-5 mb-5 text-6xl md:text-8xl font-medium font-fancy">
+            RAQUELE & DIOGO
           </h1>
           <div className="flex w-full flex-col lg:flex-row place-items-center justify-center">
             <Link

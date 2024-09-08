@@ -12,7 +12,7 @@ function TransportCard() {
   const [message, setMessage] = useState("");
   const [sendingRequest, setSendingRequest] = useState(false);
   const [responseSent, setReponseSent] = useState(false);
-  const [numberGuests, setNumberGuests] = useState(1);
+  const [numberGuests, setNumberGuests] = useState();
 
   function isFormFilled() {
     return (
@@ -24,6 +24,15 @@ function TransportCard() {
       selectedTransport &&
       selectedTransport !== ""
     );
+  }
+
+  function changeGuests(amount) {
+    if (amount > 0) {
+      setNumberGuests(amount);
+    } else {
+      setNumberGuests(undefined);
+    }
+    console.log(numberGuests);
   }
 
   return (
@@ -60,8 +69,12 @@ function TransportCard() {
           <FormInput
             placeholder={t("n_guests")}
             type="number"
-            callback={(nGuests) => setNumberGuests(Number(nGuests))}
-            value={numberGuests.toString()}
+            callback={(nGuests) =>
+              Number(nGuests) > 0
+                ? setNumberGuests(Number(nGuests))
+                : setNumberGuests(undefined)
+            }
+            value={numberGuests ? numberGuests.toString() : ""}
             paintBg={false}
           />
           <FormInput
@@ -108,7 +121,7 @@ function TransportCard() {
               email,
               "",
               "",
-              "",
+              selectedTransport,
               "",
               0,
               "",

@@ -251,9 +251,7 @@ function Form() {
               onChange={handleCheckbox}
             />
             <span className="label-text block">
-              {t(
-                "agreement_text_pictures_so_on agreement_text_pictures_so_on agreement_text_pictures_so_on agreement_text_pictures_so_on agreement_text_pictures_so_on agreement_text_pictures_so_on agreement_text_pictures_so_on agreement_text_pictures_so_on",
-              )}
+              {t("agreement_text_pictures_so_on")}
             </span>
           </label>
         </div>

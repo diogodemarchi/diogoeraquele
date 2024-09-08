@@ -98,56 +98,61 @@ function HistoryTimeline() {
         date="1996-07-11"
         title={t("diogo_is_born")}
         text={t("diogo_is_born_text")}
-        imgSrc={process.env.PUBLIC_URL + "/images/paris-compressed.jpg"}
+        imgSrc={process.env.PUBLIC_URL + "/images/diogo-baby.jpg"}
         imgSide="right"
       />
       <HistoryItem
         date="1996-11-21"
         title={t("raquele_is_born")}
         text={t("raquele_is_born_text")}
-        imgSrc={process.env.PUBLIC_URL + "/images/paris-compressed.jpg"}
+        imgSrc={process.env.PUBLIC_URL + "/images/raquele-baby.jpeg"}
         imgSide="left"
       />
       <HistoryItem
         date="2015-03-01"
         title={t("we_first_met")}
         text={t("we_first_met_text")}
-        imgSrc={process.env.PUBLIC_URL + "/images/paris-compressed.jpg"}
+        imgSrc={process.env.PUBLIC_URL + "/images/couple/day-we-met.jpeg"}
         imgSide="right"
       />
       <HistoryItem
         date="2017-05-19"
         title={t("we_first_kiss")}
         text={t("we_first_kiss_text")}
-        imgSrc={process.env.PUBLIC_URL + "/images/paris-compressed.jpg"}
+        imgSrc={process.env.PUBLIC_URL + "/images/couple/first-pic.jpg"}
         imgSide="left"
       />
       <HistoryItem
         date="2018-08-24"
         title={t("we_first_came_to_germany")}
         text={t("we_first_came_to_germany_text")}
-        imgSrc={process.env.PUBLIC_URL + "/images/paris-compressed.jpg"}
+        imgSrc={process.env.PUBLIC_URL + "/images/couple/esslingen.jpeg"}
         imgSide="right"
       />
       <HistoryItem
         date="2023-10-28"
         title={t("we_got_engaged")}
         text={t("we_got_engaged_text")}
-        imgSrc={process.env.PUBLIC_URL + "/images/cristo-engaged.jpeg"}
+        imgSrc={
+          process.env.PUBLIC_URL +
+          "/images/couple/proposal/proposal-cristo.jpeg"
+        }
         imgSide="left"
       />
       <HistoryItem
         date={new Date().toString()}
         title={t("you_are_reading_this")}
         text={t("thank_you_for_reading_this")}
-        imgSrc={process.env.PUBLIC_URL + "/images/paris-compressed.jpg"}
+        imgSrc={process.env.PUBLIC_URL + "/images/couple/russia.jpeg"}
         imgSide="right"
       />
       <HistoryItem
-        date={"2024-04-26"}
+        date={"2025-04-26"}
         title={t("our_wedding")}
         text={t("our_wedding_text")}
-        imgSrc={process.env.PUBLIC_URL + "/images/paris-compressed.jpg"}
+        imgSrc={
+          process.env.PUBLIC_URL + "/images/couple/couple-rio-ada-close.jpeg"
+        }
         imgSide="left"
       />
     </ul>
