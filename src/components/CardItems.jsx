@@ -8,7 +8,7 @@ function CardItems() {
   return (
     <div className="flex flex-col mx-4 sm:flex-row sm:flex-wrap gap-12 justify-center mb-12">
       {items
-        .filter((item) => item.key != "home")
+        .filter((item) => item.key !== "home")
         .map((item, index) => (
           <div
             key={item.key}

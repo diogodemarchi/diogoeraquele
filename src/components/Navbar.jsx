@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LanguageSelector from "./LanguageSelector";
@@ -11,8 +10,6 @@ function closeDrawer() {
 
 function Navbar() {
   const { t } = useTranslation();
-  const [isOpen, setIsOpen] = useState(false);
-  const closeMobileMenu = () => setIsOpen(false);
 
   return (
     <div className="drawer z-50">
@@ -44,9 +41,9 @@ function Navbar() {
             <Link
               to="/diogoeraquele"
               className="text-primary-content text-2xl flex flex-shrink-0 items-center cursor-pointer"
-              onClick={closeMobileMenu}
             >
               <img
+                alt=""
                 className="w-full h-16 object-contain"
                 src={process.env.PUBLIC_URL + "/images/logo.png"}
               />
@@ -54,7 +51,7 @@ function Navbar() {
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1 text-xl">
-              <DefaultItems callback={closeMobileMenu} />
+              <DefaultItems />
             </ul>
           </div>
           <div className="navbar-end">
@@ -62,11 +59,7 @@ function Navbar() {
               <ThemeSelector />
               <LanguageSelector />
             </div>
-            <Link
-              to="/rsvp"
-              className="btn flex items-center p-4 h-full"
-              onClick={closeMobileMenu}
-            >
+            <Link to="/rsvp" className="btn flex items-center p-4 h-full">
               {t("rsvp")}
             </Link>
           </div>
@@ -83,9 +76,8 @@ function Navbar() {
             <Link
               to="/diogoeraquele"
               className="text-primary-content text-2xl flex items-center cursor-pointer"
-              onClick={closeMobileMenu}
             >
-              <img src={process.env.PUBLIC_URL + "/images/logo.png"} />
+              <img alt="" src={process.env.PUBLIC_URL + "/images/logo.png"} />
             </Link>
           </li>
           <DefaultItems callback={closeDrawer} />

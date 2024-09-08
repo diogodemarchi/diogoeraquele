@@ -15,6 +15,7 @@ function History() {
           <VideoCarousel />
           <div className="w-full my-4">
             <img
+              alt=""
               src={process.env.PUBLIC_URL + "/images/couple-banner.jpg"}
               className="w-full h-auto max-h-96 object-cover rounded-xl"
             />

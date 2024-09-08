@@ -25,6 +25,7 @@ function VenueCarousel() {
   const CarouselItem = ({ src, index }) => (
     <div className="carousel-item relative w-full">
       <img
+        alt=""
         className="rounded-lg m-12 w-11/12 h-fit"
         src={process.env.PUBLIC_URL + src}
       />

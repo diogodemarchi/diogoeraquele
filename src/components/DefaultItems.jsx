@@ -6,37 +6,38 @@ const items = [
     to: "/diogoeraquele",
     key: "home",
     labels: ["label"],
-    cardImgSrc: process.env.PUBLIC_URL + "/images/paris.jpg",
+    cardImgSrc: process.env.PUBLIC_URL + "/images/paris-compressed.jpg",
   },
   {
     to: "/arrival",
     key: "getting_there",
     labels: ["label"],
-    cardImgSrc: process.env.PUBLIC_URL + "/images/paris.jpg",
+    cardImgSrc:
+      process.env.PUBLIC_URL + "/images/couple/couple-rio-ada-far.jpeg",
   },
   {
     to: "/wedding",
     key: "wedding",
     labels: ["label"],
-    cardImgSrc: process.env.PUBLIC_URL + "/images/paris.jpg",
+    cardImgSrc: process.env.PUBLIC_URL + "/images/couple/some-wedding.jpeg",
   },
   {
     to: "/our-history",
     key: "our_history",
     labels: ["label"],
-    cardImgSrc: process.env.PUBLIC_URL + "/images/paris.jpg",
+    cardImgSrc: process.env.PUBLIC_URL + "/images/couple/canyons.jpeg",
   },
   {
     to: "/vacation",
     key: "vacation",
     labels: ["label"],
-    cardImgSrc: process.env.PUBLIC_URL + "/images/paris.jpg",
+    cardImgSrc: process.env.PUBLIC_URL + "/images/paris-compressed.jpg",
   },
   {
     to: "/faq",
     key: "faq",
     labels: ["label"],
-    cardImgSrc: process.env.PUBLIC_URL + "/images/paris.jpg",
+    cardImgSrc: process.env.PUBLIC_URL + "/images/paris-compressed.jpg",
   },
 ];
 

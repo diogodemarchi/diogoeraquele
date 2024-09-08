@@ -8,7 +8,7 @@ import {
 import Home from "./components/pages/Home";
 import Rsvp from "./components/pages/Rsvp";
 import History from "./components/pages/History";
-import React, { Suspense, useState } from "react";
+import { Suspense } from "react";
 import Vacation from "./components/pages/Vacation";
 import Arrival from "./components/pages/Arrival";
 import Faq from "./components/pages/Faq";

@@ -3,11 +3,11 @@ import VenueCarousel from "../VenueCarousel";
 import TransportCard from "../TransportCard";
 
 function Maps() {
-  const { t } = useTranslation();
   return (
     <div className="mapouter flex-1 block justify-center my-12 md:mr-12 w-full">
       <div className="gmap_canvas w-full h-full">
         <iframe
+          title="map"
           className="w-full md:h-full rounded-lg h-[50vh] min-h-[30vh] min-w-[25vw] shadow-lg"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10518.588891489038!2d9.141667!3d48.76953285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4799db74294d6225%3A0xb482d483028cda73!2sSkatepark%20Botnang!5e0!3m2!1spt-BR!2sde!4v1721662354894!5m2!1spt-BR!2sde"
           loading="lazy"

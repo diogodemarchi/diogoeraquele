@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import { useEffect, useState } from "react";
 import Countdown from "./Countdown";
 import { Link } from "react-router-dom";
 

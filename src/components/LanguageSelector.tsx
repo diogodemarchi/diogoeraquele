@@ -9,7 +9,7 @@ export const LANGUAGES = [
 
 function LanguageSelector() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   const toggleDropdown = () => {
     if (dropdownOpen && document.activeElement instanceof HTMLElement) {
@@ -61,6 +61,7 @@ function LanguageSelector() {
         >
           {(
             <img
+              alt=""
               id="options-menu-flag"
               className="object-cover h-8 w-8"
               src={`${process.env.PUBLIC_URL}/images/${LANGUAGES.find((lang) => lang.code === i18n.language)?.countryCode}.png`}
