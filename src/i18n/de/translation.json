@@ -128,5 +128,15 @@
   "sent_confirmation": "Bestätigung erfolgreich gesendet",
   "confirmation_sent": "Danke, dass du unser RSVP-System genutzt hast. Wir sehen uns im April!",
   "sending_confirmation_please_wait": "Bestätigung wird gesendet, bitte warten",
-  "sending_confirmation": "Bestätigen..."
+  "sending_confirmation": "Bestätigen...",
+  "directions": "Anweisungen",
+  "tips": "Tipps",
+  "shuttle": "Shuttle",
+  "schedule": "Ablaufplan",
+  "guidelines": "Richtlinien",
+  "couple": "Paar",
+  "timeline": "Zeitleiste",
+  "fun": "Spaß",
+  "question": "Frage",
+  "answer": "Antwort"
 }

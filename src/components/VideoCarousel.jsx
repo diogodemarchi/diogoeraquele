@@ -7,6 +7,11 @@ function VideoCarousel() {
   const { t } = useTranslation();
   const videos = [
     {
+      id: "w1ewJ7ev2i8",
+      title: "Save the Date",
+      description: t("save_the_date"),
+    },
+    {
       id: "K3SsPof0-GI",
       title: "Lauterbrunnen",
       description: t("lauterbrunnen_description"),

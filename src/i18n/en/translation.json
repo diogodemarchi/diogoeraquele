@@ -128,5 +128,15 @@
   "sent_confirmation": "Confirmation sent successfully",
   "confirmation_sent": "Thank you for using our RSVP system. See you in April!",
   "sending_confirmation_please_wait": "Sending confirmation, please wait",
-  "sending_confirmation": "Confirming..."
+  "sending_confirmation": "Confirming...",
+  "directions": "Directions",
+  "tips": "Tips",
+  "shuttle": "Shuttle",
+  "schedule": "Schedule",
+  "guidelines": "Guidelines",
+  "couple": "Couple",
+  "timeline": "Timeline",
+  "fun": "Fun",
+  "question": "Question",
+  "answer": "Answer"
 }
