@@ -128,5 +128,6 @@
   "sent_confirmation": "Confirmação enviada com sucesso",
   "confirmation_sent": "Obrigado por utilizar nosso sistema de confirmação de presença. Nos vemos em Abril!",
   "sending_confirmation_please_wait": "Enviando confirmação, por favor aguarde",
-  "sending_confirmation": "Confirmando..."
+  "sending_confirmation": "Confirmando...",
+  "directions": "banane"
 }
