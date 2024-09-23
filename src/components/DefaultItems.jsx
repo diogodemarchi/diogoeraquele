@@ -15,35 +15,35 @@ const items = [
     labels: ["directions", "tips", "shuttle"],
     cardText: "getting_there_card_text",
     cardImgSrc:
-      process.env.PUBLIC_URL + "/images/couple/couple-rio-ada-far.jpeg",
+      process.env.PUBLIC_URL + "/images/couple/couple-rio-ada-far.jpg",
   },
   {
     to: "/wedding",
     key: "wedding",
     labels: ["schedule", "guidelines"],
     cardText: "wedding_card_text",
-    cardImgSrc: process.env.PUBLIC_URL + "/images/couple/some-wedding.jpeg",
+    cardImgSrc: process.env.PUBLIC_URL + "/images/couple/some-wedding.jpg",
   },
   {
     to: "/our-history",
     key: "our_history",
     labels: ["couple", "pictures", "timeline"],
     cardText: "our_history_card_text",
-    cardImgSrc: process.env.PUBLIC_URL + "/images/couple/canyons.jpeg",
+    cardImgSrc: process.env.PUBLIC_URL + "/images/couple/canyons.jpg",
   },
   {
     to: "/vacation",
     key: "vacation",
     labels: ["fun", "party"],
     cardText: "vacation_card_text",
-    cardImgSrc: process.env.PUBLIC_URL + "/images/couple/praia-bc.jpeg",
+    cardImgSrc: process.env.PUBLIC_URL + "/images/couple/praia-bc.jpg",
   },
   {
     to: "/faq",
     key: "faq",
     labels: ["question", "answer"],
     cardText: "faq_card_text",
-    cardImgSrc: process.env.PUBLIC_URL + "/images/couple/faq-pic.jpeg",
+    cardImgSrc: process.env.PUBLIC_URL + "/images/couple/faq-pic.jpg",
   },
 ];
 

@@ -3,14 +3,14 @@ import { useRef } from "react";
 function VenueCarousel() {
   const carouselRef = useRef(null);
   const images = [
-    "/images/sitio1.jpeg",
-    "/images/sitio2.jpeg",
+    "/images/sitio1.jpg",
+    "/images/sitio2.jpg",
     "/images/sitio3.jpg",
-    "/images/sitio4.jpeg",
-    "/images/sitio5.jpeg",
-    "/images/sitio6.jpeg",
-    "/images/sitio7.jpeg",
-    "/images/sitio8.jpeg",
+    "/images/sitio4.jpg",
+    "/images/sitio5.jpg",
+    "/images/sitio6.jpg",
+    "/images/sitio7.jpg",
+    "/images/sitio8.jpg",
   ];
 
   const carouselScroll = (itemNumber) => {

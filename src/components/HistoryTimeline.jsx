@@ -105,14 +105,14 @@ function HistoryTimeline() {
         date="1996-11-21"
         title={t("raquele_is_born")}
         text={t("raquele_is_born_text")}
-        imgSrc={process.env.PUBLIC_URL + "/images/raquele-baby.jpeg"}
+        imgSrc={process.env.PUBLIC_URL + "/images/raquele-baby.jpg"}
         imgSide="left"
       />
       <HistoryItem
         date="2015-03-01"
         title={t("we_first_met")}
         text={t("we_first_met_text")}
-        imgSrc={process.env.PUBLIC_URL + "/images/couple/day-we-met.jpeg"}
+        imgSrc={process.env.PUBLIC_URL + "/images/couple/day-we-met.jpg"}
         imgSide="right"
       />
       <HistoryItem
@@ -126,7 +126,7 @@ function HistoryTimeline() {
         date="2018-08-24"
         title={t("we_first_came_to_germany")}
         text={t("we_first_came_to_germany_text")}
-        imgSrc={process.env.PUBLIC_URL + "/images/couple/esslingen.jpeg"}
+        imgSrc={process.env.PUBLIC_URL + "/images/couple/esslingen.jpg"}
         imgSide="right"
       />
       <HistoryItem
@@ -134,8 +134,7 @@ function HistoryTimeline() {
         title={t("we_got_engaged")}
         text={t("we_got_engaged_text")}
         imgSrc={
-          process.env.PUBLIC_URL +
-          "/images/couple/proposal/proposal-cristo.jpeg"
+          process.env.PUBLIC_URL + "/images/couple/proposal/proposal-cristo.jpg"
         }
         imgSide="left"
       />
@@ -143,7 +142,7 @@ function HistoryTimeline() {
         date={new Date().toString()}
         title={t("you_are_reading_this")}
         text={t("thank_you_for_reading_this")}
-        imgSrc={process.env.PUBLIC_URL + "/images/couple/russia.jpeg"}
+        imgSrc={process.env.PUBLIC_URL + "/images/couple/russia.jpg"}
         imgSide="right"
       />
       <HistoryItem
@@ -151,7 +150,7 @@ function HistoryTimeline() {
         title={t("our_wedding")}
         text={t("our_wedding_text")}
         imgSrc={
-          process.env.PUBLIC_URL + "/images/couple/couple-rio-ada-close.jpeg"
+          process.env.PUBLIC_URL + "/images/couple/couple-rio-ada-close.jpg"
         }
         imgSide="left"
       />
