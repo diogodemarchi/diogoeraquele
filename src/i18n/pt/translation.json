@@ -138,5 +138,6 @@
   "timeline": "Linha do Tempo",
   "fun": "Diversão",
   "question": "Pergunta",
-  "answer": "Resposta"
+  "answer": "Resposta",
+  "incorrect_password": "Senha incorreta!"
 }

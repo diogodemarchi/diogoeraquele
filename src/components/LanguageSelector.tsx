@@ -19,8 +19,6 @@ function LanguageSelector() {
   };
   const onChangeLang = (e: React.MouseEvent<HTMLButtonElement>) => {
     const selectedLang = (e.target as HTMLButtonElement).value;
-    console.log(e);
-    console.log(`Changing language to ${selectedLang}`);
     i18n.changeLanguage(selectedLang);
     setDropdownOpen(false);
   };
@@ -59,17 +57,14 @@ function LanguageSelector() {
           aria-expanded="true"
           onClick={toggleDropdown}
         >
-          {(
+          {
             <img
               alt=""
               id="options-menu-flag"
               className="object-cover h-8 w-8"
               src={`${process.env.PUBLIC_URL}/images/${LANGUAGES.find((lang) => lang.code === i18n.language)?.countryCode}.png`}
             />
-          ) ||
-            LANGUAGES.find((lang) => lang.code === i18n.language)
-              ?.countryCode ||
-            "Select Language"}
+          }
         </button>
         {dropdownOpen && (
           <ul
