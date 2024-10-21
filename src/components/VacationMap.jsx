@@ -21,6 +21,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
 import usePOI from "../constants/PointsOfInterest";
+import ReactDOMServer from "react-dom/server";
+import Form from "./Form";
 
 // Fix default icon issue
 delete L.Icon.Default.prototype._getIconUrl;
@@ -50,6 +52,7 @@ const VacationMap = () => {
       icon: faHouse,
       color: "text-red-500 shadow-2xl",
       maps: "",
+      imgSrc: "/images/sitio3.jpg",
     },
     ...poi.southAirports,
     ...poi.southEastAirports,
@@ -83,14 +86,37 @@ const VacationMap = () => {
         zoomToBoundsOnClick: true,
         spiderfyOnMaxZoom: true,
         maxClusterRadius: 20,
-      });
+      })
+        .on("clustermouseover", function (ev) {
+          const childMarkers = ev.propagatedFrom.getAllChildMarkers();
+          const iconCounts = {};
+          childMarkers.forEach((marker) => {
+            const iconType = marker.options.icon.options.className;
+            if (!iconCounts[iconType]) {
+              iconCounts[iconType] = 0;
+            }
+            iconCounts[iconType]++;
+          });
+          let tooltipContent = "";
+          for (const icon in iconCounts) {
+            tooltipContent += `${iconCounts[icon]}x <i class="${ReactDOMServer.renderToString(icon)}"></i><br/>`;
+          }
+          ev.propagatedFrom
+            .bindTooltip(tooltipContent, {
+              sticky: false,
+            })
+            .openTooltip();
+        })
+        .on("clustermouseout", function (ev) {
+          ev.propagatedFrom.unbindTooltip();
+        });
       children.forEach((child) => {
         const { position, icon, color, popupContent, tooltipContent } =
           child.props;
         const marker = L.marker(position, {
           icon: createCustomIcon(icon ?? faLocationDot, color),
         }).bindPopup(child.props.children);
-        marker.bindPopup(popupContent).openPopup();
+        marker.bindPopup(popupContent);
         marker.bindTooltip(tooltipContent).openTooltip();
         markers.addLayer(marker);
       });
@@ -107,7 +133,7 @@ const VacationMap = () => {
 
   return (
     <div className="container mx-auto p-4">
-      {/* <div className="min-h-screen"></div> */}
+      <i class="fa fa-solid fa-city fa-2x undefined"></i>
       <MapContainer
         center={pointsOfInterest[0].position}
         zoom={12}
@@ -126,7 +152,31 @@ const VacationMap = () => {
               icon={point.icon}
               color={point.color}
               tooltipContent={point.name}
-              popupContent={point.description}
+              popupContent={ReactDOMServer.renderToString(
+                <div className="flex flex-col items-center">
+                  <h3 className="text-xl font-semibold mb-2">{point.name}</h3>
+                  <div className="flex flex-col items-center">
+                    {point.imgSrc && (
+                      <img
+                        className="max-w-none h-56"
+                        alt=""
+                        src={process.env.PUBLIC_URL + point.imgSrc}
+                      />
+                    )}
+                    <p className="mt-2 text-gray-600">{point.description}</p>
+                  </div>
+                  <div className="mt-2">
+                    <a
+                      href={point.maps}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-blue-500 underline"
+                    >
+                      {t("view_on_maps")}
+                    </a>
+                  </div>
+                </div>,
+              )}
             ></Marker>
           ))}
         </MarkerCluster>

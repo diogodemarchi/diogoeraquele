@@ -24,3 +24,8 @@
   text-align: center;
   transition: all 1s cubic-bezier(1, 0, 0, 1);
 }
+
+.leaflet-popup-content {
+  width: auto !important;
+  height: auto !important;
+}
