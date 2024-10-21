@@ -19,21 +19,21 @@ function App() {
   return (
     <>
       <Suspense fallback="loading">
-        {/* <Gate> */}
-        <Router>
-          <Navbar />
-          <Routes>
-            <Route path="/diogoeraquele" Component={Home} />
-            <Route path="/arrival" Component={Arrival} />
-            <Route path="/our-history" Component={History} />
-            <Route path="/wedding" Component={Wedding} />
-            <Route path="/vacation" Component={Vacation} />
-            <Route path="/faq" Component={Faq} />
-            <Route path="/rsvp" Component={Rsvp} />
-            <Route path="/" element={<Navigate to="/diogoeraquele" />} />
-          </Routes>
-        </Router>
-        {/* </Gate> */}
+        <Gate>
+          <Router>
+            <Navbar />
+            <Routes>
+              <Route path="/diogoeraquele" Component={Home} />
+              <Route path="/arrival" Component={Arrival} />
+              <Route path="/our-history" Component={History} />
+              <Route path="/wedding" Component={Wedding} />
+              <Route path="/vacation" Component={Vacation} />
+              <Route path="/faq" Component={Faq} />
+              <Route path="/rsvp" Component={Rsvp} />
+              <Route path="/" element={<Navigate to="/diogoeraquele" />} />
+            </Routes>
+          </Router>
+        </Gate>
       </Suspense>
     </>
   );

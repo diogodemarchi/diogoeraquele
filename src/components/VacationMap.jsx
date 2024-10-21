@@ -99,7 +99,7 @@ const VacationMap = () => {
           });
           let tooltipContent = "";
           for (const icon in iconCounts) {
-            tooltipContent += `${iconCounts[icon]}x <i class="${ReactDOMServer.renderToString(icon)}"></i><br/>`;
+            tooltipContent += `<div style="margin: 8px;"><span style="font-size: 18px;">${iconCounts[icon]} </span><i class="${ReactDOMServer.renderToString(icon)}"></i></div>`;
           }
           ev.propagatedFrom
             .bindTooltip(tooltipContent, {
@@ -133,7 +133,6 @@ const VacationMap = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <i class="fa fa-solid fa-city fa-2x undefined"></i>
       <MapContainer
         center={pointsOfInterest[0].position}
         zoom={12}
