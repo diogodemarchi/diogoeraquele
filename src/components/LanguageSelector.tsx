@@ -31,8 +31,6 @@ function LanguageSelector() {
   };
 
   const onClickOutside = (e: Event) => {
-    console.log(e.target);
-    console.log(i18n.language);
     if (!(e.target as HTMLElement).id.includes("options-menu")) {
       setDropdownOpen(false);
     }

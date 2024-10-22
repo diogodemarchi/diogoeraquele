@@ -3,26 +3,17 @@ import "leaflet/dist/leaflet.css";
 import "leaflet.markercluster/dist/MarkerCluster.css";
 import "leaflet.markercluster/dist/MarkerCluster.Default.css";
 import L from "leaflet";
-import "leaflet.markercluster"; // Import marker cluster
-import { useEffect } from "react";
+import "leaflet.markercluster";
+import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Icon, IconProp } from "@fortawesome/fontawesome-svg-core";
-import { library } from "@fortawesome/fontawesome-svg-core";
 import {
-  faWater,
   faHouse,
-  faLandmark,
-  faPalette,
-  faMonument,
   faLocationDot,
-  faPlaneDeparture,
-  faCity,
-  // Add other icons here as needed
+  faMapLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
 import usePOI from "../constants/PointsOfInterest";
 import ReactDOMServer from "react-dom/server";
-import Form from "./Form";
 
 // Fix default icon issue
 delete L.Icon.Default.prototype._getIconUrl;
@@ -36,11 +27,17 @@ L.Icon.Default.mergeOptions({
 const VacationMap = () => {
   const { t } = useTranslation();
   const { poi } = usePOI();
+  const [hideAirports, setHideAirports] = useState(false);
+  const [hideCities, setHideCities] = useState(false);
+  const [hideLandmarks, setHideLandmarks] = useState(false);
+  const [hideActivities, setHideActivities] = useState(false);
+  const [hideNaturePlaces, setHideNaturePlaces] = useState(false);
+  const [hideBeaches, setHideBeaches] = useState(false);
 
   // support fontawesome icons
   const createCustomIcon = (icon, color) => {
     return L.divIcon({
-      className: `fa fa-solid fa-${icon.iconName} fa-2x ${color}`,
+      className: `fa fa-solid fa-${icon.iconName} fa-2x ${color ?? "text-black"}`,
     });
   };
 
@@ -50,31 +47,18 @@ const VacationMap = () => {
       description: t("omas_house_description"),
       position: [-26.639564, -49.2525337],
       icon: faHouse,
-      color: "text-red-500 shadow-2xl",
+      color: "text-red-500",
       maps: "",
       imgSrc: "/images/sitio3.jpg",
     },
-    ...poi.southAirports,
-    ...poi.southEastAirports,
-    ...poi.northAirports,
-    ...poi.cities,
-    {
-      name: t("rio_bonito_dam"),
-      description: t("rio_bonito_dam_description"),
-      position: [-26.6071156, -49.3413628],
-      icon: faWater,
-      color: "text-blue-600",
-      maps: "https://maps.app.goo.gl/UNAhN7RaJKZP9jAW8",
-    },
-    {
-      name: t("pinhal_dam"),
-      description: t("pinhal_dam_description"),
-      position: [-26.6142982, -49.4087885],
-      icon: faWater,
-      color: "text-blue-600",
-      maps: "https://maps.app.goo.gl/pNCBVGgipY2t8J6Y7",
-    },
-    // ...
+    ...(!hideAirports ? poi.southAirports : []),
+    ...(!hideAirports ? poi.southEastAirports : []),
+    ...(!hideAirports ? poi.northAirports : []),
+    ...(!hideCities ? poi.cities : []),
+    ...(!hideLandmarks ? poi.landmarks : []),
+    ...(!hideActivities ? poi.activities : []),
+    ...(!hideNaturePlaces ? poi.naturePlaces : []),
+    ...(!hideBeaches ? poi.beaches : []),
   ];
 
   const MarkerCluster = ({ children }) => {
@@ -162,15 +146,22 @@ const VacationMap = () => {
                         src={process.env.PUBLIC_URL + point.imgSrc}
                       />
                     )}
-                    <p className="mt-2 text-gray-600">{point.description}</p>
+                    <p className="mt-2 text-base-content">
+                      {point.description}
+                    </p>
                   </div>
-                  <div className="mt-2">
+                  <div className="flex mt-2">
                     <a
+                      key={point.maps}
                       href={point.maps}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block text-blue-500 underline"
+                      className="btn btn-sm btn-primary !text-primary-content max-w-full h-fit p-2 flex items-center flex-nowrap"
                     >
+                      <FontAwesomeIcon
+                        icon={faMapLocationDot}
+                        className="w-4 h-4"
+                      />
                       {t("view_on_maps")}
                     </a>
                   </div>
@@ -180,6 +171,44 @@ const VacationMap = () => {
           ))}
         </MarkerCluster>
       </MapContainer>
+      <div className="flex flex-wrap justify-center mt-4">
+        <input
+          type="checkbox"
+          onClick={() => setHideAirports(!hideAirports)}
+          className="btn btn-outline btn-primary mt-4 mr-2"
+          aria-label={t("hide_airports")}
+        />
+        <input
+          type="checkbox"
+          onClick={() => setHideCities(!hideCities)}
+          className="btn btn-outline btn-primary mt-4 mx-2"
+          aria-label={t("hide_cities")}
+        />
+        <input
+          type="checkbox"
+          onClick={() => setHideLandmarks(!hideLandmarks)}
+          className="btn btn-outline btn-primary mt-4 mx-2"
+          aria-label={t("hide_landmarks")}
+        />
+        <input
+          type="checkbox"
+          onClick={() => setHideActivities(!hideActivities)}
+          className="btn btn-outline btn-primary mt-4 mx-2"
+          aria-label={t("hide_activities")}
+        />
+        <input
+          type="checkbox"
+          onClick={() => setHideNaturePlaces(!hideNaturePlaces)}
+          className="btn btn-outline btn-primary mt-4 mx-2"
+          aria-label={t("hide_nature_places")}
+        />
+        <input
+          type="checkbox"
+          onClick={() => setHideBeaches(!hideBeaches)}
+          className="btn btn-outline btn-primary mt-4 mx-2"
+          aria-label={t("hide_beaches")}
+        />
+      </div>
     </div>
   );
 };
