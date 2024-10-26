@@ -139,5 +139,67 @@
   "fun": "Diversão",
   "question": "Pergunta",
   "answer": "Resposta",
-  "incorrect_password": "Senha incorreta!"
+  "incorrect_password": "Senha incorreta!",
+  "info": {
+    "title": "Informações de Viagem",
+    "language": {
+      "title": "Idioma",
+      "description": "O idioma oficial no Brasil é o português, mas em locais turísticos é comum encontrar pessoas que falam inglês. Recomendamos saber algumas frases básicas de português. O uso de tradutor, como o Deepl pode ser bem útil, as pessoas normalmente são bem atenciosas e tentam ajudar principalmente os 'gringos'."
+    },
+    "currency": {
+      "title": "Moeda",
+      "description": "A moeda brasileira é o Real (R$). Cartões de crédito são amplamente aceitos, mas é bom ter dinheiro em espécie para pequenas despesas."
+    },
+    "powerOutlets": {
+      "title": "Tomadas e Voltagem",
+      "description": "As tomadas no Brasil podem variar entre 110V e 220V, dependendo da região. O plugue mais comum é o tipo N, mas levar um adaptador universal é recomendado."
+    },
+    "climate": {
+      "title": "Clima",
+      "description": "O Brasil é um país tropical, então é importante verificar o clima da cidade que vão visitar para escolher roupas adequadas. Roupas leves e confortáveis são uma boa ideia. Em abril, no sul, pode ser que tenhamos alguns dias mais frescos, recomendamos também trazer casacos leves."
+    },
+    "tapWater": {
+      "title": "Água da Torneira",
+      "description": "No Brasil, não é recomendado beber água diretamente da torneira. A maioria das pessoas consome água filtrada ou mineral. Certifique-se de que a água seja filtrada ou compre garrafas de água mineral, disponíveis em supermercados, bares e restaurantes."
+    },
+    "toiletPaper": {
+      "title": "Papel Higiênico no Lixo",
+      "description": "Em muitos lugares do Brasil, especialmente fora das grandes cidades, o sistema de encanamento não é projetado para suportar papel higiênico no vaso sanitário. Por isso, é comum que se jogue o papel higiênico em uma lixeira ao lado do vaso. A maioria dos banheiros terá uma lixeira disponível para isso."
+    },
+    "safety": {
+      "title": "Segurança nas Ruas",
+      "tips": [
+        "Evite usar joias caras ou objetos de valor na rua, como relógios e acessórios chamativos, para evitar atrair atenção indesejada.",
+        "Tenha cuidado ao usar o celular enquanto caminha, especialmente em áreas movimentadas. Se precisar verificar o telefone ou usar um aplicativo, é melhor fazê-lo em um local seguro, como dentro de um café, farmácia ou loja.",
+        "Prefira andar em grupos ou usar táxis ou aplicativos de transporte (Uber, 99) para se locomover à noite, especialmente em áreas menos conhecidas."
+      ]
+    },
+    "visa": {
+      "title": "Visto",
+      "description": "Cidadãos alemães e europeus não precisam de visto para entradas no Brasil a turismo, desde que a estadia não ultrapasse 90 dias. Este período pode ser prorrogado por mais 90 dias, totalizando até 180 dias dentro de um período de 12 meses."
+    },
+    "travelInsurance": {
+      "title": "Seguro Viagem",
+      "description": "É altamente recomendável que todos os visitantes do Brasil contratem um seguro viagem que inclua cobertura médica. Isso garante que você terá acesso a cuidados médicos sem ter que arcar com grandes despesas."
+    }
+  },
+  "transportation": {
+    "title": "Meios de Transporte",
+    "airport": {
+      "title": "Aeroporto",
+      "description": "O aeroporto mais próximo do casamento é o Aeroporto Internacional de Navegantes (NVT), que fica a cerca de 80 km de Timbó. Outra opção é o Aeroporto Internacional de Florianópolis (FLN), que está a cerca de 170 km. Algumas outras opções são o Aeroporto de Joinville (JOI) e o Aeroporto de Curitiba (CWB)."
+    },
+    "localTransport": {
+      "title": "Transporte Local",
+      "description": "Na região, recomendamos alugar um carro, pois as cidades são pequenas e o transporte público pode ser limitado. Em cidades maiores, como Blumenau e Florianópolis, o serviço de ônibus é mais amplo, e o transporte entre cidades costuma funcionar bem; uma das empresas que faz esse serviço é a 'Catarinense.' Serviços de aplicativos como Uber e 99 também são amplamente utilizados. Se preferirem, podemos ajudar a organizar expedições com vans para grupos."
+    },
+    "bigCities": {
+      "title": "Em Grandes Cidades",
+      "description": "Nas grandes cidades, como São Paulo e Rio de Janeiro, há serviços de metrô e ônibus disponíveis. Recomendamos o uso de aplicativos de transporte como Uber e 99."
+    },
+    "driving": {
+      "title": "É Ilegal Dirigir de Chinelo",
+      "description": "Embora o Brasil seja famoso por suas Havaianas, é ilegal dirigir de chinelo. Os chinelos podem facilmente ficar presos nos pedais do carro e causar acidentes, portanto, se você for pego dirigindo com eles, poderá ser multado. No entanto, é aceitável dirigir descalço se não tiver nenhum outro calçado consigo."
+    }
+  }
 }

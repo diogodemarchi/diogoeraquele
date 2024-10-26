@@ -145,12 +145,74 @@
   "activities": "Activities",
   "places": "Places",
   "beaches": "Beaches",
-  "brazil": "Brazil",
-  "brazil_introduction": "<strong>Brazil is officially divided into five regions:</strong> North, Northeast, Center-West, Southeast and South. The wedding will happen on the south of Brazil, in the state Santa Catarina.<p>The first Portuguese colonial expedition arrived in Brazil in the year 1500. Before this, Brazil was inhabited by native Indians with many different cultures and languages. Later on, Africans were taken to the country farms, when Brazil became one of the biggest slavery-based colonies in the world.</p><p>After the abolition of slavery, European immigrants came to work in coffee farms widespread throughout Brazil. The mass European immigration changed the population, and this is still apparent today, as Brazilian society is a mix of diverse ethnic communities and a confluence of people of several different origins.</p>",
+  "welcome_to_brazil": "Welcome to Brazil",
+  "brazil_introduction": "<strong>Brazil is officially divided into five regions:</strong> North, Northeast, Center-West, Southeast and South. The wedding will take place in the south of Brazil, in the state of Santa Catarina.",
   "disclaimer": "Disclaimer",
   "interactive_map": {
     "title": "Interactive Map",
     "description": "Here is a map of Brazil with some points of interest, such as airports, natural places, and activities in general. You can take this as a starting point for planning your trip!",
     "disclaimer": "Note that there might be some inaccuracies with the map, don't take it for granted. I also don't know if all google maps links will be working. If you note something wrong, please get in touch with me!"
+  },
+  "info": {
+    "title": "Travel Information",
+    "language": {
+      "title": "Language",
+      "description": "The official language in Brazil is Portuguese, but in tourist areas, it’s common to find people who speak English. We recommend learning a few basic Portuguese phrases. Using a translator app like Deepl can be very helpful, as people are usually quite friendly and will try to help, especially with foreigners."
+    },
+    "currency": {
+      "title": "Currency",
+      "description": "The Brazilian currency is the Real (R$). Credit cards are widely accepted, but it’s good to carry cash for small expenses."
+    },
+    "powerOutlets": {
+      "title": "Power Outlets and Voltage",
+      "description": "Power outlets in Brazil may vary between 110V and 220V, depending on the region. The most common plug type is Type N, but bringing a universal adapter is recommended."
+    },
+    "climate": {
+      "title": "Climate",
+      "description": "Brazil is a tropical country, so check the climate of the city you’ll be visiting to choose appropriate clothing. Lightweight and comfortable clothing is a good idea. In April in the south, there may be cooler days, so we also recommend bringing light jackets."
+    },
+    "tapWater": {
+      "title": "Tap Water",
+      "description": "In Brazil, it’s not recommended to drink tap water directly. Most people consume filtered or bottled water. Ensure the water is filtered or buy bottled water, available in supermarkets, bars, and restaurants."
+    },
+    "toiletPaper": {
+      "title": "Toilet Paper Disposal",
+      "description": "In many places in Brazil, especially outside large cities, plumbing systems are not designed to handle toilet paper in the toilet. Therefore, it’s common to place used toilet paper in a trash bin next to the toilet. Most bathrooms will have a trash bin available for this purpose."
+    },
+    "safety": {
+      "title": "Street Safety",
+      "tips": [
+        "Avoid wearing expensive jewelry or valuable items, like flashy watches and accessories, to avoid attracting unwanted attention.",
+        "Be cautious when using your phone while walking, especially in busy areas. If you need to check your phone or use an app, it’s safer to do so in a secure place, like inside a café, pharmacy, or store.",
+        "It’s recommended to walk in groups or use taxis or ridesharing apps (Uber, 99) to get around at night, especially in less familiar areas."
+      ]
+    },
+    "visa": {
+      "title": "Visa",
+      "description": "German and European citizens do not need a visa for tourism entry into Brazil, provided the stay does not exceed 90 days. This period can be extended for an additional 90 days, totaling up to 180 days within a 12-month period."
+    },
+    "travelInsurance": {
+      "title": "Travel Insurance",
+      "description": "It’s highly recommended that all visitors to Brazil purchase travel insurance that includes medical coverage. This ensures access to medical care without incurring significant expenses."
+    }
+  },
+  "transportation": {
+    "title": "Means of Transport",
+    "airport": {
+      "title": "Airport",
+      "description": "The closest airport to the wedding is the Navegantes International Airport (NVT), located about 80 km from Timbó. Another option is the Florianópolis International Airport (FLN), which is about 170 km away. Other options include Joinville Airport (JOI) and Curitiba Airport (CWB)."
+    },
+    "localTransport": {
+      "title": "Local Transportation",
+      "description": "In the region, we recommend renting a car since the towns are small and public transport can be limited. In larger cities like Blumenau and Florianópolis, bus services are more extensive, and intercity transport usually works well; one company providing this service is 'Catarinense.' Ride-sharing services like Uber and 99 are also widely used. If preferred, we can help organize van expeditions for groups."
+    },
+    "bigCities": {
+      "title": "In Big Cities",
+      "description": "In large cities like São Paulo and Rio de Janeiro, there are metro and bus services available. We recommend using ride-sharing apps like Uber and 99."
+    },
+    "driving": {
+      "title": "It's Illegal to Drive in Flip-Flops",
+      "description": "Although Brazil is famous for its Havaianas, it is illegal to drive in flip-flops. Flip-flops can easily get caught on the pedals and cause accidents, so if you're caught driving in them, you may be fined. However, it is acceptable to drive barefoot if you have no other footwear with you."
+    }
   }
 }

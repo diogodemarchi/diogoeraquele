@@ -137,5 +137,67 @@
   "timeline": "Zeitleiste",
   "fun": "Spaß",
   "question": "Frage",
-  "answer": "Antwort"
+  "answer": "Antwort",
+  "info": {
+    "title": "Reiseinformationen",
+    "language": {
+      "title": "Sprache",
+      "description": "Die offizielle Sprache in Brasilien ist Portugiesisch, aber in touristischen Orten findet man oft Menschen, die Englisch sprechen. Wir empfehlen, einige Grundphrasen auf Portugiesisch zu kennen. Die Verwendung eines Übersetzers, wie Deepl, kann sehr nützlich sein, da die Menschen in der Regel freundlich sind und besonders Ausländern gerne helfen."
+    },
+    "currency": {
+      "title": "Währung",
+      "description": "Die brasilianische Währung ist der Real (R$). Kreditkarten werden weitgehend akzeptiert, aber es ist ratsam, Bargeld für kleinere Ausgaben bei sich zu haben."
+    },
+    "powerOutlets": {
+      "title": "Steckdosen und Spannung",
+      "description": "Die Steckdosen in Brasilien können je nach Region zwischen 110V und 220V variieren. Der häufigste Stecker ist der Typ N, es wird jedoch empfohlen, einen universellen Adapter mitzubringen."
+    },
+    "climate": {
+      "title": "Klima",
+      "description": "Brasilien ist ein tropisches Land, daher ist es wichtig, das Wetter der Stadt, die Sie besuchen werden, zu überprüfen, um geeignete Kleidung zu wählen. Leichte und bequeme Kleidung ist eine gute Idee. Im April im Süden könnte es einige kühlere Tage geben, daher empfehlen wir auch leichte Jacken."
+    },
+    "tapWater": {
+      "title": "Leitungswasser",
+      "description": "In Brasilien wird nicht empfohlen, Leitungswasser direkt zu trinken. Die meisten Menschen konsumieren gefiltertes oder Mineralwasser. Stellen Sie sicher, dass das Wasser gefiltert ist, oder kaufen Sie Mineralwasserflaschen, die in Supermärkten, Bars und Restaurants erhältlich sind."
+    },
+    "toiletPaper": {
+      "title": "Toilettenpapier im Müll",
+      "description": "In vielen Teilen Brasiliens, besonders außerhalb der großen Städte, ist das Abwassersystem nicht darauf ausgelegt, Toilettenpapier in die Toilette zu spülen. Daher ist es üblich, Toilettenpapier in einen Mülleimer neben der Toilette zu werfen. Die meisten Toiletten sind mit einem Mülleimer dafür ausgestattet."
+    },
+    "safety": {
+      "title": "Sicherheit auf der Straße",
+      "tips": [
+        "Vermeiden Sie es, teuren Schmuck oder Wertsachen auf der Straße zu tragen, wie Uhren und auffällige Accessoires, um unerwünschte Aufmerksamkeit zu vermeiden.",
+        "Seien Sie vorsichtig, wenn Sie Ihr Handy beim Gehen benutzen, insbesondere in überfüllten Bereichen. Wenn Sie Ihr Telefon überprüfen oder eine App verwenden müssen, ist es besser, dies an einem sicheren Ort zu tun, z. B. in einem Café, einer Apotheke oder einem Geschäft.",
+        "Gehen Sie bevorzugt in Gruppen oder nutzen Sie Taxis oder Fahrgemeinschafts-Apps (Uber, 99), um nachts unterwegs zu sein, insbesondere in weniger bekannten Gegenden."
+      ]
+    },
+    "visa": {
+      "title": "Visum",
+      "description": "Deutsche und europäische Staatsbürger benötigen kein Visum für die touristische Einreise nach Brasilien, solange der Aufenthalt 90 Tage nicht überschreitet. Dieser Zeitraum kann um weitere 90 Tage verlängert werden, sodass insgesamt bis zu 180 Tage innerhalb eines Zeitraums von 12 Monaten möglich sind."
+    },
+    "travelInsurance": {
+      "title": "Reiseversicherung",
+      "description": "Es wird dringend empfohlen, dass alle Besucher Brasiliens eine Reiseversicherung mit medizinischer Deckung abschließen. Dies stellt sicher, dass Sie medizinische Hilfe in Anspruch nehmen können, ohne hohe Kosten zu tragen."
+    }
+  },
+  "transportation": {
+    "title": "Verkehrsmittel",
+    "airport": {
+      "title": "Flughafen",
+      "description": "Der nächstgelegene Flughafen zur Hochzeit ist der Flughafen Navegantes (NVT), der etwa 80 km von Timbó entfernt liegt. Eine weitere Option ist der Flughafen Florianópolis (FLN), der etwa 170 km entfernt ist. Weitere Optionen sind der Flughafen Joinville (JOI) und der Flughafen Curitiba (CWB)."
+    },
+    "localTransport": {
+      "title": "Öffentliche Verkehrsmittel",
+      "description": "In der Region empfehlen wir, ein Auto zu mieten, da die Städte klein sind und der öffentliche Verkehr eingeschränkt sein kann. In größeren Städten wie Blumenau und Florianópolis gibt es ein umfangreicheres Busnetz, und der interkommunale Verkehr funktioniert in der Regel gut; ein Unternehmen, das diesen Service anbietet, ist 'Catarinense.' Fahrdienste wie Uber und 99 werden ebenfalls häufig genutzt. Wenn gewünscht, können wir bei der Organisation von Fahrten mit Vans für Gruppen helfen."
+    },
+    "bigCities": {
+      "title": "In Großen Städten",
+      "description": "In großen Städten wie São Paulo und Rio de Janeiro gibt es U-Bahn- und Busdienste. Wir empfehlen die Nutzung von Fahrdienst-Apps wie Uber und 99."
+    },
+    "driving": {
+      "title": "Es ist Illegal, In Flip-Flops Zu Fahren",
+      "description": "Obwohl Brasilien für seine Havaianas bekannt ist, ist es illegal, in Flip-Flops zu fahren. Flip-Flops können leicht an den Pedalen hängen bleiben und Unfälle verursachen, daher können Sie mit einer Geldstrafe rechnen, wenn Sie beim Fahren mit Flip-Flops erwischt werden. Es ist jedoch akzeptabel, barfuß zu fahren, wenn Sie kein anderes Schuhwerk dabei haben."
+    }
+  }
 }
