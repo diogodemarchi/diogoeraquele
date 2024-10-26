@@ -138,5 +138,19 @@
   "timeline": "Timeline",
   "fun": "Fun",
   "question": "Question",
-  "answer": "Answer"
+  "answer": "Answer",
+  "airports": "Airports",
+  "cities": "Cities",
+  "landmarks": "Landmarks",
+  "activities": "Activities",
+  "places": "Places",
+  "beaches": "Beaches",
+  "brazil": "Brazil",
+  "brazil_introduction": "<strong>Brazil is officially divided into five regions:</strong> North, Northeast, Center-West, Southeast and South. The wedding will happen on the south of Brazil, in the state Santa Catarina.<p>The first Portuguese colonial expedition arrived in Brazil in the year 1500. Before this, Brazil was inhabited by native Indians with many different cultures and languages. Later on, Africans were taken to the country farms, when Brazil became one of the biggest slavery-based colonies in the world.</p><p>After the abolition of slavery, European immigrants came to work in coffee farms widespread throughout Brazil. The mass European immigration changed the population, and this is still apparent today, as Brazilian society is a mix of diverse ethnic communities and a confluence of people of several different origins.</p>",
+  "disclaimer": "Disclaimer",
+  "interactive_map": {
+    "title": "Interactive Map",
+    "description": "Here is a map of Brazil with some points of interest, such as airports, natural places, and activities in general. You can take this as a starting point for planning your trip!",
+    "disclaimer": "Note that there might be some inaccuracies with the map, don't take it for granted. I also don't know if all google maps links will be working. If you note something wrong, please get in touch with me!"
+  }
 }

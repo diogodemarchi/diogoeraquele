@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "leaflet.markercluster/dist/MarkerCluster.css";
 import "leaflet.markercluster/dist/MarkerCluster.Default.css";
@@ -115,8 +115,24 @@ const VacationMap = () => {
     return null;
   };
 
+  const ButtonWithIcons = ({ items, isActive, toggleActive, labelText }) => (
+    <div className="flex flex-col items-center mx-2">
+      <label
+        className={`btn btn-outline mt-4 ${
+          isActive ? "btn-primary" : "btn-secondary"
+        }`}
+      >
+        {[...new Set(items.map((item) => item.icon))].map((icon, index) => (
+          <FontAwesomeIcon key={index} icon={icon} />
+        ))}
+        <input type="checkbox" onClick={toggleActive} className="hidden" />
+      </label>
+      <span className="text-xs">{labelText}</span>
+    </div>
+  );
+
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 min-w-96">
       <MapContainer
         center={pointsOfInterest[0].position}
         zoom={12}
@@ -172,41 +188,45 @@ const VacationMap = () => {
         </MarkerCluster>
       </MapContainer>
       <div className="flex flex-wrap justify-center mt-4">
-        <input
-          type="checkbox"
-          onClick={() => setHideAirports(!hideAirports)}
-          className="btn btn-outline btn-primary mt-4 mr-2"
-          aria-label={t("hide_airports")}
+        <ButtonWithIcons
+          items={[
+            ...poi.southAirports,
+            ...poi.northAirports,
+            ...poi.southEastAirports,
+          ]}
+          isActive={!hideAirports}
+          toggleActive={() => setHideAirports(!hideAirports)}
+          labelText={t("airports")}
         />
-        <input
-          type="checkbox"
-          onClick={() => setHideCities(!hideCities)}
-          className="btn btn-outline btn-primary mt-4 mx-2"
-          aria-label={t("hide_cities")}
+        <ButtonWithIcons
+          items={poi.cities}
+          isActive={!hideCities}
+          toggleActive={() => setHideCities(!hideCities)}
+          labelText={t("cities")}
         />
-        <input
-          type="checkbox"
-          onClick={() => setHideLandmarks(!hideLandmarks)}
-          className="btn btn-outline btn-primary mt-4 mx-2"
-          aria-label={t("hide_landmarks")}
+        <ButtonWithIcons
+          items={poi.landmarks}
+          isActive={!hideLandmarks}
+          toggleActive={() => setHideLandmarks(!hideLandmarks)}
+          labelText={t("landmarks")}
         />
-        <input
-          type="checkbox"
-          onClick={() => setHideActivities(!hideActivities)}
-          className="btn btn-outline btn-primary mt-4 mx-2"
-          aria-label={t("hide_activities")}
+        <ButtonWithIcons
+          items={poi.activities}
+          isActive={!hideActivities}
+          toggleActive={() => setHideActivities(!hideActivities)}
+          labelText={t("activities")}
         />
-        <input
-          type="checkbox"
-          onClick={() => setHideNaturePlaces(!hideNaturePlaces)}
-          className="btn btn-outline btn-primary mt-4 mx-2"
-          aria-label={t("hide_nature_places")}
+        <ButtonWithIcons
+          items={poi.naturePlaces}
+          isActive={!hideNaturePlaces}
+          toggleActive={() => setHideNaturePlaces(!hideNaturePlaces)}
+          labelText={t("places")}
         />
-        <input
-          type="checkbox"
-          onClick={() => setHideBeaches(!hideBeaches)}
-          className="btn btn-outline btn-primary mt-4 mx-2"
-          aria-label={t("hide_beaches")}
+        <ButtonWithIcons
+          items={poi.beaches}
+          isActive={!hideBeaches}
+          toggleActive={() => setHideBeaches(!hideBeaches)}
+          labelText={t("beaches")}
         />
       </div>
     </div>

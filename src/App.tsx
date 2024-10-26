@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       <Suspense fallback="loading">
-        <Gate>
+        {/* <Gate> */}
           <Router>
             <Navbar />
             <Routes>
@@ -33,7 +33,7 @@ function App() {
               <Route path="/" element={<Navigate to="/diogoeraquele" />} />
             </Routes>
           </Router>
-        </Gate>
+        {/* </Gate> */}
       </Suspense>
     </>
   );

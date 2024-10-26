@@ -2,6 +2,17 @@ import { useTranslation } from "react-i18next";
 import {
   faPlaneDeparture,
   faCity,
+  faLandmark,
+  faMountain,
+  faBuilding,
+  faTree,
+  faWater,
+  faBookOpen,
+  faBeer,
+  faSun,
+  faUmbrellaBeach,
+  faCableCar,
+  faMountainSun,
   // Add other icons here as needed
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -223,6 +234,146 @@ const usePOI = () => {
       maps: "https://maps.app.goo.gl/kKpxGLRNhmpixhds6",
     },
   ];
+  const landmarks = [
+    {
+      name: t("christ_redeemer"),
+      description: t("christ_redeemer_description"),
+      position: [-22.9519, -43.2105], // Christ the Redeemer
+      icon: faLandmark,
+      maps: "https://maps.app.goo.gl/YjQGVdWy4PUhFjjTA",
+    },
+    {
+      name: t("palacio_da_alvorada"),
+      description: t("palacio_da_alvorada_description"),
+      position: [-15.7926168, -47.824705], // Palácio da Alvorada
+      icon: faBuilding,
+      maps: "https://maps.app.goo.gl/Bt8rzn7E3GPF2dQa9",
+    },
+    {
+      name: t("catedral_sao_paulo"),
+      description: t("catedral_sao_paulo_description"),
+      position: [-5.1272, -42.8248], // Cathedral of São Pedro
+      icon: faLandmark,
+      maps: "https://maps.app.goo.gl/Y7TFfF9H7Z5ZnA5W6",
+    },
+    {
+      name: t("landmark_igreja_sao_francisco"),
+      description: t("landmark_igreja_sao_francisco_description"),
+      position: [-9.9286, -44.2095], // Igreja de São Francisco
+      icon: faLandmark,
+      maps: "https://maps.app.goo.gl/PdFbSC8U8ZaWTuUK6",
+    },
+    {
+      name: t("landmark_catedral_de_petrópolis"),
+      description: t("landmark_catedral_de_petrópolis_description"),
+      position: [-22.5038, -43.1754], // Cathedral of Petrópolis
+      icon: faLandmark,
+      maps: "https://maps.app.goo.gl/HcLGuxqAdg8uUQ9V7",
+    },
+  ];
+
+  const activities = [
+    {
+      name: t("rio_bonito_dam"),
+      description: t("rio_bonito_dam_description"),
+      position: [-26.6071156, -49.3413628],
+      icon: faWater,
+      color: "text-blue-600",
+      maps: "https://maps.app.goo.gl/UNAhN7RaJKZP9jAW8",
+    },
+    {
+      name: t("pinhal_dam"),
+      description: t("pinhal_dam_description"),
+      position: [-26.6142982, -49.4087885],
+      icon: faWater,
+      color: "text-blue-600",
+      maps: "https://maps.app.goo.gl/pNCBVGgipY2t8J6Y7",
+    },
+    {
+      name: t("landmark_sugarloaf_mountain"),
+      description: t("landmark_sugarloaf_mountain_description"),
+      position: [-22.9486, -43.1566], // Sugarloaf Mountain
+      icon: faCableCar,
+      maps: "https://maps.app.goo.gl/VbGxQ8Py2yZn12T69",
+    },
+  ];
+
+  const naturePlaces = [
+    {
+      name: t("landmark_amazon_rainforest"),
+      description: t("landmark_amazon_rainforest_description"),
+      position: [-3.4653, -62.2159], // Amazon Rainforest
+      icon: faTree,
+      maps: "https://maps.app.goo.gl/QdFCPwH5f53jsvGTA",
+    },
+    {
+      name: t("landmark_lençois_maranhenses"),
+      description: t("landmark_lençois_maranhenses_description"),
+      position: [-2.5117, -43.1288], // Lençóis Maranhenses National Park
+      icon: faTree,
+      maps: "https://maps.app.goo.gl/fTAZcKZJm2WGoA9E8",
+    },
+    {
+      name: t("landmark_pantanal"),
+      description: t("landmark_pantanal_description"),
+      position: [-16.4245, -56.8833], // Pantanal
+      icon: faTree,
+      maps: "https://maps.app.goo.gl/h3MfjX59iMYWFnMg7",
+    },
+    {
+      name: t("landmark_iguazu_falls"),
+      description: t("landmark_iguazu_falls_description"),
+      position: [-25.6953, -54.4367], // Iguazu Falls
+      icon: faWater,
+      maps: "https://maps.app.goo.gl/z5FZ5gZ7iS4R1v9F6",
+    },
+    {
+      name: t("landmark_serra_gaucha"),
+      description: t("landmark_serra_gaucha_description"),
+      position: [-29.3751, -50.9969], // Serra Gaúcha
+      icon: faMountainSun,
+      maps: "https://maps.app.goo.gl/6GRyYMiG7oSyyCc27",
+    },
+    {
+      name: t("landmark_jardim_botanico"),
+      description: t("landmark_jardim_botanico_description"),
+      position: [-30.0265, -51.2287], // Jardim Botânico (Botanical Garden) of Porto Alegre
+      icon: faTree,
+      maps: "https://maps.app.goo.gl/hcEzbuH5RMso9XfS8",
+    },
+    {
+      name: t("landmark_parque_vila_germanica"),
+      description: t("landmark_parque_vila_germanica_description"),
+      position: [-26.9173, -49.0677], // Parque Vila Germânica
+      icon: faBeer,
+      maps: "https://maps.app.goo.gl/x2U5oUGyDucnC5cG6",
+      color: "text-yellow-600",
+    },
+    {
+      name: t("campos_do_jordao"),
+      description: t("campos_do_jordao_description"),
+      position: [-22.7394, -45.5926], // Campos do Jordão (considered a mountain destination)
+      icon: faMountain,
+      maps: "https://maps.app.goo.gl/GeGdV3NacZFM6xD88",
+    },
+  ];
+
+  const beaches = [
+    {
+      name: t("fernando_de_noronha"),
+      description: t("fernando_de_noronha_description"),
+      position: [-30.0612, -51.1757], // Fortress of Nossa Senhora dos Remédios
+      icon: faUmbrellaBeach,
+      maps: "https://maps.app.goo.gl/AzGGZAPnshwEvsWe6",
+    },
+    {
+      name: t("beach_joaquina"),
+      description: t("beach_joaquina_description"),
+      position: [-27.6282, -48.4402], // Praia da Joaquina
+      icon: faUmbrellaBeach,
+      maps: "https://maps.app.goo.gl/s7fPYXc8yTWnQ9MN6",
+    },
+  ];
 
   return {
     poi: {
@@ -230,6 +381,10 @@ const usePOI = () => {
       southEastAirports,
       northAirports,
       cities,
+      landmarks,
+      activities,
+      naturePlaces,
+      beaches,
     },
   };
 };
