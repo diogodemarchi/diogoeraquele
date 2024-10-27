@@ -1,4 +1,10 @@
-import { MapContainer, TileLayer, Marker, useMap } from "react-leaflet";
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  useMap,
+  GeoJSON,
+} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "leaflet.markercluster/dist/MarkerCluster.css";
 import "leaflet.markercluster/dist/MarkerCluster.Default.css";
@@ -7,13 +13,15 @@ import "leaflet.markercluster";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faHighlighter,
   faHouse,
   faLocationDot,
   faMapLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import usePOI from "../constants/PointsOfInterest";
 import ReactDOMServer from "react-dom/server";
+import { states } from "../constants/geojson";
 
 // Fix default icon issue
 delete L.Icon.Default.prototype._getIconUrl;
@@ -25,7 +33,7 @@ L.Icon.Default.mergeOptions({
 });
 
 const VacationMap = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { poi } = usePOI();
   const [hideAirports, setHideAirports] = useState(false);
   const [hideCities, setHideCities] = useState(false);
@@ -33,6 +41,8 @@ const VacationMap = () => {
   const [hideActivities, setHideActivities] = useState(false);
   const [hideNaturePlaces, setHideNaturePlaces] = useState(false);
   const [hideBeaches, setHideBeaches] = useState(false);
+  const [hideFood, setHideFood] = useState(false);
+  const [highlightStates, setHighlightStates] = useState(true);
 
   // support fontawesome icons
   const createCustomIcon = (icon, color) => {
@@ -59,6 +69,7 @@ const VacationMap = () => {
     ...(!hideActivities ? poi.activities : []),
     ...(!hideNaturePlaces ? poi.naturePlaces : []),
     ...(!hideBeaches ? poi.beaches : []),
+    ...(!hideFood ? poi.food : []),
   ];
 
   const MarkerCluster = ({ children }) => {
@@ -131,6 +142,97 @@ const VacationMap = () => {
     </div>
   );
 
+  const stringToColor = (str) => {
+    let hash = 0;
+    str.split("").forEach((char) => {
+      hash = char.charCodeAt(0) + ((hash << 5) - hash);
+    });
+    let colour = "#";
+    for (let i = 0; i < 3; i++) {
+      const value = (hash >> (i * 8)) & 0xff;
+      colour += value.toString(16).padStart(2, "0");
+    }
+    return colour;
+  };
+
+  const extractCoordinatesFromMaps = (url) => {
+    const regex = /@(-?\d+\.\d+),(-?\d+\.\d+)/;
+    const match = url.match(regex);
+
+    if (match) {
+      const latitude = parseFloat(match[1]);
+      const longitude = parseFloat(match[2]);
+      return [latitude, longitude];
+    }
+  };
+
+  const style = (feature) => {
+    return {
+      fillColor:
+        feature.properties.color ||
+        stringToColor(feature.properties.name || ""),
+      weight: 0.5,
+      opacity: 1,
+      color: "green",
+      dashArray: "3",
+      fillOpacity: 0.15,
+    };
+  };
+
+  const onEachFeature = (feature, layer) => {
+    const { name, id, imgSrc } = feature.properties;
+
+    if (name) {
+      layer.bindTooltip(name);
+    }
+
+    if (i18n.exists(id)) {
+      layer.bindPopup(
+        ReactDOMServer.renderToString(
+          <div className="flex flex-col items-center">
+            <h3 className="text-xl font-semibold mb-2 text-center w-full">
+              {name}
+            </h3>
+            <div className="flex flex-col items-center w-full">
+              {imgSrc && (
+                <img
+                  className="w-full max-h-56 object-contain"
+                  alt=""
+                  src={process.env.PUBLIC_URL + imgSrc}
+                />
+              )}
+              <div className="mt-2 text-base-content text-center h-32 overflow-y-scroll w-[60vw] md:w-[40vw]">
+                <p>
+                  <Trans i18nKey={id} />
+                </p>
+              </div>
+            </div>
+          </div>,
+        ),
+        {
+          maxWidth: "auto",
+          className: "custom-popup",
+          autoPan: true,
+          keepInView: true,
+          closeOnEscapeKey: true,
+        },
+      );
+    }
+  };
+
+  const getPOIname = (name) => {
+    if (i18n.exists(name)) {
+      return t(name);
+    }
+    return name;
+  };
+
+  const getPOIdescription = (name) => {
+    if (i18n.exists(name + "_description")) {
+      return t(name + "_description");
+    }
+  };
+
   return (
     <div className="container mx-auto p-4 min-w-96">
       <MapContainer
@@ -142,19 +244,31 @@ const VacationMap = () => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
+        {highlightStates && (
+          <GeoJSON
+            key="my-geojson"
+            data={states.features}
+            style={style}
+            onEachFeature={onEachFeature}
+          ></GeoJSON>
+        )}
 
         <MarkerCluster>
           {pointsOfInterest.map((point) => (
             <Marker
               key={point.name}
-              position={point.position}
+              position={
+                point.position || extractCoordinatesFromMaps(point.maps)
+              }
               icon={point.icon}
               color={point.color}
-              tooltipContent={point.name}
+              tooltipContent={getPOIname(point.name)}
               popupContent={ReactDOMServer.renderToString(
                 <div className="flex flex-col items-center">
-                  <h3 className="text-xl font-semibold mb-2">{point.name}</h3>
-                  <div className="flex flex-col items-center">
+                  <h3 className="text-xl font-semibold mb-2">
+                    {getPOIname(point.name)}
+                  </h3>
+                  <div className="flex flex-col items-center w-[60vw] md:w-[40vw] max-w-fit">
                     {point.imgSrc && (
                       <img
                         className="max-w-none h-56"
@@ -163,7 +277,7 @@ const VacationMap = () => {
                       />
                     )}
                     <p className="mt-2 text-base-content">
-                      {point.description}
+                      {point.description || getPOIdescription(point.name)}
                     </p>
                   </div>
                   <div className="flex mt-2">
@@ -188,6 +302,18 @@ const VacationMap = () => {
         </MarkerCluster>
       </MapContainer>
       <div className="flex flex-wrap justify-center mt-4">
+        <ButtonWithIcons
+          items={[{ icon: faHighlighter }]}
+          isActive={highlightStates}
+          toggleActive={() => setHighlightStates(!highlightStates)}
+          labelText={t("fedetal_states")}
+        />
+        <ButtonWithIcons
+          items={poi.food}
+          isActive={!hideFood}
+          toggleActive={() => setHideFood(!hideFood)}
+          labelText={t("food")}
+        />
         <ButtonWithIcons
           items={[
             ...poi.southAirports,

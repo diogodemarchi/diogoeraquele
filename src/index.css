@@ -27,5 +27,11 @@
 
 .leaflet-popup-content {
   width: auto !important;
-  height: auto !important;
+  /* height: auto !important; */
+}
+
+.custom-popup {
+  width: auto;
+  padding: 1rem;
+  box-sizing: border-box;
 }

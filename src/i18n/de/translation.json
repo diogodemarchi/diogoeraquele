@@ -138,6 +138,22 @@
   "fun": "Spaß",
   "question": "Frage",
   "answer": "Antwort",
+  "incorrect_password": "Falsches Kenntwort",
+  "airports": "Flughäfen",
+  "cities": "Städte",
+  "landmarks": "Sehenswürdigkeiten",
+  "activities": "Aktivitäten",
+  "places": "Orte",
+  "beaches": "Strände",
+  "welcome_to_brazil": "Willkommen in Brasilien",
+  "brazil_introduction": "<strong>Brasilien ist offiziell in fünf Regionen unterteilt:</strong> Norden, Nordosten, Mittelwesten, Südosten und Süden. Die Hochzeit findet im Süden Brasiliens, im Bundesstaat Santa Catarina, statt.",
+  "disclaimer": "Haftungsausschluss",
+  "interactive_map": {
+    "title": "Interaktive Karte",
+    "description": "Hier ist eine Karte von Brasilien mit einigen interessanten Punkten wie Flughäfen, Naturgebieten und allgemeinen Aktivitäten. Sie können dies als Ausgangspunkt für Ihre Reiseplanung nutzen!",
+    "disclaimer": "Beachten Sie, dass die Karte einige Ungenauigkeiten aufweisen kann; nehmen Sie sie also nicht als endgültig an. Ich weiß auch nicht, ob alle Google Maps-Links funktionieren werden. Falls Ihnen etwas falsch vorkommt, setzen Sie sich bitte mit mir in Verbindung!",
+    "in_progress": "The map is still under construction, please check back later for more content!"
+  },
   "info": {
     "title": "Reiseinformationen",
     "language": {
@@ -179,6 +195,14 @@
     "travelInsurance": {
       "title": "Reiseversicherung",
       "description": "Es wird dringend empfohlen, dass alle Besucher Brasiliens eine Reiseversicherung mit medizinischer Deckung abschließen. Dies stellt sicher, dass Sie medizinische Hilfe in Anspruch nehmen können, ohne hohe Kosten zu tragen."
+    },
+    "emergency": {
+      "title": "Notrufnummern",
+      "description": "Ich hoffe, dass niemand dies benötigen wird, aber falls doch, finden Sie hier einige nützliche Nummern für den Notfall. Wenn Sie unsicher sind, rufen Sie einfach 190 an, und man wird Sie weiterleiten.",
+      "military_police": "Militärpolizei",
+      "highway_patrol": "Autobahnpolizei",
+      "samu": "SAMU (Mobiler Notfalldienst) - Krankenwagen",
+      "firefighters": "Feuerwehr"
     }
   },
   "transportation": {
@@ -196,8 +220,60 @@
       "description": "In großen Städten wie São Paulo und Rio de Janeiro gibt es U-Bahn- und Busdienste. Wir empfehlen die Nutzung von Fahrdienst-Apps wie Uber und 99."
     },
     "driving": {
-      "title": "Es ist Illegal, In Flip-Flops Zu Fahren",
+      "title": "Es ist Illegal, in Flip-Flops zu Fahren",
       "description": "Obwohl Brasilien für seine Havaianas bekannt ist, ist es illegal, in Flip-Flops zu fahren. Flip-Flops können leicht an den Pedalen hängen bleiben und Unfälle verursachen, daher können Sie mit einer Geldstrafe rechnen, wenn Sie beim Fahren mit Flip-Flops erwischt werden. Es ist jedoch akzeptabel, barfuß zu fahren, wenn Sie kein anderes Schuhwerk dabei haben."
     }
-  }
+  },
+  "federal_states": "Bundesländer",
+  "view_on_maps": "Auf Google Maps anzeigen",
+  "fedetal_states": "Bundesländer",
+  "rio_dos_cedros": "Rio dos Cedros",
+  "rio_dos_cedros_description": "Heimatstadt von Diogo und Ort der Hochzeit, mit üppigen Landschaften, Wasserfällen, Wanderwegen, einem Startplatz für Gleitschirmflieger, einem Wasserpark, Seen, Vögeln und Wildtieren. Die Region ist ein Anziehungspunkt für Abenteuer- und Ökotourismus und ein Aufruf an Naturliebhaber.",
+  "pinhal_dam": "Pinhal-Talsperre",
+  "pinhal_dam_description": "Die Pinhal-Talsperre befindet sich im Alto Cedros Reservoir und ist Teil der Seenregion. Die Seenregion wurde in den 1950er Jahren errichtet, als die Flüsse Bonito, Palmeiras und Cedros gestaut wurden, um zwei Wasserkraftwerke der Celesc zu versorgen. Die Pinhal-Talsperre ist die längste der Region mit 14 km, hat aber mit 18 Millionen Kubikmetern das kleinste Wasservolumen.",
+  "rio_bonito_dam": "Rio Bonito-Talsperre",
+  "rio_bonito_dam_description": "Die Lagoa do Rio Bonito ist ebenfalls ein künstlicher See in der Seenregion in Palmeiras. Diese Talsperre ist kleiner, mit einer Länge von 9 km. Ihr Wasservolumen ist jedoch mit 32 Millionen Kubikmetern das größte. Klare Gewässer zusammen mit Reservaten heimischer Wälder prägen die Landschaft der Region. Die Priorität der Rio Bonito-Talsperre ist die Energieerzeugung für die Region.",
+  "formosa_waterfall": "Formosa-Wasserfall",
+  "formosa_waterfall_description": "Ein schöner Wasserfall in Rio dos Cedros, etwa 40 Meter hoch. Er liegt im Alto da Palmeira, innerhalb eines Privatgeländes; ein kleiner Spaziergang in das Gebiet ermöglicht es, ihn zu sehen.",
+  "waterpark_sao_bernardo": "Aguas São Bernardo Park",
+  "waterpark_sao_bernardo_description": "Der São Bernardo Park ist ein ruhiger Ort mit Pool, Bach, Wasserfall, Lagune, Wanderweg, Campingplatz, Imbiss und Veranstaltungen.",
+  "sao_bernardo_hill": "São Bernardo-Hügel",
+  "sao_bernardo_hill_description": "Der Hügel bietet einen großartigen Blick auf Rio dos Cedros. An Wochenenden ist er ein sehr beliebter Ort unter Gleitschirmfliegern.",
+  "omas_house": "Omas Haus",
+  "omas_house_description": "Das Haus, in dem Diogos Oma lebte und wo die Hochzeit stattfinden wird.",
+  "timbo": "Timbó",
+  "timbo_description": "Heimatstadt von Raquele, kolonisiert von deutschen und italienischen Einwanderern, zeigt die Stadt viel dieser Kultur in ihrer Architektur, Küche und allgemeinen Bräuchen. Die Stadt Timbó SC hat eine geschätzte Bevölkerung von 45.000 (2021). Timbó wurde von der UN als die 10. beste Stadt des Landes zum Leben eingestuft, eine großartige Option für diejenigen, die dem Trubel einer großen Stadt entfliehen möchten.",
+  "jardim_do_imigrante": "Jardim do Imigrante Touristenkomplex",
+  "jardim_do_imigrante_description": "Dieser Komplex ist ein Raum, der die Geschichte der Einwanderung in Timbó feiert und ein lehrreiches und kulturelles Erlebnis bietet. Der Ort ist mit gut gepflegten Gärten, Freizeitbereichen und Denkmälern gefüllt, die den Einwanderern gewidmet sind, die zur Prägung der Stadt beigetragen haben.",
+  "jardim_botanico_timbo": "Botanischer Garten Franz Damm",
+  "jardim_botanico_timbo_description": "Benannt nach einem der ersten Einwanderer in der Region, ist es ein Raum, der der Erhaltung einheimischer und exotischer Pflanzenarten gewidmet ist. Der Botanische Garten umfasst etwa 18 Hektar und ist einer der größten botanischen Gärten in Santa Catarina.",
+  "morro_azul": "Morro Azul",
+  "morro_azul_description": "Morro Azul ist ein Naturschutzgebiet mit Wanderwegen und einer erhaltenen Naturumgebung, ideal für diejenigen, die den Kontakt zur Natur suchen. Der Park ist bekannt für seine schönen Panoramablicke und seine reiche Biodiversität. Besucher können Wanderwege zu Aussichtspunkten erkunden und atemberaubende Ausblicke auf die Region genießen.",
+  "music_museum_timbo": "Musikmuseum Timbó",
+  "music_museum_timbo_description": "Dieses Museum widmet sich der Erhaltung und Förderung der Geschichte der Musik in der Region. Mit einer Sammlung, die Musikinstrumente, Noten und Erinnerungsstücke von lokalen Künstlern umfasst, bietet das Museum ein reichhaltiges kulturelles Erlebnis.",
+  "immigrant_museum": "Einwanderermuseum",
+  "immigrant_museum_description": "Das Einwanderermuseum erzählt die Geschichte der Kolonialisierung in der Region und betont die Beiträge europäischer Einwanderer. Das Museum beherbergt eine Sammlung von Objekten, Dokumenten und Fotografien, die das Leben und die Traditionen der frühen Bewohner der Stadt darstellen.",
+  "restaurant_jardim_bontanico": "Restaurant Botanischer Garten",
+  "restaurant_jardim_bontanico_description": "Buffet mit typischen deutschen Gerichten",
+  "restaurant_paromas": "Paromas",
+  "restaurant_paromas_description": "Buffet mit abwechslungsreicher Kost und Pizza am Abend",
+  "restaurant_bierdamm": "BierDamm",
+  "restaurant_bierdamm_description": "Typisch deutsche Küche",
+  "restaurant_mattarello": "Mattarello Gourmet",
+  "restaurant_mattarello_description": "Pizzeria und Burgerladen",
+  "restaurant_patolino": "Patolino Restaurant",
+  "restaurant_patolino_description": "Fischgerichte",
+  "cafe_madonna_mia": "Madonna Mia Cafe",
+  "cafe_madonna_mia_description": "Der beste Kaffee in der Stadt, ohne Zweifel",
+  "cafe_kitutte": "Kitutte Cafe",
+  "cafe_schuh": "Schuh Cafe",
+  "cafe_donna_caixa": "Donna Caixa Bar und Cafe",
+  "cafe_latte_macchiato": "Latte Macchiato Cafe",
+  "food": "Essen",
+  "restaurant_villagio_di_cedro": "Villagio di Cedro Restaurant",
+  "restaurant_pesque_e_pague_andreazza": "Pesque e Pague Andreazza Restaurant",
+  "restaurant_armazém_do_lago": "Lago Warehouse Restaurant",
+  "restaurant_ess_haus": "Ess Haus",
+  "cafe_mae_joana": "Café Mutter Joana",
+  "vale_do_itajai": "<p>Die Kolonisierung des Europäischen Tals, das in Santa Catarina liegt, war geprägt von der Einwanderung von Europäern, hauptsächlich Deutschen und Italienern, die in der zweiten Hälfte des 19. Jahrhunderts nach Brasilien kamen. Diese Region, die Städte wie Blumenau, Pomerode, Timbó und Rio dos Cedros umfasst, wurde zu einem wichtigen Zentrum der Kolonisation im Land. Hier ist eine Zusammenfassung des Kolonisierungsprozesses im Europäischen Tal:</p><p>Gründe für die Einwanderung: Die europäische Kolonisation in Brasilien wurde durch Faktoren wie die Suche nach neuen Möglichkeiten, wirtschaftliche und soziale Krisen in Europa und den Bedarf an Arbeitskräften für die landwirtschaftliche und industrielle Entwicklung in Brasilien vorangetrieben. Die Einwanderung begann in den 1850er und 1870er Jahren mit der Ankunft deutscher Einwanderer und später Italiener. Die brasilianische Regierung förderte die Kolonisation, um dünn besiedelte Regionen zu bevölkern und zu entwickeln.</p><p>Deutsche Kolonisation: Die ersten deutschen Siedler kamen 1850 und gründeten die Stadt Blumenau. Die Kolonisation konzentrierte sich auf die landwirtschaftliche Produktion, insbesondere den Anbau von Tabak, Mais und später Trauben. Die Deutschen brachten ihre Kultur, Traditionen und landwirtschaftlichen Techniken mit. Die Sprache, die Küche, Feste (wie die Oktoberfest) und die Fachwerkarchitektur sind wichtige Vermächtnisse der deutschen Kolonisation.</p><p>Italienische Kolonisation: Die italienische Einwanderung begann 1875, als Familien sich hauptsächlich in Gebieten wie Rio dos Cedros und Timbó niederließen. Die meisten Einwanderer stammten aus der Lombardei und dem Veneto. Die Italiener beschäftigten sich mit der Landwirtschaft und bauten Äpfel, Trauben und andere Produkte an sowie entwickelten die Weinproduktion in der Region. Landwirtschaftliche Genossenschaften entstanden, um die lokale Produktion zu stärken. Die italienische Präsenz bereicherte die lokale Kultur und brachte Traditionen, Küche (wie Polenta und Pasta) und typische Feste mit, die sich mit deutschen Traditionen vermischten und eine vielfältige regionale Identität schufen.</p><p>Vermächtnis der Kolonisation: Das Europäische Tal ist heute bekannt für seine Architektur, Traditionen und Festlichkeiten, die das kulturelle Erbe der Einwanderer feiern. Das Oktoberfest in Blumenau und andere traditionelle Feste ziehen Touristen an und halten die Geschichte der europäischen Kolonisation lebendig. Die kulturelle Vielfalt, die aus der Einwanderung resultiert, beeinflusst weiterhin die Identität der Region und macht das Europäische Tal zu einem einzigartigen Ort, der reich an Traditionen ist.</p>"
 }

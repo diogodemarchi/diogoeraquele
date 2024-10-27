@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import VenueCarousel from "../VenueCarousel";
 import TransportCard from "../TransportCard";
+import Footer from "../Footer";
 
 function Maps() {
   return (
@@ -23,70 +24,75 @@ function Arrival() {
   const { t } = useTranslation();
 
   return (
-    <div className="justify-center flex items-baseline w-full min-h-screen py-5">
-      <div className="xl:max-w-7xl bg-primary-content drop-shadow-xl border border-black/20 w-full rounded-md justify-between items-stretch px-5 xl:px-5 py-5">
-        <div className="mx-auto w-full">
-          <div className="flex flex-col md:mx-12">
-            <h1 className="text-3xl text-center mb-8">{t("the_venue")}</h1>
-            <p className="text-base-content text-base indent-4">
-              {t("venue_text")}
-            </p>
-            <VenueCarousel />
-          </div>
-          <div className="divider"></div>
-          <div className="text md:mx-12">
-            <h1 className="text-3xl text-center my-8">{t("getting_there")}</h1>
-            <p className="text-base-content text-base indent-4">
-              {t("how_to_get_there_text")}
-            </p>
-            <p className="text-base-content text-base indent-4">
-              {t("how_to_get_there_text_2")}
-            </p>
-            <h2 className="alert text-xl text-left my-4">
-              {t("direction_instructions")}
-            </h2>
-            <div className="alert bg-transparent">
-              <h2 className="text-lg text-left sm:my-4 sm:w-min lg:w-40">
-                {t("arriving_by_car")}
-              </h2>
-              <div className="hidden sm:divider sm:divider-horizontal"></div>
-              <ul className="list-disc list-inside">
-                <div className="divider mt-0 sm:hidden"></div>
-                <li className="list-item text-left">
-                  <span className="font-bold">Timbó:</span>{" "}
-                  {t("hot_to_get_there_from_timbo")}
-                </li>
-                <div className="divider"></div>
-                <li className="list-item text-left">
-                  <span className="font-bold">Blumenau:</span>{" "}
-                  {t("hot_to_get_there_from_blumenau")}
-                </li>
-                <div className="divider"></div>
-                <li className="list-item text-left">
-                  <span className="font-bold">Jaraguá do Sul:</span>{" "}
-                  {t("hot_to_get_there_from_jaragua")}
-                </li>
-              </ul>
-            </div>
-            <div className="alert bg-transparent mt-4 flex w-full flex-col sm:grid">
-              <div className="text-lg text-left sm:my-4 sm:w-min lg:w-40">
-                {t("arriving_by_shuttle")}
-              </div>
-              <div className="hidden sm:divider sm:divider-horizontal"></div>
-              <div className="divider my-0 sm:hidden"></div>
-              <p className="text-base-content text-base text-left">
-                {t("how_to_get_there_text_3")}
+    <>
+      <div className="justify-center flex items-baseline w-full min-h-screen py-5">
+        <div className="xl:max-w-7xl bg-primary-content drop-shadow-xl border border-black/20 w-full rounded-md justify-between items-stretch px-5 xl:px-5 py-5">
+          <div className="mx-auto w-full">
+            <div className="flex flex-col md:mx-12">
+              <h1 className="text-3xl text-center mb-8">{t("the_venue")}</h1>
+              <p className="text-base-content text-base indent-4">
+                {t("venue_text")}
               </p>
+              <VenueCarousel />
             </div>
-            <div className="flex flex-col-reverse md:flex-row">
-              <TransportCard />
-              <div className="divider-horizontal mx-1" />
-              <Maps />
+            <div className="divider"></div>
+            <div className="text md:mx-12">
+              <h1 className="text-3xl text-center my-8">
+                {t("getting_there")}
+              </h1>
+              <p className="text-base-content text-base indent-4">
+                {t("how_to_get_there_text")}
+              </p>
+              <p className="text-base-content text-base indent-4">
+                {t("how_to_get_there_text_2")}
+              </p>
+              <h2 className="alert text-xl text-left my-4">
+                {t("direction_instructions")}
+              </h2>
+              <div className="alert bg-transparent">
+                <h2 className="text-lg text-left sm:my-4 sm:w-min lg:w-40">
+                  {t("arriving_by_car")}
+                </h2>
+                <div className="hidden sm:divider sm:divider-horizontal"></div>
+                <ul className="list-disc list-inside">
+                  <div className="divider mt-0 sm:hidden"></div>
+                  <li className="list-item text-left">
+                    <span className="font-bold">Timbó:</span>{" "}
+                    {t("hot_to_get_there_from_timbo")}
+                  </li>
+                  <div className="divider"></div>
+                  <li className="list-item text-left">
+                    <span className="font-bold">Blumenau:</span>{" "}
+                    {t("hot_to_get_there_from_blumenau")}
+                  </li>
+                  <div className="divider"></div>
+                  <li className="list-item text-left">
+                    <span className="font-bold">Jaraguá do Sul:</span>{" "}
+                    {t("hot_to_get_there_from_jaragua")}
+                  </li>
+                </ul>
+              </div>
+              <div className="alert bg-transparent mt-4 flex w-full flex-col sm:grid">
+                <div className="text-lg text-left sm:my-4 sm:w-min lg:w-40">
+                  {t("arriving_by_shuttle")}
+                </div>
+                <div className="hidden sm:divider sm:divider-horizontal"></div>
+                <div className="divider my-0 sm:hidden"></div>
+                <p className="text-base-content text-base text-left">
+                  {t("how_to_get_there_text_3")}
+                </p>
+              </div>
+              <div className="flex flex-col-reverse md:flex-row">
+                <TransportCard />
+                <div className="divider-horizontal mx-1" />
+                <Maps />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }
 

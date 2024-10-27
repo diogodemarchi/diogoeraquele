@@ -139,6 +139,7 @@
   "fun": "Fun",
   "question": "Question",
   "answer": "Answer",
+  "incorrect_password": "Incorrect Password",
   "airports": "Airports",
   "cities": "Cities",
   "landmarks": "Landmarks",
@@ -151,7 +152,8 @@
   "interactive_map": {
     "title": "Interactive Map",
     "description": "Here is a map of Brazil with some points of interest, such as airports, natural places, and activities in general. You can take this as a starting point for planning your trip!",
-    "disclaimer": "Note that there might be some inaccuracies with the map, don't take it for granted. I also don't know if all google maps links will be working. If you note something wrong, please get in touch with me!"
+    "disclaimer": "Note that there might be some inaccuracies with the map, don't take it for granted. I also don't know if all google maps links will be working. If you note something wrong, please get in touch with me!",
+    "in_progress": "The map is still under construction, please check back later for more content!"
   },
   "info": {
     "title": "Travel Information",
@@ -194,6 +196,14 @@
     "travelInsurance": {
       "title": "Travel Insurance",
       "description": "It’s highly recommended that all visitors to Brazil purchase travel insurance that includes medical coverage. This ensures access to medical care without incurring significant expenses."
+    },
+    "emergency": {
+      "title": "Emergency Numbers",
+      "description": "I hope nobody will need this, but if you do, here you can find some useful numbers if you are in a pickle. If you are in doubt, just call 190 and they will redirect you.",
+      "military_police": "Military Police",
+      "highway_patrol": "Highway Patrol",
+      "samu": "SAMU (Urgenct Mobile Care Service) - Ambulance",
+      "firefighters": "Firefighters"
     }
   },
   "transportation": {
@@ -214,5 +224,56 @@
       "title": "It's Illegal to Drive in Flip-Flops",
       "description": "Although Brazil is famous for its Havaianas, it is illegal to drive in flip-flops. Flip-flops can easily get caught on the pedals and cause accidents, so if you're caught driving in them, you may be fined. However, it is acceptable to drive barefoot if you have no other footwear with you."
     }
-  }
+  },
+  "view_on_maps": "View on Google Maps",
+  "fedetal_states": "States",
+  "rio_dos_cedros": "Rio dos Cedros",
+  "rio_dos_cedros_description": "Hometown of Diogo and where the wedding will take place, with lush landscapes, waterfalls, trails, a paragliding launch site, a water park, lakes, birds, and wildlife. The region is an attraction for adventure tourism, ecotourism, and a call for lovers of natural beauty.",
+  "pinhal_dam": "Pinhal Dam",
+  "pinhal_dam_description": "Pinhal Dam is located in the Alto Cedros Reservoir and is part of the Lakes Region. The Lakes Region was constructed in the 1950s when the Bonito, Palmeiras, and Cedros rivers were dammed to supply two hydroelectric plants of Celesc. Pinhal Dam is the longest in the region, stretching 14 km, but with 18 million cubic meters, it has the smallest water volume.",
+  "rio_bonito_dam": "Rio Bonito Dam",
+  "rio_bonito_dam_description": "Lagoa do Rio Bonito is also an artificial lake in the Lakes Region, located in Palmeiras. This dam is smaller, with a length of 9 km. However, its water volume is the largest, with 32 million cubic meters. Clear waters along with reserves of native forest shape the region's landscape. The priority of the Rio Bonito Dam is to generate energy for the region.",
+  "formosa_waterfall": "Formosa Waterfall",
+  "formosa_waterfall_description": "A beautiful waterfall in Rio dos Cedros, approximately 40 meters high. It is located in Alto da Palmeira, within a private property; a small walk into the area allows you to catch a glimpse of it.",
+  "waterpark_sao_bernardo": "Aguas São Bernardo Park",
+  "waterpark_sao_bernardo_description": "São Bernardo Park is a peaceful place with a pool, stream, waterfall, lagoon, trail, camping, snack bar, and events.",
+  "sao_bernardo_hill": "São Bernardo Hill",
+  "sao_bernardo_hill_description": "The hill offers a great view of Rio dos Cedros. On weekends, it is a very popular spot among people who enjoy paragliding.",
+  "omas_house": "Oma's House",
+  "omas_house_description": "The house where Diogo's Oma lived and where the wedding will take place.",
+  "timbo": "Timbó",
+  "timbo_description": "Hometown of Raquele, colonized by German and Italian immigrants, the city showcases much of this culture in its architecture, cuisine, and customs. The city of Timbó SC has an estimated population of 45,000 (2021). Timbó was ranked by the UN as the 10th best city in the country to live in, a great option for those looking to escape the hustle and bustle of a big city.",
+  "jardim_do_imigrante": "Jardim do Imigrante Tourist Complex",
+  "jardim_do_imigrante_description": "This complex is a space that celebrates the history of immigration in Timbó, providing an educational and cultural experience. The location is filled with well-kept gardens, leisure areas, and monuments honoring the immigrants who helped shape the city.",
+  "jardim_botanico_timbo": "Franz Damm Botanical Garden",
+  "jardim_botanico_timbo_description": "Named in honor of one of the first immigrants in the region, it is a space dedicated to the preservation of native and exotic plant species. Covering approximately 18 hectares, it is one of the largest botanical gardens in Santa Catarina.",
+  "morro_azul": "Morro Azul",
+  "morro_azul_description": "Morro Azul is an ecological reserve offering hiking trails and a preserved natural environment, ideal for those seeking contact with nature. The park is known for its beautiful panoramic views and rich biodiversity. Visitors can hike trails leading to viewpoints, enjoying breathtaking views of the region.",
+  "music_museum_timbo": "Timbó Music Museum",
+  "music_museum_timbo_description": "This museum is dedicated to preserving and promoting the history of music in the region. With a collection that includes musical instruments, sheet music, and memorabilia from local artists, the museum offers a rich cultural experience.",
+  "immigrant_museum": "Immigrant Museum",
+  "immigrant_museum_description": "The Immigrant Museum tells the story of colonization in the region, emphasizing the contributions of European immigrants. The museum houses a collection of objects, documents, and photographs depicting the lives and traditions of the city's early inhabitants.",
+  "restaurant_jardim_bontanico": "Botanical Garden Restaurant",
+  "restaurant_jardim_bontanico_description": "Buffet with typical German food",
+  "restaurant_paromas": "Paromas",
+  "restaurant_paromas_description": "Buffet with varied food and pizza at night",
+  "restaurant_bierdamm": "BierDamm",
+  "restaurant_bierdamm_description": "Typical German food",
+  "restaurant_mattarello": "Mattarello Gourmet",
+  "restaurant_mattarello_description": "Pizzeria and Burger joint",
+  "restaurant_patolino": "Patolino Restaurant",
+  "restaurant_patolino_description": "Fish options",
+  "cafe_madonna_mia": "Madonna Mia Cafe",
+  "cafe_madonna_mia_description": "The best coffee in town, without a doubt",
+  "cafe_kitutte": "Kitutte Cafe",
+  "cafe_schuh": "Schuh Cafe",
+  "cafe_donna_caixa": "Donna Caixa Bar and Cafe",
+  "cafe_latte_macchiato": "Latte Macchiato Cafe",
+  "food": "Food",
+  "restaurant_villagio_di_cedro": "Villagio di Cedro Restaurant",
+  "restaurant_pesque_e_pague_andreazza": "Pesque e Pague Andreazza Restaurant",
+  "restaurant_armazém_do_lago": "Lago Warehouse Restaurant",
+  "restaurant_ess_haus": "Ess Haus",
+  "cafe_mae_joana": "Mother Joana's Cafe",
+  "vale_do_itajai": "<p>The colonization of the European Valley, located in Santa Catarina, was marked by the immigration of Europeans, mainly Germans and Italians, who arrived in Brazil from the second half of the 19th century. This region, which includes cities like Blumenau, Pomerode, Timbó, and Rio dos Cedros, became an important center of colonization in the country. Here is a summary of the colonization process in the European Valley:</p><p>Reasons for Immigration: European colonization in Brazil was driven by factors such as the search for new opportunities, economic and social crises in Europe, and the need for labor for agricultural and industrial development in Brazil. Immigration effectively began in the 1850s and 1870s, with the arrival of German immigrants and, later, Italians. The Brazilian government encouraged colonization to populate and develop sparsely inhabited regions.</p><p>German Colonization: The first German settlers arrived in 1850, establishing the city of Blumenau. Colonization focused on agricultural production, especially the cultivation of tobacco, corn, and later, grapes. The Germans brought their culture, traditions, and agricultural techniques. The language, cuisine, festivals (like Oktoberfest), and half-timbered architecture are important legacies of German colonization.</p><p>Italian Colonization: Italian immigration began in 1875, with families settling mainly in areas like Rio dos Cedros and Timbó. Most immigrants came from Lombardy and Veneto. The Italians engaged in agriculture, cultivating apples, grapes, and other products, and developing viticulture in the region. Agricultural cooperatives emerged to strengthen local production. The Italian presence enriched the local culture, bringing traditions, cuisine (such as polenta and pasta), and typical festivals, which blended with German traditions, creating a diverse regional identity.</p><p>Legacy of Colonization: The European Valley is now known for its architecture, traditions, and festivities that celebrate the cultural heritage of immigrants. Oktoberfest in Blumenau and other traditional festivals attract tourists and keep alive the history of European colonization. The cultural diversity resulting from immigration continues to influence the identity of the region, making the European Valley a unique place rich in traditions.</p>"
 }
