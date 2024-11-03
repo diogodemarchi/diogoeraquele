@@ -47,13 +47,14 @@ function LanguageSelector() {
   return (
     <div className="dropdown justify-center flex items-center h-full">
       <div className="m-2">
-        <button
-          type="button"
+        <div
+          role="button"
           className="inline-flex justify-center w-16 shadow-lg py-2 text-sm font-medium hover:bg-base-100 focus:bg-base-100 rounded-t-lg rounded-b-lg active:bg-secondary"
           id="options-menu"
           aria-haspopup="true"
           aria-expanded="true"
           onClick={toggleDropdown}
+          tabIndex={0}
         >
           {
             <img
@@ -63,11 +64,12 @@ function LanguageSelector() {
               src={`${process.env.PUBLIC_URL}/images/${LANGUAGES.find((lang) => lang.code === i18n.language)?.countryCode}.png`}
             />
           }
-        </button>
+        </div>
         {dropdownOpen && (
           <ul
             className="dropdown-content absolute z-[1] menu rounded-b-lg bg-base-100 rounded-btn w-16 shadow h-auto"
             role="menu"
+            tabIndex={0}
           >
             {LANGUAGES.filter((item) => item.code !== i18n.language).map(
               ({ code, label, countryCode }) => (

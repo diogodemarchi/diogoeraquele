@@ -14,21 +14,28 @@ function CardItems() {
             key={item.key}
             className="card shadow-xl compact bg-base-100 basis-1/4 min-w-64"
           >
-            <Link key={item.key} to={item.to} className="card h-full">
+            <Link key={`${item.key}1`} to={item.to} className="card h-full">
               <figure key={index}>
-                <img key={item.key} src={item.cardImgSrc} alt={t(item.key)} />
+                <img
+                  key={`${item.key}`}
+                  src={item.cardImgSrc}
+                  alt={t(item.key)}
+                />
               </figure>
-              <div key={item.key} className="card-body">
+              <div key={`${item.key}2`} className="card-body">
                 <h2 key={`h2${index}`} className="card-title">
                   {t(item.key)}
                 </h2>
                 <p key={index}>{t(item.cardText)}</p>
                 <div
-                  key={item.key}
+                  key={`${item.key}3`}
                   className="card-actions justify-end place-items-end"
                 >
                   {item.labels.map((label) => (
-                    <div key={item.key} className="badge badge-outline">
+                    <div
+                      key={`${item.key}${label}`}
+                      className="badge badge-outline"
+                    >
                       {t(label)}
                     </div>
                   ))}
